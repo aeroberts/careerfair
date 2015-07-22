@@ -58,11 +58,12 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(navigationTileReuse, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(navigationTileReuse, forIndexPath: indexPath) as! MainCollectionViewCell
         cell.backgroundColor = UIColor.blackColor();
         
-        println("AWW YEE");
+        //println("AWW YEE");
         // Configure the cell
+        cell.imageView.image = UIImage(named: "cat.png");
         return cell
     }
 
@@ -75,12 +76,48 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        println("IN COLLECTIONVIEW SHOULD SELECT ITEM AT PATH");
+        switch indexPath.row {
+        case 0: // Organizations
+            // Segue to organizationTableView
+            println("performingSegueWithIdentifier: navigationTileToOrgs");
+            performSegueWithIdentifier("navigationTileToOrgs", sender: self);
+            break;
+        case 1: // Map
+            performSegueWithIdentifier("navigationTileToMapTable", sender: self);
+            break;
+        case 2:
+            // Segue to
+            break;
+        case 3:
+            // Segue to
+            break;
+        case 4:
+            // Segue to
+            break;
+        case 5:
+            // Segue to
+            break;
+        case 6:
+            // Segue to
+            break;
+        case 7:
+            // Segue to
+            break;
+        case 8:
+            // Segue to
+            break;
+        default:
+            // ERROR
+            println("ERROR");
+            break;
+        }
+        return true;
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

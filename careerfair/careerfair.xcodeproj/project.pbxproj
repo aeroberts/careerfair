@@ -15,6 +15,8 @@
 		AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0310261B5C26B800554DD2 /* LaunchScreen.xib */; };
 		AC0310341B5C26B900554DD2 /* careerfairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0310331B5C26B900554DD2 /* careerfairTests.swift */; };
 		AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */; };
+		AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */; };
+		AC9D7FF51B5F3AA20049107F /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9D7FF41B5F3AA20049107F /* cat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		AC0310321B5C26B900554DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC0310331B5C26B900554DD2 /* careerfairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careerfairTests.swift; sourceTree = "<group>"; };
 		AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC9D7FF41B5F3AA20049107F /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,10 @@
 			children = (
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
 				AC03101F1B5C26B800554DD2 /* ViewController.swift */,
-				AC0310211B5C26B800554DD2 /* Main.storyboard */,
+				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
 				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
+				AC0310211B5C26B800554DD2 /* Main.storyboard */,
+				AC9D7FF41B5F3AA20049107F /* cat.png */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
@@ -200,6 +206,7 @@
 			files = (
 				AC0310231B5C26B800554DD2 /* Main.storyboard in Resources */,
 				AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */,
+				AC9D7FF51B5F3AA20049107F /* cat.png in Resources */,
 				AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +227,7 @@
 			files = (
 				AC0310201B5C26B800554DD2 /* ViewController.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
+				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 			);
