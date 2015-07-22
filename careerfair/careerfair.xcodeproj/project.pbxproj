@@ -14,6 +14,7 @@
 		AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0310241B5C26B800554DD2 /* Images.xcassets */; };
 		AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0310261B5C26B800554DD2 /* LaunchScreen.xib */; };
 		AC0310341B5C26B900554DD2 /* careerfairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0310331B5C26B900554DD2 /* careerfairTests.swift */; };
+		AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		AC03102D1B5C26B900554DD2 /* careerfairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = careerfairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0310321B5C26B900554DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC0310331B5C26B900554DD2 /* careerfairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careerfairTests.swift; sourceTree = "<group>"; };
+		AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
 				AC03101F1B5C26B800554DD2 /* ViewController.swift */,
 				AC0310211B5C26B800554DD2 /* Main.storyboard */,
+				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0310201B5C26B800554DD2 /* ViewController.swift in Sources */,
+				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 			);
@@ -413,6 +417,7 @@
 				AC0310391B5C26B900554DD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC03103A1B5C26B900554DD2 /* Build configuration list for PBXNativeTarget "careerfairTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				AC03103C1B5C26B900554DD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
