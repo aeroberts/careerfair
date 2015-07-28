@@ -10,6 +10,11 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
+// Define global data structures here
+var orgData = [Int: organization](); // Maps orgId to organization struct
+var favoritedOrgs = [Int: UnsafeMutablePointer<organization?>](); // Maps orgId to org*
+var notedOrgs = [Int: UnsafeMutablePointer<organization?>](); // Maps orgId to org*
+
 class MainCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     private let navigationTileReuse = "navigationTile";
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
@@ -31,7 +36,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -89,25 +94,25 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         case 1: // Map
             performSegueWithIdentifier("navigationTileToMapTable", sender: self);
             break;
-        case 2:
+        case 2: // Favorited
             // Segue to
             break;
-        case 3:
+        case 3: // Notes
             // Segue to
             break;
-        case 4:
+        case 4: // Todo list
             // Segue to
             break;
-        case 5:
+        case 5: // Events
             // Segue to
             break;
-        case 6:
+        case 6: // Announcements
             // Segue to
             break;
-        case 7:
+        case 7: // Career Fair Tips / FAQ
             // Segue to
             break;
-        case 8:
+        case 8: // General Info
             // Segue to
             break;
         default:

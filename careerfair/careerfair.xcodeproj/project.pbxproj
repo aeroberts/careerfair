@@ -14,6 +14,7 @@
 		AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0310241B5C26B800554DD2 /* Images.xcassets */; };
 		AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0310261B5C26B800554DD2 /* LaunchScreen.xib */; };
 		AC0310341B5C26B900554DD2 /* careerfairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0310331B5C26B900554DD2 /* careerfairTests.swift */; };
+		AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5536FB1B670D6B00C66C7D /* organization.swift */; };
 		AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */; };
 		AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */; };
 		AC9D7FF51B5F3AA20049107F /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9D7FF41B5F3AA20049107F /* cat.png */; };
@@ -41,6 +42,7 @@
 		AC03102D1B5C26B900554DD2 /* careerfairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = careerfairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0310321B5C26B900554DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC0310331B5C26B900554DD2 /* careerfairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careerfairTests.swift; sourceTree = "<group>"; };
+		AC5536FB1B670D6B00C66C7D /* organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = organization.swift; sourceTree = "<group>"; };
 		AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC9D7FF41B5F3AA20049107F /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
+				AC5536FB1B670D6B00C66C7D /* organization.swift */,
 				AC03101F1B5C26B800554DD2 /* ViewController.swift */,
 				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
 				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
@@ -229,6 +232,7 @@
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
+				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

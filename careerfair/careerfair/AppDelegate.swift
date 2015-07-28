@@ -16,8 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        // Load orgData from database
+        orgData[0]=(organization(fromTitle: "One", desc_in: "one_better"));
+        orgData[1]=(organization(fromTitle: "Two", desc_in: "NOta s gooda 221"));
+        
+        notedOrgs[0] = 0;
+        notedOrgs[1] = 
+        
+        // Load favorited and noted Orgs from orgData
+        for (orgId, orgPtr) in favoritedOrgs {
+            if (orgData[orgId] === nil) {
+                // Error, favorited org no longer exists
+                favoritedOrgs[orgId] = nil;
+                continue;
+            }
+            withUnsafeMutablePointer(&orgData[orgId], {(orgPtr) -> Void in
+                var currentOrgPtr : UnsafeMutablePointer<organization?> = orgPtr;
+                favoritedOrgs[orgId] = currentOrgPtr;
+            })
+        }
+        
+        for (orgId, orgPtr) in notedOrgs {
+            if (orgData[orgId] === nil) {
+                // Error, noted org no longer exists
+                notedOrgs[orgId] = nil;
+                continue;
+            }
+            withUnsafeMutablePointer(&orgData[orgId], {(orgPtr) -> Void in
+                var currentOrgPtr : UnsafeMutablePointer<organization?> = orgPtr;
+                notedOrgs[orgId] = currentOrgPtr;
+            })
+        }
+    return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
