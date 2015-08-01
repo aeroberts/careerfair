@@ -9,11 +9,7 @@
 import UIKit
 
 let reuseIdentifier = "Cell"
-
-// Define global data structures here
-var orgData = [Int: organization](); // Maps orgId to organization struct
-var favoritedOrgs = [Int: UnsafeMutablePointer<organization?>](); // Maps orgId to org*
-var notedOrgs = [Int: UnsafeMutablePointer<organization?>](); // Maps orgId to org*
+var currentArray:currentOrgArray = currentOrgArray.none;
 
 class MainCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     private let navigationTileReuse = "navigationTile";
@@ -37,28 +33,56 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "navigationTileToFavorited") {
+            currentArray = currentOrgArray.favorited;
+            orgNameToIdList.removeAll();
+            
+            for orgId in favoritedOrgs {
+                orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
+            }
+            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+            println("Bob is a good guy");
+            for x in orgNameToIdList {
+                println("x: " + toString(x.orgId) + " " + x.orgName);
+            }
+        }
+        else if (segue.identifier == "navigationTileToNoted") {
+            currentArray = currentOrgArray.noted;
+            orgNameToIdList.removeAll();
+            
+            for orgId in notedOrgs {
+                orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
+            }
+            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+        }
+        else if (segue.identifier == "navigationTileToOrgs") {
+            currentArray = currentOrgArray.all;
+            orgNameToIdList.removeAll();
+            
+            for (orgId, org) in orgData {
+                orgNameToIdList.append(orgNameToId(orgName_in: org.title, orgId_in: orgId));
+            }
+            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
-        println("YOO");
         return 1;
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        println("HOT NACHOS");
         return 9;
     }
 
@@ -84,7 +108,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        println("IN COLLECTIONVIEW SHOULD SELECT ITEM AT PATH");
         switch indexPath.row {
         case 0: // Organizations
             // Segue to organizationTableView
@@ -95,10 +118,10 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             performSegueWithIdentifier("navigationTileToMapTable", sender: self);
             break;
         case 2: // Favorited
-            // Segue to
+            performSegueWithIdentifier("navigationTileToFavorited", sender: self);
             break;
         case 3: // Notes
-            // Segue to
+            performSegueWithIdentifier("navigationTileToNoted", sender: self);
             break;
         case 4: // Todo list
             // Segue to

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+enum currentOrgArray {
+    case none
+    case favorited
+    case noted
+    case all
+}

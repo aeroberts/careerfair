@@ -17,37 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Load orgData from database
-        orgData[0]=(organization(fromTitle: "One", desc_in: "one_better"));
-        orgData[1]=(organization(fromTitle: "Two", desc_in: "NOta s gooda 221"));
+        orgData[0]=(organization(fromTitle: "Blizzard", desc_in: "Game development Studio", note_in: "", favorited_in: false, date_in: "Thursday", location_in: "BBB"));
+        orgData[1]=(organization(fromTitle: "Riot", desc_in: "Game development Studio", note_in: "", favorited_in: false, date_in: "Friday", location_in: "BBB"));
+        orgData[2]=(organization(fromTitle: "Valve", desc_in: "Game development Studio", note_in: "", favorited_in: true, date_in: "Friday", location_in: "EECS"));
+        // Load favorited/noted from memory
         
-        notedOrgs[0] = 0;
-        notedOrgs[1] = 
-        
-        // Load favorited and noted Orgs from orgData
-        for (orgId, orgPtr) in favoritedOrgs {
-            if (orgData[orgId] === nil) {
-                // Error, favorited org no longer exists
-                favoritedOrgs[orgId] = nil;
-                continue;
+        // Check all orgId's within noted/favorited are valid
+        for orgId in favoritedOrgs {
+            if (orgData[orgId] == nil) {
+                favoritedOrgs.remove(orgId);
+                //notedOrgs.remove(orgId);
             }
-            withUnsafeMutablePointer(&orgData[orgId], {(orgPtr) -> Void in
-                var currentOrgPtr : UnsafeMutablePointer<organization?> = orgPtr;
-                favoritedOrgs[orgId] = currentOrgPtr;
-            })
         }
         
-        for (orgId, orgPtr) in notedOrgs {
-            if (orgData[orgId] === nil) {
-                // Error, noted org no longer exists
-                notedOrgs[orgId] = nil;
-                continue;
+        for orgId in notedOrgs {
+            if (orgData[orgId] == nil) {
+                notedOrgs.remove(orgId);
             }
-            withUnsafeMutablePointer(&orgData[orgId], {(orgPtr) -> Void in
-                var currentOrgPtr : UnsafeMutablePointer<organization?> = orgPtr;
-                notedOrgs[orgId] = currentOrgPtr;
-            })
         }
-    return true
+        
+        return true;
     }
 
     func applicationWillResignActive(application: UIApplication) {

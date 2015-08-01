@@ -8,6 +8,18 @@
 
 import UIKit
 
+struct orgNameToId {
+    var orgName:String;
+    var orgId:Int;
+    
+    init(orgName_in:String, orgId_in:Int) {
+        orgName = orgName_in;
+        orgId = orgId_in;
+    }
+}
+
+var orgNameToIdList = [orgNameToId]();
+
 class FavoritedNotedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -30,24 +42,80 @@ class FavoritedNotedTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        if (currentArray == currentOrgArray.favorited) {
+            return favoritedOrgs.count;
+        }
+        else if (currentArray == currentOrgArray.noted) {
+            return notedOrgs.count;
+        }
+        println("ERROR in FavoritedNotedVC numberOfRowsInSection");
+        return 0; // ERROR
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("orgCell", forIndexPath: indexPath) as! OrganizationTableViewCell
+        var orgDataIndex = orgNameToIdList[indexPath.row].orgId;
+        var org = orgData[orgDataIndex]; // Use org to populate table information
+        
+        cell.orgTitleLabel.text = org?.title;
+        cell.orgDateLabel.text = org?.desc;
+        
+        if (org?.favorited === true) {
+            cell.favoritedButton.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);
+            //cell.favoritedButton.setImage(UIImage(contentsOfFile: "heartfaved"), forState: UIControlState.Normal);
+        }
+        else {
+            cell.favoritedButton.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
+            //cell.favoritedButton.setImage(UIImage(contentsOfFile: "heartunfaved"), forState: UIControlState.Normal);
+        }
+        
+        cell.favoritedButton.tag = orgDataIndex;
+        cell.favoritedButton.addTarget(self, action: "touchFavorite:", forControlEvents: .TouchUpInside);
+        
+        return cell;
     }
-    */
+    
+    @IBAction func touchFavorite(sender: UIButton) {
+        let orgId = sender.tag;
+        if (orgData[orgId] == nil) {
+            println("ERROR");
+            return;
+        }
+        
+        let favoritedStatus = orgData[orgId]!.favorited;
+        orgData[orgId]!.favorited = !favoritedStatus;
+        if (favoritedStatus == false) {
+            //Write to core data
+            
+            //Add to list of favorites
+            if (favoritedOrgs.contains(orgId)) {
+                println("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
+            }
+            favoritedOrgs.insert(orgId);
+            //Switch button image to faved
+            
+            sender.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);
+        }
+        else {
+            //Remove from core data
+            
+            //Remove from list of favorites
+            if (!favoritedOrgs.contains(orgId)) {
+                println("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
+            }
+            favoritedOrgs.remove(orgId);
+            
+            //Switch button image to unfaved
+            sender.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
