@@ -9,6 +9,16 @@
 import UIKit
 
 class OrganizationDetailViewController: UIViewController {
+    
+    private var currentOrg:organization = organization();
+    
+    func setCurrentOrg(org_in:organization) {
+        currentOrg = org_in;
+    }
+
+    func getCurrentOrg() -> organization {
+        return currentOrg;
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

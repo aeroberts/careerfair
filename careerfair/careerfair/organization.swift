@@ -21,6 +21,15 @@ class organization {
     var date: String;
     var location: String;
     
+    init() {
+        title = "";
+        desc = "";
+        note = "";
+        favorited = false;
+        date = "";
+        location = "";
+    }
+    
     init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String) {
         title = title_in;
         desc = desc_in;

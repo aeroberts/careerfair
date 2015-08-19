@@ -23,6 +23,7 @@
 		ACF988991B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988981B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift */; };
 		ACF9889D1B6B0C580024C113 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889C1B6B0C580024C113 /* Map.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
+		ACF988A11B6DA59F0024C113 /* OrganizationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		ACF988981B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritedNotedTableViewController.swift; path = ../FavoritedNotedTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889C1B6B0C580024C113 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
+		ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
 				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
 				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
+				ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */,
 				AC03101F1B5C26B800554DD2 /* ViewController.swift */,
 				AC5536FB1B670D6B00C66C7D /* organization.swift */,
 				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
@@ -251,6 +254,7 @@
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				ACF988991B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift in Sources */,
+				ACF988A11B6DA59F0024C113 /* OrganizationDetailViewController.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,
