@@ -11,6 +11,8 @@ import UIKit
 var isFiltered = false;
 
 class OrganizationsTableViewController: UITableViewController {
+    private var transitionCellIndex = -1;
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,6 +207,14 @@ class OrganizationsTableViewController: UITableViewController {
     }
     */
 
+<<<<<<< HEAD
+=======
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.transitionCellIndex = indexPath.row;
+        performSegueWithIdentifier("viewOrgDetail", sender: self);
+    }
+    
+>>>>>>> 0593034224319b7170329af0786438f986ee3d10
     
     // MARK: - Navigation
 
@@ -212,6 +222,7 @@ class OrganizationsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+<<<<<<< HEAD
         if (segue.identifier == "orgToFilter") {
             self.navigationController?.setToolbarHidden(true, animated: true);
         }
@@ -237,6 +248,10 @@ class OrganizationsTableViewController: UITableViewController {
             
             let currentCell = tableView.cellForRowAtIndexPath(ip) as! OrganizationTableViewCell;
             destinationVC.orgId = currentCell.favoritedButton.tag;
+=======
+        if (segue.identifier == "viewOrgDetail") {
+            
+>>>>>>> 0593034224319b7170329af0786438f986ee3d10
         }
     }
     
