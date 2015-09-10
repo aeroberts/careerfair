@@ -11,10 +11,12 @@ import UIKit
 struct orgNameToId {
     var orgName:String;
     var orgId:Int;
+    var filtered:Bool;
     
     init(orgName_in:String, orgId_in:Int) {
         orgName = orgName_in;
         orgId = orgId_in;
+        filtered = true;
     }
 }
 

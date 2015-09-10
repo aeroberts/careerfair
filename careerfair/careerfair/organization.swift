@@ -21,13 +21,61 @@ class organization {
     var date: String;
     var location: String;
     
-    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String) {
+    var internshipC: Bool;
+    var fulltimeC: Bool;
+    var coopC: Bool;
+    var bachelorsC: Bool;
+    var mastersC: Bool;
+    var doctoralC: Bool;
+    var sponsorYesC: Bool;
+    var sponsorNoC: Bool;
+    var sponsorOnOccasionC: Bool;
+    var majorC = [Bool]();
+    
+    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int]) {
+        
         title = title_in;
         desc = desc_in;
         note = note_in;
         favorited = favorited_in;
         date = date_in;
         location = location_in;
+        
+        internshipC = internshipC_in;
+        fulltimeC = fulltimeC_in;
+        coopC = coopC_in;
+        bachelorsC = bachelorsC_in;
+        mastersC = mastersC_in;
+        doctoralC = doctoralC_in;
+        sponsorYesC = sponsorYesC_in;
+        sponsorNoC = sponsorNoC_in;
+        sponsorOnOccasionC = sponsorOnOccasionC_in;
+        
+        majorC = Array(count: 16, repeatedValue: false);
+        for majorId in majorC_in {
+            majorC[majorId] = true;
+        }
+    }
+    
+    init() {
+        title = "";
+        desc = "";
+        note = "";
+        favorited = false;
+        date = "";
+        location = "";
+        
+        internshipC = false;
+        fulltimeC = false;
+        coopC = false;
+        bachelorsC = false;
+        mastersC = false;
+        doctoralC = false;
+        sponsorYesC = false;
+        sponsorNoC = false;
+        sponsorOnOccasionC = false;
+        
+        majorC = Array(count: 16, repeatedValue: false);
     }
 }
 

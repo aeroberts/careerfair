@@ -17,16 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Load orgData from database
-        orgData[0]=(organization(fromTitle: "Blizzard", desc_in: "Game development Studio", note_in: "", favorited_in: false, date_in: "Thursday", location_in: "BBB"));
-        orgData[1]=(organization(fromTitle: "Riot", desc_in: "Game development Studio", note_in: "", favorited_in: false, date_in: "Friday", location_in: "BBB"));
-        orgData[2]=(organization(fromTitle: "Valve", desc_in: "Game development Studio", note_in: "", favorited_in: true, date_in: "Friday", location_in: "EECS"));
+        
+        orgData[0]=(organization(fromTitle: "Bob", desc_in: "This is bob", note_in: "", favorited_in: true, date_in: "Thursday", location_in: "BBB", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5]));
+        orgData[1]=(organization(fromTitle: "Kathyyy", desc_in: "Is the...", note_in: "", favorited_in: false, date_in: "Friday", location_in: "EECS", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [8]));
+        orgData[2]=(organization(fromTitle: "Alx", desc_in: "Best", note_in: "Suchacutie", favorited_in: true, date_in: "Thrusday", location_in: "BBB", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
+        
         // Load favorited/noted from memory
+        
+        for org in orgData {
+            if (org.1.favorited) {
+                println(org.0);
+                favoritedOrgs.insert(org.0);
+            }
+            if (org.1.note.isEmpty == false) {
+                println(org.0);
+                notedOrgs.insert(org.0);
+            }
+        }
         
         // Check all orgId's within noted/favorited are valid
         for orgId in favoritedOrgs {
             if (orgData[orgId] == nil) {
                 favoritedOrgs.remove(orgId);
-                //notedOrgs.remove(orgId);
             }
         }
         

@@ -41,6 +41,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if (segue.identifier == "navigationTileToFavorited") {
+            println("To Favorited");
             currentArray = currentOrgArray.favorited;
             orgNameToIdList.removeAll();
             
@@ -104,7 +105,9 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         return true
     }
     */
-
+    @IBAction func unwindToMainVC(segue:UIStoryboardSegue) {
+        isFiltered = false;
+    }
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {

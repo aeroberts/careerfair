@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21F382A31B84E98600E5700C /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382A21B84E98600E5700C /* FilterVC.swift */; };
+		21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */; };
 		AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03101A1B5C26B800554DD2 /* AppDelegate.swift */; };
 		AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */; };
 		AC0310201B5C26B800554DD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03101F1B5C26B800554DD2 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21F382A21B84E98600E5700C /* FilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDescriptionVC.swift; sourceTree = "<group>"; };
 		AC0310151B5C26B800554DD2 /* careerfair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = careerfair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0310191B5C26B800554DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC03101A1B5C26B800554DD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,9 +106,9 @@
 				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
 				AC03101F1B5C26B800554DD2 /* ViewController.swift */,
 				AC5536FB1B670D6B00C66C7D /* organization.swift */,
+				21F382A21B84E98600E5700C /* FilterVC.swift */,
+				21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */,
 				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
-				ACF988981B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift */,
-				ACF9889C1B6B0C580024C113 /* Map.swift */,
 				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
 				ACF988901B6AF69F0024C113 /* currentOrgArray.swift */,
 				AC0310211B5C26B800554DD2 /* Main.storyboard */,
@@ -112,6 +116,8 @@
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
+				ACF9889C1B6B0C580024C113 /* Map.swift */,
+				ACF988981B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift */,
 				AC0310181B5C26B800554DD2 /* Supporting Files */,
 			);
 			path = careerfair;
@@ -243,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F382A31B84E98600E5700C /* FilterVC.swift in Sources */,
 				ACF9889D1B6B0C580024C113 /* Map.swift in Sources */,
 				ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */,
 				AC0310201B5C26B800554DD2 /* ViewController.swift in Sources */,
@@ -252,6 +259,7 @@
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				ACF988991B6AF7FB0024C113 /* FavoritedNotedTableViewController.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
+				21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,
 			);
