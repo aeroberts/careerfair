@@ -21,7 +21,6 @@ class organization {
     var date: String;
     var location: String;
     
-<<<<<<< HEAD
     var internshipC: Bool;
     var fulltimeC: Bool;
     var coopC: Bool;
@@ -35,18 +34,6 @@ class organization {
     
     init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int]) {
         
-=======
-    init() {
-        title = "";
-        desc = "";
-        note = "";
-        favorited = false;
-        date = "";
-        location = "";
-    }
-    
-    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String) {
->>>>>>> 0593034224319b7170329af0786438f986ee3d10
         title = title_in;
         desc = desc_in;
         note = note_in;

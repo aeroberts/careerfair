@@ -73,15 +73,37 @@ class OrganizationDescriptionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
+    // Given an organization's location, return the enum for the Map Location
+    func parseLocation(location:String) -> mapLocations {
+        switch(location) {
+            case "BBB":
+                return mapLocations.BBB;
+            case "eecs":
+                return mapLocations.eecs;
+            case "dow":
+                return mapLocations.dow;
+            case "dude":
+                return mapLocations.dude;
+            case "dudeConnector":
+                return mapLocations.dudeConnector;
+            case "fxb":
+                return mapLocations.fxb;
+            case "GG Brown":
+                return mapLocations.ggBrown;
+            default:
+                return mapLocations.dude;
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "orgDescToMap") {
+            let destinationVC = segue.destinationViewController as! MapImageVC;
+            destinationVC.mapLocation = parseLocation(org.location);
+        }
     }
-    */
-
 }
