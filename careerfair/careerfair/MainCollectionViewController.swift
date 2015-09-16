@@ -130,7 +130,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             // Segue to
             break;
         case 5: // Events
-            // Segue to
+            performSegueWithIdentifier("navigationTileToEvents", sender: self);
             break;
         case 6: // Announcements
             // Segue to
