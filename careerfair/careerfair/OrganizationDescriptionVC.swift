@@ -73,27 +73,7 @@ class OrganizationDescriptionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Given an organization's location, return the enum for the Map Location
-    func parseLocation(location:String) -> mapLocations {
-        switch(location) {
-            case "BBB":
-                return mapLocations.BBB;
-            case "eecs":
-                return mapLocations.eecs;
-            case "dow":
-                return mapLocations.dow;
-            case "dude":
-                return mapLocations.dude;
-            case "dudeConnector":
-                return mapLocations.dudeConnector;
-            case "fxb":
-                return mapLocations.fxb;
-            case "GG Brown":
-                return mapLocations.ggBrown;
-            default:
-                return mapLocations.dude;
-        }
-    }
+
     
     // MARK: - Navigation
 

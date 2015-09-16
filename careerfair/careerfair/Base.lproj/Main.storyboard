@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MQR-WX-gbi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MQR-WX-gbi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" id="g7D-Yy-3UP"/>
                     <connections>
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToOrgs" id="Mc2-iF-7X2"/>
-                        <segue destination="4Lp-sg-Guu" kind="show" identifier="navigationTileToMapTable" id="sp6-Mi-mPn"/>
+                        <segue destination="qlM-5Q-5cG" kind="show" identifier="navigationTileToMapTable" id="sp6-Mi-mPn"/>
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToFavorited" id="J9m-7H-na6"/>
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToNoted" id="icf-xj-b9h"/>
                     </connections>
@@ -324,16 +324,16 @@
             </objects>
             <point key="canvasLocation" x="2289" y="0.0"/>
         </scene>
-        <!--Table View Controller-->
+        <!--MapTVC-->
         <scene sceneID="kKP-Rp-NAX">
             <objects>
-                <tableViewController id="4Lp-sg-Guu" sceneMemberID="viewController">
+                <tableViewController id="4Lp-sg-Guu" customClass="MapTVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LWb-ug-JzS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="clc-LJ-mhx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapCell" id="clc-LJ-mhx">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="clc-LJ-mhx" id="6Hj-Vq-Sva">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -345,13 +345,23 @@
                             <outlet property="delegate" destination="4Lp-sg-Guu" id="TjO-gE-ScU"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="1Nx-ox-blc">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="AfP-Ui-a1d">
+                            <connections>
+                                <action selector="touchBackButton:" destination="4Lp-sg-Guu" id="zGg-hg-9ds"/>
+                                <segue destination="5EM-Bc-4Zq" kind="unwind" unwindAction="unwindToMainVC:" id="pwn-Tu-9u4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="kdA-bI-foD" kind="show" id="zA6-uL-89l"/>
+                        <outlet property="backButton" destination="AfP-Ui-a1d" id="Ahg-mj-MIL"/>
+                        <segue destination="kdA-bI-foD" kind="show" identifier="mapTVCtoMapImageVC" id="Qi0-V8-ixW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozN-1F-XQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5EM-Bc-4Zq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="770" y="778"/>
+            <point key="canvasLocation" x="1490" y="778"/>
         </scene>
         <!--Map ImageVC-->
         <scene sceneID="sam-Pq-VZ4">
@@ -365,8 +375,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LqA-je-JVU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LqA-je-JVU">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,7 +384,7 @@
                             <constraint firstItem="LqA-je-JVU" firstAttribute="bottom" secondItem="gbU-37-cgB" secondAttribute="bottomMargin" id="Cbb-rL-0Na"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LqA-je-JVU" secondAttribute="trailing" constant="-16" id="S94-PC-kg5"/>
                             <constraint firstItem="LqA-je-JVU" firstAttribute="leading" secondItem="gbU-37-cgB" secondAttribute="leadingMargin" constant="-16" id="lYZ-dp-ZS2"/>
-                            <constraint firstItem="LqA-je-JVU" firstAttribute="top" secondItem="gbU-37-cgB" secondAttribute="topMargin" id="sQU-RF-ZpV"/>
+                            <constraint firstItem="LqA-je-JVU" firstAttribute="top" secondItem="gbU-37-cgB" secondAttribute="topMargin" constant="60" id="sQU-RF-ZpV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -383,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZo-zl-J9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="785"/>
+            <point key="canvasLocation" x="2289" y="778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Na-9t-dv7">
@@ -752,12 +762,30 @@
             </objects>
             <point key="canvasLocation" x="1490" y="-693"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h8K-Bq-qGA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qlM-5Q-5cG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="42N-EJ-TY3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Lp-sg-Guu" kind="relationship" relationship="rootViewController" id="6WN-eZ-p5Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VuZ-cQ-Ssx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="778"/>
+        </scene>
     </scenes>
     <resources>
         <image name="heartfaved" width="24" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="icf-xj-b9h"/>
-        <segue reference="MNR-6g-NH2"/>
+        <segue reference="Qi0-V8-ixW"/>
     </inferredMetricsTieBreakers>
 </document>

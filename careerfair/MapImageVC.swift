@@ -9,7 +9,6 @@
 import UIKit
 
 enum mapLocations {
-    case chryslerBasement
     case dudeConnector
     case dude
     case dow
@@ -28,8 +27,24 @@ class MapImageVC: UIViewController {
 
     func getMapImage(mapLocation: mapLocations) -> String {
         switch (mapLocation) {
-        case mapLocations.dude:
-            return "cat.png";
+            case mapLocations.dude:
+                return "dude.png";
+            case mapLocations.dow:
+                return "dow.png";
+            case mapLocations.eecs:
+                return "eecs.png";
+            case mapLocations.fxb:
+                return "fxb.png";
+            case mapLocations.ggBrown:
+                return "ggbrown.png";
+            case mapLocations.pierpont:
+                return "pierpont.png";
+            case mapLocations.BBB:
+                return "cat.png";
+            case mapLocations.dudeConnector:
+                return "dude_connector.png";
+            default:
+                return "cat.png";
         }
     }
     
