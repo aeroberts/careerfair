@@ -21,6 +21,9 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var noteTV: UITextView!
     
+    @IBOutlet weak var descL: UILabel!
+    @IBOutlet weak var descTV: UITextView!
+    
     @IBAction func handleTouch(recognizer:UITapGestureRecognizer) {
         self.view.endEditing(true);
     }
@@ -96,6 +99,9 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         favoriteFromDescCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
         favoriteFromDescCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
         favoriteFromDescCB.selected = org.favorited;
+        
+        descL.text = ("About " + org.title);
+        descTV.text = org.desc;
 
         // Attempt to load note from core data
         var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;

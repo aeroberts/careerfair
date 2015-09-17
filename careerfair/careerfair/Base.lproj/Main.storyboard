@@ -249,11 +249,13 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="XEH-Ha-Olq">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="tcr-9L-Y8I">
+                            <color key="tintColor" red="1" green="0.79607843137254897" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="s5K-t1-MnC" kind="unwind" unwindAction="unwindToMainVC:" id="kUe-Dh-d0Y"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="xZU-Kg-Cen">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="FwA-QU-PPq" kind="show" identifier="orgToFilter" id="fFx-do-SKG"/>
                             </connections>
@@ -287,17 +289,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-tJ-Ev2">
                                         <rect key="frame" x="8" y="0.0" width="572" height="492"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZT-3e-DfR">
-                                                <rect key="frame" x="483" y="20" width="89" height="30"/>
-                                                <state key="normal" title="View on Map">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="touchViewOnMap:" destination="aGZ-4f-vRN" eventType="touchUpInside" id="1wk-4q-8ug"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WO1-wr-Mqk">
-                                                <rect key="frame" x="0.0" y="86" width="93" height="21"/>
+                                                <rect key="frame" x="0.0" y="96" width="93" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -308,8 +301,14 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-Ye-qBY">
+                                                <rect key="frame" x="0.0" y="20" width="141" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yX-Xy-oUy">
-                                                <rect key="frame" x="10" y="115" width="552" height="130"/>
+                                                <rect key="frame" x="10" y="125" width="552" height="130"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="W2v-EC-hjP"/>
@@ -317,25 +316,42 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-Ye-qBY">
-                                                <rect key="frame" x="0.0" y="20" width="141" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joN-p5-641">
+                                                <rect key="frame" x="10" y="309" width="50" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0of-YD-zcX">
+                                                <rect key="frame" x="10" y="343" width="552" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZT-3e-DfR">
+                                                <rect key="frame" x="483" y="14" width="89" height="30"/>
+                                                <state key="normal" title="View on Map">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchViewOnMap:" destination="aGZ-4f-vRN" eventType="touchUpInside" id="1wk-4q-8ug"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="joN-p5-641" firstAttribute="top" secondItem="2yX-Xy-oUy" secondAttribute="bottom" constant="54" id="1sl-J7-Wbg"/>
                                             <constraint firstItem="oX5-Ye-qBY" firstAttribute="leading" secondItem="RsQ-tJ-Ev2" secondAttribute="leading" id="Cvg-4k-hso"/>
                                             <constraint firstItem="Nz8-Fw-bKy" firstAttribute="top" secondItem="oX5-Ye-qBY" secondAttribute="bottom" constant="10" id="Fyv-hs-t1q"/>
                                             <constraint firstItem="2yX-Xy-oUy" firstAttribute="leading" secondItem="RsQ-tJ-Ev2" secondAttribute="leading" constant="10" id="SEW-cV-WdU"/>
-                                            <constraint firstItem="WO1-wr-Mqk" firstAttribute="top" secondItem="Nz8-Fw-bKy" secondAttribute="bottom" constant="20" id="T1q-At-Bci"/>
+                                            <constraint firstItem="WO1-wr-Mqk" firstAttribute="top" secondItem="Nz8-Fw-bKy" secondAttribute="bottom" constant="30" id="T1q-At-Bci"/>
                                             <constraint firstItem="WO1-wr-Mqk" firstAttribute="leading" secondItem="RsQ-tJ-Ev2" secondAttribute="leading" id="VyK-L4-dhH"/>
                                             <constraint firstItem="Nz8-Fw-bKy" firstAttribute="leading" secondItem="RsQ-tJ-Ev2" secondAttribute="leading" constant="10" id="cwP-pm-OyF"/>
+                                            <constraint firstItem="joN-p5-641" firstAttribute="leading" secondItem="RsQ-tJ-Ev2" secondAttribute="leading" constant="10" id="h7h-ir-9Lj"/>
                                             <constraint firstAttribute="trailing" secondItem="9ZT-3e-DfR" secondAttribute="trailing" id="mAD-33-i5N"/>
                                             <constraint firstItem="oX5-Ye-qBY" firstAttribute="top" secondItem="RsQ-tJ-Ev2" secondAttribute="top" constant="20" id="r7E-7h-vJU"/>
-                                            <constraint firstItem="9ZT-3e-DfR" firstAttribute="top" secondItem="RsQ-tJ-Ev2" secondAttribute="top" constant="20" id="smy-yq-uK1"/>
+                                            <constraint firstItem="9ZT-3e-DfR" firstAttribute="top" secondItem="RsQ-tJ-Ev2" secondAttribute="top" constant="14" id="smy-yq-uK1"/>
                                             <constraint firstAttribute="trailing" secondItem="2yX-Xy-oUy" secondAttribute="trailing" constant="10" id="tbA-al-x70"/>
                                             <constraint firstItem="2yX-Xy-oUy" firstAttribute="top" secondItem="WO1-wr-Mqk" secondAttribute="bottom" constant="8" id="yGh-Fm-Hik"/>
                                         </constraints>
@@ -386,6 +402,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="yYg-h9-F5e">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="64b-dP-rRk">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="mrO-rG-cmY" kind="unwind" unwindAction="unwindToOrgTVC:" id="dpk-eK-YRj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="UgN-vL-piO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yb8-dL-G5W">
                                 <rect key="frame" x="505" y="10" width="24" height="23"/>
@@ -401,6 +423,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLocationLabel" destination="Nz8-Fw-bKy" id="0nI-Jx-pdQ"/>
+                        <outlet property="descL" destination="joN-p5-641" id="3nJ-Q5-62X"/>
+                        <outlet property="descTV" destination="0of-YD-zcX" id="4Ds-ay-1yg"/>
                         <outlet property="favoriteFromDescCB" destination="yb8-dL-G5W" id="1fQ-S8-TIn"/>
                         <outlet property="noteTV" destination="2yX-Xy-oUy" id="iR2-bc-CGu"/>
                         <outlet property="viewOnMap" destination="9ZT-3e-DfR" id="4m9-5O-rVA"/>
@@ -408,6 +432,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af7-8u-hAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mrO-rG-cmY" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="UMC-wE-Cu8">
                     <connections>
                         <action selector="handleTouch:" destination="aGZ-4f-vRN" id="BR8-GN-g3l"/>
@@ -439,6 +464,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="1Nx-ox-blc">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="AfP-Ui-a1d">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="touchBackButton:" destination="4Lp-sg-Guu" id="zGg-hg-9ds"/>
                                 <segue destination="5EM-Bc-4Zq" kind="unwind" unwindAction="unwindToMainVC:" id="pwn-Tu-9u4"/>
@@ -508,7 +534,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Na-9t-dv7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fGL-ke-y4A" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fGL-ke-y4A" customClass="navigationController" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LyR-r6-JjJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -844,11 +870,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ej2-Lp-w5D">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ey6-m1-hJ9">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="filterCancel:" destination="FwA-QU-PPq" id="eUc-be-Td8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Tbw-gg-4uE">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="filterDone:" destination="FwA-QU-PPq" id="Eyh-ix-WnH"/>
                             </connections>
@@ -875,7 +903,7 @@
         <!--Navigation Controller-->
         <scene sceneID="h8K-Bq-qGA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qlM-5Q-5cG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qlM-5Q-5cG" customClass="navigationController" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="42N-EJ-TY3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
