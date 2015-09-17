@@ -17,13 +17,13 @@ func parseLocation(location:String) -> mapLocations {
         return mapLocations.eecs;
     case "dow":
         return mapLocations.dow;
-    case "dude":
+    case "duderstadt center":
         return mapLocations.dude;
-    case "dudeconnector":
+    case "duderstadt connector":
         return mapLocations.dudeConnector;
     case "fxb":
         return mapLocations.fxb;
-    case "ggbrown":
+    case "gg brown":
         return mapLocations.ggBrown;
     default:
         return mapLocations.dude;

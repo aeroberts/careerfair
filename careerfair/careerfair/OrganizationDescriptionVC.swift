@@ -148,27 +148,35 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
                     // Delete from core data
                     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
                     var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    var error : NSError?
+                    
                     var pred = NSPredicate(format: "orgId == " + toString(orgId));
                     let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
                     fetchRequest.predicate = pred;
                 
-                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+                    let results = context.executeFetchRequest(fetchRequest, error: &error) as? [NotedOrganizations];
+                    if ((error) != nil) { handleError("OrgDescVC willDisappear Delete from CD", &error); }
                     if (results!.count > 0) {
                         context.deleteObject(results!.first!);
                     }
                     context.save(nil);
+                    
+                    // Remove from Noted Data Structure
+                    notedOrgs.remove(orgId);
                 }
                 else if (count(noteTV.text) > 0) {
                     // Write to core data
                     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
                     var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    var error : NSError?
 
-                    // CHECK IF ALREADY EXISTS
+                    // Check if org already exists in core data
                     var pred = NSPredicate(format: "orgId == " + toString(orgId));
                     let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
                     fetchRequest.predicate = pred;
                     
-                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+                    let results = context.executeFetchRequest(fetchRequest, error: &error) as? [NotedOrganizations];
+                    if ((error) != nil) { handleError("OrgDescVC willDissappear Check if already exists", &error); }
                     if (results?.count != 0) {
                         var managedObject = results?[0];
                         managedObject?.setValue(noteTV.text, forKey: "note");
@@ -177,6 +185,9 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
                         var newNote = NSEntityDescription.insertNewObjectForEntityForName("NotedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
                         newNote.setValue(orgId, forKey: "orgId");
                         newNote.setValue(noteTV.text, forKey: "note");
+                        
+                        // Add to Noted Data Structure
+                        notedOrgs.insert(orgId);
                     }
                     
                     context.save(nil);
@@ -185,7 +196,6 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         }
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

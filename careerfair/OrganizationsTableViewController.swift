@@ -88,7 +88,9 @@ class OrganizationsTableViewController: UITableViewController {
         var org = orgData[orgDataIndex]; // Use org to populate table information
 
         cell.orgTitleLabel.text = org?.title;
-        cell.orgDateLabel.text = org?.desc;
+        var temp = org?.date;
+        var temp2 = org?.location;
+        cell.orgDateLabel.text = temp! + ", " + temp2!;
         
         if (org?.favorited === true) {
             cell.favoritedButton.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);
@@ -136,11 +138,14 @@ class OrganizationsTableViewController: UITableViewController {
             //Remove from core data
             var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
             var context:NSManagedObjectContext = appDel.managedObjectContext!;
-        var pred = NSPredicate(format: "orgId == " + toString(orgId));
+            var error : NSError?
+
+            var pred = NSPredicate(format: "orgId == " + toString(orgId));
             let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
             fetchRequest.predicate = pred;
             
-            let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
+            let results = context.executeFetchRequest(fetchRequest, error: &error) as? [FavoritedOrganizations];
+            if ((error) != nil) { handleError("OrgTVC touchFavorite Remove From Core Data", &error); }
             context.deleteObject(results!.first!);
             context.save(nil);
             
