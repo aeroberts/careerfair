@@ -38,6 +38,9 @@
 		F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */; };
 		F7BA7C361BA9E39E005D036D /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C351BA9E39E005D036D /* Events.swift */; };
 		F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
+		F7DE966F1BAA40BE0012C1F4 /* translateMajors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */; };
+		F7DE96731BAA47020012C1F4 /* FavoritedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */; };
+		F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +88,10 @@
 		F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTVC.swift; sourceTree = "<group>"; };
 		F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		F7BA7C351BA9E39E005D036D /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDescriptionVC.swift; sourceTree = "<group>"; };
+		F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsDescriptionVC.swift; path = ../EventsDescriptionVC.swift; sourceTree = "<group>"; };
+		F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = translateMajors.swift; sourceTree = "<group>"; };
+		F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritedOrganizations.swift; sourceTree = "<group>"; };
+		F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotedOrganizations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,6 @@
 		AC03100C1B5C26B800554DD2 = {
 			isa = PBXGroup;
 			children = (
-				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
 				AC0310171B5C26B800554DD2 /* careerfair */,
 				AC0310301B5C26B900554DD2 /* careerfairTests */,
 				AC0310161B5C26B800554DD2 /* Products */,
@@ -128,7 +133,10 @@
 		AC0310171B5C26B800554DD2 /* careerfair */ = {
 			isa = PBXGroup;
 			children = (
+				F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */,
+				F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */,
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
+				F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */,
 				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
 				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
 				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
@@ -143,6 +151,7 @@
 				21F5D02F1BA90D72006E1237 /* MapTVC.swift */,
 				F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */,
 				F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */,
+				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
 				F7BA7C351BA9E39E005D036D /* Events.swift */,
 				AC0310211B5C26B800554DD2 /* Main.storyboard */,
 				AC9D7FF41B5F3AA20049107F /* cat.png */,
@@ -303,7 +312,9 @@
 				ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
+				F7DE96731BAA47020012C1F4 /* FavoritedOrganizations.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
+				F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */,
 				ACF988A11B6DA59F0024C113 /* OrganizationDetailViewController.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */,
@@ -312,6 +323,7 @@
 				F746FB561BA8869600885476 /* MapImageVC.swift in Sources */,
 				F7BA7C361BA9E39E005D036D /* Events.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
+				F7DE966F1BAA40BE0012C1F4 /* translateMajors.swift in Sources */,
 				F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,
 			);

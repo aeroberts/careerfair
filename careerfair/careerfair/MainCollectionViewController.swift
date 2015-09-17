@@ -41,7 +41,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if (segue.identifier == "navigationTileToFavorited") {
-            println("To Favorited");
             currentArray = currentOrgArray.favorited;
             orgNameToIdList.removeAll();
             
@@ -49,7 +48,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
                 orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
             }
             orgNameToIdList.sort({ $0.orgName < $1.orgName });
-            println("Bob is a good guy");
             for x in orgNameToIdList {
                 println("x: " + toString(x.orgId) + " " + x.orgName);
             }

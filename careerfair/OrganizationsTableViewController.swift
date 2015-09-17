@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var isFiltered = false;
 
@@ -37,12 +38,10 @@ class OrganizationsTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData();
-        println("Reload Data on Favorites");
         if (isFiltered) {
             self.navigationController?.setToolbarHidden(false, animated: true);
         }
@@ -93,11 +92,9 @@ class OrganizationsTableViewController: UITableViewController {
         
         if (org?.favorited === true) {
             cell.favoritedButton.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);
-            //cell.favoritedButton.setImage(UIImage(contentsOfFile: "heartfaved"), forState: UIControlState.Normal);
         }
         else {
             cell.favoritedButton.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-            //cell.favoritedButton.setImage(UIImage(contentsOfFile: "heartunfaved"), forState: UIControlState.Normal);
         }
         
         cell.favoritedButton.tag = orgDataIndex;

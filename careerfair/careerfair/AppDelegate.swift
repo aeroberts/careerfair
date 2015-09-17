@@ -26,7 +26,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Load favorited/noted from memory
+        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        var context:NSManagedObjectContext = appDel.managedObjectContext!;
         
+        var favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+        favoriteRequest.returnsObjectsAsFaults = false;
+        // NOT RETURNING ERROR NEED TO FIXT HIS
+        var favoritedResults = context.executeFetchRequest(favoriteRequest, error: nil) as? [FavoritedOrganizations];
+        
+        for result:NSManagedObject in favoritedResults! {
+            var orgId = result.valueForKey("orgId") as! Int;
+            if (orgData[orgId] != nil) {
+                orgData[orgId]?.favorited = true;
+            }
+        }
+        
+        var notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
+        notedRequest.returnsObjectsAsFaults = false;
+        var notedResults = context.executeFetchRequest(notedRequest, error: nil) as? [NotedOrganizations];
+        
+        for result:NSManagedObject in notedResults! {
+            var orgId = result.valueForKey("orgId") as! Int;
+            if (orgData[orgId] != nil) {
+                orgData[orgId]?.note = result.valueForKey("note") as! String;
+            }
+        }
+        
+        
+        // Insert favorited and noted orgs (could be done above and would be faster)
         for org in orgData {
             if (org.1.favorited) {
                 println(org.0);
