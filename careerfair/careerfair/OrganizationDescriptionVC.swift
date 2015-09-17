@@ -13,6 +13,7 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     var org = organization();
     var orgId = -1;
     var originalText:String = "";
+    var noteTVHasPlaceholder:Bool = false;
     
     @IBOutlet weak var viewOnMap: UIButton!
     @IBOutlet weak var favoriteFromDescCB: UIButton!
@@ -86,9 +87,27 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         favoriteFromDescCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
         favoriteFromDescCB.selected = org.favorited;
 
-        // Set note placeholder text light-gray
-        noteTV.text = "Write a note here...";
-        noteTV.textColor = UIColor.lightGrayColor();
+        // Attempt to load note from core data
+        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        var context:NSManagedObjectContext = appDel.managedObjectContext!;
+        
+        // Check if orgId for org exists in NotedOrganizations
+        var pred = NSPredicate(format: "orgId == " + toString(orgId));
+        let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
+        fetchRequest.predicate = pred;
+        
+        let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+        if (results?.count != 0) {
+            var managedObject = results?[0];
+            noteTV.text = managedObject?.note;
+            noteTVHasPlaceholder = false;
+        }
+        else {
+            noteTV.text = "Write a note here...";
+            noteTV.textColor = UIColor.lightGrayColor();
+            noteTVHasPlaceholder = true;
+        }
+        
         noteTV.delegate = self;
         originalText = noteTV.text;
     }
@@ -99,8 +118,11 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     }
     
     func textViewShouldBeginEditing(textView:UITextView) -> Bool {
-        textView.text = "";
-        textView.textColor = UIColor.blackColor();
+        if (noteTVHasPlaceholder) {
+            textView.text = "";
+            textView.textColor = UIColor.blackColor();
+            noteTVHasPlaceholder = false;
+        }
         return true;
     }
     
@@ -108,6 +130,7 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         if (count(noteTV.text) == 0) {
             noteTV.text = "Write a note here...";
             noteTV.textColor = UIColor.lightGrayColor();
+            noteTVHasPlaceholder = true;
             noteTV.resignFirstResponder();
         }
 
@@ -121,31 +144,42 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         
         if (self.isMovingFromParentViewController()){
             if (noteTV.text != originalText) {
-                if (count(noteTV.text) > 0) {
-                    // Write to core data
-                    
-                    // CHECK IF ALREADY EXISTS
-                    
-                    // IF NOT, CREATE ENTRY
-                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
-                    
-                    var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
-                    newFavorite.setValue(orgId, forKey: "orgId");
-                    context.save(nil);
-                }
-                else {
+                if (noteTVHasPlaceholder || count(noteTV.text) == 0) {
                     // Delete from core data
                     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
                     var context:NSManagedObjectContext = appDel.managedObjectContext!;
                     var pred = NSPredicate(format: "orgId == " + toString(orgId));
-                    let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+                    let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
+                    fetchRequest.predicate = pred;
+                
+                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+                    if (results!.count > 0) {
+                        context.deleteObject(results!.first!);
+                    }
+                    context.save(nil);
+                }
+                else if (count(noteTV.text) > 0) {
+                    // Write to core data
+                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
+
+                    // CHECK IF ALREADY EXISTS
+                    var pred = NSPredicate(format: "orgId == " + toString(orgId));
+                    let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
                     fetchRequest.predicate = pred;
                     
-                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
-                    context.deleteObject(results!.first!);
+                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+                    if (results?.count != 0) {
+                        var managedObject = results?[0];
+                        managedObject?.setValue(noteTV.text, forKey: "note");
+                    }
+                    else {
+                        var newNote = NSEntityDescription.insertNewObjectForEntityForName("NotedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+                        newNote.setValue(orgId, forKey: "orgId");
+                        newNote.setValue(noteTV.text, forKey: "note");
+                    }
+                    
                     context.save(nil);
-
                 }
             }
         }

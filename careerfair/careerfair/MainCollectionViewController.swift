@@ -24,7 +24,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        println("ahh");
         // Do any additional setup after loading the view.
     }
 
@@ -48,9 +47,9 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
                 orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
             }
             orgNameToIdList.sort({ $0.orgName < $1.orgName });
-            for x in orgNameToIdList {
+            /*for x in orgNameToIdList {
                 println("x: " + toString(x.orgId) + " " + x.orgName);
-            }
+            }*/
         }
         else if (segue.identifier == "navigationTileToNoted") {
             currentArray = currentOrgArray.noted;
@@ -89,7 +88,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(navigationTileReuse, forIndexPath: indexPath) as! MainCollectionViewCell
         cell.backgroundColor = UIColor.blackColor();
         
-        //println("AWW YEE");
         // Configure the cell
         cell.imageView.image = UIImage(named: "cat.png");
         return cell
@@ -112,7 +110,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         switch indexPath.row {
         case 0: // Organizations
             // Segue to organizationTableView
-            println("performingSegueWithIdentifier: navigationTileToOrgs");
             performSegueWithIdentifier("navigationTileToOrgs", sender: self);
             break;
         case 1: // Map

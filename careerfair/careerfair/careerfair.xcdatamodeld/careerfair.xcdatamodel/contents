@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="FavoritedOrganizations" representedClassName="FavoritedOrganizations" syncable="YES">
         <attribute name="orgId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="NotedOrganizations" representedClassName="PRODUCT_MODULE_NAME.NotedOrganizations" syncable="YES">
+    <entity name="NotedOrganizations" representedClassName="NotedOrganizations" syncable="YES">
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orgId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
