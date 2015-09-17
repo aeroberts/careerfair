@@ -92,6 +92,15 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         cell.imageView.image = UIImage(named: "cat.png");
         return cell
     }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "mainCollectionViewHeader", forIndexPath: indexPath) as! MainCollectionViewHeader;
+            headerView.backgroundColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
+            headerView.titleLabel.textColor = UIColor.whiteColor();
+            headerView.titleLabel.text = "SWE / TBP Career Fair 2015";
+        
+        return headerView;
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -165,7 +174,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(76, 10, 30, 10);
+        return UIEdgeInsetsMake(48, 10, 30, 10);
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {

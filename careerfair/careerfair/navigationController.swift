@@ -17,7 +17,6 @@ class navigationController: UINavigationController, UINavigationBarDelegate {
         navigationBar.tintColor = UIColor(red: 255/255, green: 203/255, blue: 5/255, alpha: 1.0);
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         
-        navigationController?.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Chalkduster", size: 20)!], forState: UIControlState.Normal);
         // Do any additional setup after loading the view.
     }
     
