@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */; };
 		21F382A31B84E98600E5700C /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382A21B84E98600E5700C /* FilterVC.swift */; };
 		21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */; };
 		21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5D02F1BA90D72006E1237 /* MapTVC.swift */; };
@@ -24,7 +25,6 @@
 		ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988901B6AF69F0024C113 /* currentOrgArray.swift */; };
 		ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
-		ACF988A11B6DA59F0024C113 /* OrganizationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
 		F7BA7C261BA9DF41005D036D /* chrysler_basement.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BA7C1F1BA9DF41005D036D /* chrysler_basement.png */; };
 		F7BA7C271BA9DF41005D036D /* dow.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BA7C201BA9DF41005D036D /* dow.png */; };
@@ -38,8 +38,6 @@
 		F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */; };
 		F7BA7C361BA9E39E005D036D /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C351BA9E39E005D036D /* Events.swift */; };
 		F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
-		F7DE966F1BAA40BE0012C1F4 /* translateMajors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */; };
-		F7DE96731BAA47020012C1F4 /* FavoritedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */; };
 		F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritedOrganizations.swift; sourceTree = "<group>"; };
 		21F382A21B84E98600E5700C /* FilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDescriptionVC.swift; sourceTree = "<group>"; };
 		21F5D02F1BA90D72006E1237 /* MapTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTVC.swift; sourceTree = "<group>"; };
@@ -75,7 +74,6 @@
 		ACF988901B6AF69F0024C113 /* currentOrgArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrgArray.swift; sourceTree = "<group>"; };
 		ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationsTableViewController.swift; path = ../OrganizationsTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
-		ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailViewController.swift; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
 		F7BA7C1F1BA9DF41005D036D /* chrysler_basement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrysler_basement.png; sourceTree = SOURCE_ROOT; };
 		F7BA7C201BA9DF41005D036D /* dow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dow.png; sourceTree = SOURCE_ROOT; };
@@ -89,8 +87,6 @@
 		F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		F7BA7C351BA9E39E005D036D /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsDescriptionVC.swift; path = ../EventsDescriptionVC.swift; sourceTree = "<group>"; };
-		F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = translateMajors.swift; sourceTree = "<group>"; };
-		F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritedOrganizations.swift; sourceTree = "<group>"; };
 		F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotedOrganizations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,19 +129,15 @@
 		AC0310171B5C26B800554DD2 /* careerfair */ = {
 			isa = PBXGroup;
 			children = (
-				F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */,
-				F7DE96721BAA47020012C1F4 /* FavoritedOrganizations.swift */,
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
-				F7DE966E1BAA40BE0012C1F4 /* translateMajors.swift */,
 				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
 				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
-				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
-				ACF988A01B6DA59F0024C113 /* OrganizationDetailViewController.swift */,
 				21F5D0311BA915F5006E1237 /* location.swift */,
-				AC5536FB1B670D6B00C66C7D /* organization.swift */,
 				21F382A21B84E98600E5700C /* FilterVC.swift */,
-				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
+				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
 				21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */,
+				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
+				AC5536FB1B670D6B00C66C7D /* organization.swift */,
 				ACF988901B6AF69F0024C113 /* currentOrgArray.swift */,
 				F746FB551BA8869600885476 /* MapImageVC.swift */,
 				21F5D02F1BA90D72006E1237 /* MapTVC.swift */,
@@ -165,6 +157,8 @@
 				F7BA7C2D1BA9DF48005D036D /* pierpont.png */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
+				F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */,
+				21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
 				AC0310181B5C26B800554DD2 /* Supporting Files */,
 			);
@@ -312,10 +306,9 @@
 				ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
-				F7DE96731BAA47020012C1F4 /* FavoritedOrganizations.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */,
-				ACF988A11B6DA59F0024C113 /* OrganizationDetailViewController.swift in Sources */,
+				21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */,
 				21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */,
@@ -323,7 +316,6 @@
 				F746FB561BA8869600885476 /* MapImageVC.swift in Sources */,
 				F7BA7C361BA9E39E005D036D /* Events.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
-				F7DE966F1BAA40BE0012C1F4 /* translateMajors.swift in Sources */,
 				F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,
 			);

@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
-class OrganizationDescriptionVC: UIViewController {
+class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     var org = organization();
     var orgId = -1;
+    var originalText:String = "";
     
     @IBOutlet weak var viewOnMap: UIButton!
     @IBOutlet weak var favoriteFromDescCB: UIButton!
     @IBOutlet weak var dateLocationLabel: UILabel!
+    
+    @IBOutlet weak var noteTV: UITextView!
     
     @IBAction func touchFavorite(sender: AnyObject) {
         favoriteFromDescCB.selected = !favoriteFromDescCB.selected;
@@ -28,6 +32,13 @@ class OrganizationDescriptionVC: UIViewController {
         orgData[orgId]!.favorited = !favoritedStatus;
         if (favoritedStatus == false) {
             //Write to core data
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            
+            var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+            newFavorite.setValue(orgId, forKey: "orgId");
+            context.save(nil);
+            
             
             //Add to list of favorites
             if (favoritedOrgs.contains(orgId)) {
@@ -40,6 +51,15 @@ class OrganizationDescriptionVC: UIViewController {
         }
         else {
             //Remove from core data
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            var pred = NSPredicate(format: "orgId == " + toString(orgId));
+            let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+            fetchRequest.predicate = pred;
+            
+            let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
+            context.deleteObject(results!.first!);
+            context.save(nil);
             
             //Remove from list of favorites
             if (!favoritedOrgs.contains(orgId)) {
@@ -65,7 +85,12 @@ class OrganizationDescriptionVC: UIViewController {
         favoriteFromDescCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
         favoriteFromDescCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
         favoriteFromDescCB.selected = org.favorited;
-        // Do any additional setup after loading the view.
+
+        // Set note placeholder text light-gray
+        noteTV.text = "Write a note here...";
+        noteTV.textColor = UIColor.lightGrayColor();
+        noteTV.delegate = self;
+        originalText = noteTV.text;
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,9 +98,58 @@ class OrganizationDescriptionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textViewShouldBeginEditing(textView:UITextView) -> Bool {
+        textView.text = "";
+        textView.textColor = UIColor.blackColor();
+        return true;
+    }
+    
+    func textViewDidChange(noteTV:UITextView) {
+        if (count(noteTV.text) == 0) {
+            noteTV.text = "Write a note here...";
+            noteTV.textColor = UIColor.lightGrayColor();
+            noteTV.resignFirstResponder();
+        }
+
+    }
 
     
     // MARK: - Navigation
+    
+    override func viewWillDisappear(animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (self.isMovingFromParentViewController()){
+            if (noteTV.text != originalText) {
+                if (count(noteTV.text) > 0) {
+                    // Write to core data
+                    
+                    // CHECK IF ALREADY EXISTS
+                    
+                    // IF NOT, CREATE ENTRY
+                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    
+                    var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+                    newFavorite.setValue(orgId, forKey: "orgId");
+                    context.save(nil);
+                }
+                else {
+                    // Delete from core data
+                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    var pred = NSPredicate(format: "orgId == " + toString(orgId));
+                    let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+                    fetchRequest.predicate = pred;
+                    
+                    let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
+                    context.deleteObject(results!.first!);
+                    context.save(nil);
+
+                }
+            }
+        }
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(NotedOrganizations)
 class NotedOrganizations: NSManagedObject {
 
     @NSManaged var orgId: NSNumber

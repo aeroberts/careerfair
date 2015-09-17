@@ -116,6 +116,12 @@ class OrganizationsTableViewController: UITableViewController {
         orgData[orgId]!.favorited = !favoritedStatus;
         if (favoritedStatus == false) {
             //Write to core data
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            
+            var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+            newFavorite.setValue(orgId, forKey: "orgId");
+            context.save(nil);
             
             //Add to list of favorites
             if (favoritedOrgs.contains(orgId)) {
@@ -128,6 +134,15 @@ class OrganizationsTableViewController: UITableViewController {
         }
         else {
             //Remove from core data
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+        var pred = NSPredicate(format: "orgId == " + toString(orgId));
+            let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+            fetchRequest.predicate = pred;
+            
+            let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
+            context.deleteObject(results!.first!);
+            context.save(nil);
             
             //Remove from list of favorites
             if (!favoritedOrgs.contains(orgId)) {

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Load orgData from database
         
-        orgData[0]=(organization(fromTitle: "Bob", desc_in: "This is bob", note_in: "", favorited_in: true, date_in: "Thursday", location_in: "BBB", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5]));
+        orgData[0]=(organization(fromTitle: "Bob", desc_in: "This is bob", note_in: "", favorited_in: false, date_in: "Thursday", location_in: "BBB", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5]));
         orgData[1]=(organization(fromTitle: "Kathyyy", desc_in: "Is the...", note_in: "", favorited_in: false, date_in: "Friday", location_in: "EECS", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [8]));
-        orgData[2]=(organization(fromTitle: "Alx", desc_in: "Best", note_in: "Suchacutie", favorited_in: true, date_in: "Thrusday", location_in: "BBB", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
+        orgData[2]=(organization(fromTitle: "Alx", desc_in: "Best", note_in: "Suchacutie", favorited_in: false, date_in: "Thrusday", location_in: "BBB", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[3]=(organization(fromTitle: "Dow Company", desc_in: "In", note_in: "Dow", favorited_in: false, date_in: "Friday", location_in: "Dow", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         
         
@@ -32,8 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
         favoriteRequest.returnsObjectsAsFaults = false;
         // NOT RETURNING ERROR NEED TO FIXT HIS
-        var favoritedResults = context.executeFetchRequest(favoriteRequest, error: nil) as? [FavoritedOrganizations];
+        var error : NSError?
+
+        var favoritedResults = context.executeFetchRequest(favoriteRequest, error: &error) as? [FavoritedOrganizations];
         
+        println("ERROR:");
+        println(error);
         for result:NSManagedObject in favoritedResults! {
             var orgId = result.valueForKey("orgId") as! Int;
             if (orgData[orgId] != nil) {
