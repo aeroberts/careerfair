@@ -40,7 +40,7 @@ class MapImageVC: UIViewController {
             case mapLocations.pierpont:
                 return "pierpont.png";
             case mapLocations.BBB:
-                return "cat.png";
+                return "bbb.png";
             case mapLocations.dudeConnector:
                 return "dude_connector.png";
             default:

@@ -26,6 +26,7 @@
 		ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
+		F75E4C301BAB2E4100080DEF /* bbb.png in Resources */ = {isa = PBXBuildFile; fileRef = F75E4C2F1BAB2E4100080DEF /* bbb.png */; };
 		F7BA7C261BA9DF41005D036D /* chrysler_basement.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BA7C1F1BA9DF41005D036D /* chrysler_basement.png */; };
 		F7BA7C271BA9DF41005D036D /* dow.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BA7C201BA9DF41005D036D /* dow.png */; };
 		F7BA7C281BA9DF41005D036D /* dude_connector.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BA7C211BA9DF41005D036D /* dude_connector.png */; };
@@ -76,6 +77,7 @@
 		ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationsTableViewController.swift; path = ../OrganizationsTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
+		F75E4C2F1BAB2E4100080DEF /* bbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbb.png; sourceTree = SOURCE_ROOT; };
 		F7BA7C1F1BA9DF41005D036D /* chrysler_basement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrysler_basement.png; sourceTree = SOURCE_ROOT; };
 		F7BA7C201BA9DF41005D036D /* dow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dow.png; sourceTree = SOURCE_ROOT; };
 		F7BA7C211BA9DF41005D036D /* dude_connector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude_connector.png; sourceTree = SOURCE_ROOT; };
@@ -152,6 +154,7 @@
 				AC0310191B5C26B800554DD2 /* Info.plist */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC9D7FF41B5F3AA20049107F /* cat.png */,
+				F75E4C2F1BAB2E4100080DEF /* bbb.png */,
 				F7BA7C1F1BA9DF41005D036D /* chrysler_basement.png */,
 				F7BA7C201BA9DF41005D036D /* dow.png */,
 				F7BA7C211BA9DF41005D036D /* dude_connector.png */,
@@ -285,6 +288,7 @@
 				AC9D7FF51B5F3AA20049107F /* cat.png in Resources */,
 				AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */,
 				F7BA7C301BA9DFC6005D036D /* eecs.png in Resources */,
+				F75E4C301BAB2E4100080DEF /* bbb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

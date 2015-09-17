@@ -21,6 +21,10 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var noteTV: UITextView!
     
+    @IBAction func handleTouch(recognizer:UITapGestureRecognizer) {
+        self.view.endEditing(true);
+    }
+    
     @IBAction func touchFavorite(sender: AnyObject) {
         favoriteFromDescCB.selected = !favoriteFromDescCB.selected;
         let orgId = self.orgId;
@@ -83,6 +87,12 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
 
         dateLocationLabel.text = org.date + ", " + org.location;
         
+        // Set up TextView Styling
+        self.noteTV.layer.borderWidth = 1.0;
+        self.noteTV.layer.cornerRadius = 5;
+        var tfBorderColor:UIColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        self.noteTV.layer.borderColor = tfBorderColor.CGColor;
+        
         favoriteFromDescCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
         favoriteFromDescCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
         favoriteFromDescCB.selected = org.favorited;
@@ -117,6 +127,10 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.noteTV.resignFirstResponder();
+    }
+    
     func textViewShouldBeginEditing(textView:UITextView) -> Bool {
         if (noteTVHasPlaceholder) {
             textView.text = "";
@@ -127,13 +141,13 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(noteTV:UITextView) {
-        if (count(noteTV.text) == 0) {
+        /*if (count(noteTV.text) == 0) {
             noteTV.text = "Write a note here...";
             noteTV.textColor = UIColor.lightGrayColor();
             noteTVHasPlaceholder = true;
             noteTV.resignFirstResponder();
         }
-
+*/
     }
 
     
