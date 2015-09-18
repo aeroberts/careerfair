@@ -15,12 +15,19 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     private let navigationTileReuse = "navigationTile";
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
-
+    override func viewWillAppear(animated: Bool) {
+        let toolbar = UIToolbar();
+        toolbar.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 50);
+        toolbar.sizeToFit();
+        toolbar.barTintColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
+        toolbar.translucent = false;
+        self.view.addSubview(toolbar);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        collectionView?.backgroundColor = UIColor.whiteColor();
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -96,6 +103,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "mainCollectionViewHeader", forIndexPath: indexPath) as! MainCollectionViewHeader;
             headerView.backgroundColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
+
             headerView.titleLabel.textColor = UIColor.whiteColor();
             headerView.titleLabel.text = "SWE / TBP Career Fair 2015";
         

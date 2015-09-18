@@ -84,18 +84,11 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
         filteredOrgNameToIdList.removeAll(keepCapacity: false);
         for org in orgNameToIdList {
-            println("In orgNameToIdList: " + org.orgName);
             if ((orgData[org.orgId]) == nil) { continue; }
 
             if (filtersMatchOrg(checked, org: orgData[org.orgId]!)) {
-                println("APPENDING: " + orgData[org.orgId]!.title);
                 filteredOrgNameToIdList.append(org);
             }
-        }
-        println("LOOPING THROUGH FONTIL");
-        for orgname in filteredOrgNameToIdList {
-            println("org: " + orgname.orgName);
-            println("orgid: " + toString(orgname.orgId));
         }
         
         isFiltered = true;
@@ -177,10 +170,9 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 */
     func filtersMatchOrg(filters:[Int], org: organization) -> Bool {
         for filter in filters {
-            println("Filter: " + toString(filter));
             switch (filter) {
                 case 1:
-                    if (org.internshipC == false) { println("org: " + org.title); return false; }
+                    if (org.internshipC == false) { return false; }
                     break;
                 case 2:
                     if (!org.fulltimeC) { return false; }
@@ -208,8 +200,6 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                     break;
                 default:
                     if (filter > 9 && filter < 27) {
-                        println("CHECKING FILTER");
-                        println(filter);
                         if (!org.majorC[filter-9]) {
                             return false;
                         }

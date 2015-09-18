@@ -16,9 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Set Status Bar appearence app wide to light
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true);
+        
         // Load orgData from database
         
-        orgData[0]=(organization(fromTitle: "Microsoft", desc_in: "This is bob", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Duderstadt Center", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5]));
+        orgData[0]=(organization(fromTitle: "Microsoft", desc_in: "This is bob", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Duderstadt Center", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5, 6, 7, 8]));
         orgData[1]=(organization(fromTitle: "Facebook", desc_in: "Is the...", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "EECS", internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [8]));
         orgData[2]=(organization(fromTitle: "Hewlett-Packard", desc_in: "Best", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "GG Brown", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[3]=(organization(fromTitle: "Dow Company", desc_in: "In", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Dow", internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
