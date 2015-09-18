@@ -102,6 +102,8 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Create Filter";
+        
         internshipCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         internshipCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         internshipCB.selected = false;
