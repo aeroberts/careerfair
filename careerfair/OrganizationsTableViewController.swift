@@ -28,6 +28,9 @@ class OrganizationsTableViewController: UITableViewController {
         default:
             self.title = "Organizations";
         }
+        
+        self.navigationController?.toolbar.barTintColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
+        self.navigationController?.toolbar.translucent = false;
                 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

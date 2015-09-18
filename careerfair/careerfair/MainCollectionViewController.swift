@@ -14,14 +14,21 @@ var currentArray:currentOrgArray = currentOrgArray.none;
 class MainCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     private let navigationTileReuse = "navigationTile";
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    
+    var toolbar:UIToolbar = UIToolbar();
 
     override func viewWillAppear(animated: Bool) {
-        let toolbar = UIToolbar();
-        toolbar.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 50);
-        toolbar.sizeToFit();
-        toolbar.barTintColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
-        toolbar.translucent = false;
-        self.view.addSubview(toolbar);
+        if (UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication().statusBarOrientation)) {
+            toolbar.hidden = false;
+            toolbar.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 50);
+            toolbar.sizeToFit();
+            toolbar.barTintColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
+            toolbar.translucent = false;
+            self.view.addSubview(toolbar);
+        }
+        else {
+            toolbar.hidden = true;
+        }
     }
     
     override func viewDidLoad() {
@@ -120,6 +127,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     */
     @IBAction func unwindToMainVC(segue:UIStoryboardSegue) {
         isFiltered = false;
+        self.collectionView?.collectionViewLayout.invalidateLayout();
     }
     
     // Uncomment this method to specify if the specified item should be selected
@@ -177,16 +185,32 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.collectionView?.collectionViewLayout.invalidateLayout();
+        if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
+            toolbar.hidden = true;
+        }
+        toolbar.hidden = false;
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
+            return UIEdgeInsetsMake(30, 10, 30, 10);
+        }
         return UIEdgeInsetsMake(48, 10, 30, 10);
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 70;
+        if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
+            return 40;
+        }
+        else {
+            return 70;
+        }
     }
     
 }

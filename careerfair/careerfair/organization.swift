@@ -20,6 +20,8 @@ class organization {
     var favorited: Bool;
     var date: String;
     var location: String;
+    var jobLocation: String;
+    var attendingReceptions: Bool;
     
     var internshipC: Bool;
     var fulltimeC: Bool;
@@ -32,7 +34,7 @@ class organization {
     var sponsorOnOccasionC: Bool;
     var majorC = [Bool]();
     
-    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int]) {
+    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String, jobLoc_in: String, attendingRec_in: Bool, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int]) {
         
         title = title_in;
         desc = desc_in;
@@ -40,6 +42,9 @@ class organization {
         favorited = favorited_in;
         date = date_in;
         location = location_in;
+        jobLocation = jobLoc_in;
+        attendingReceptions = attendingRec_in;
+        
         
         internshipC = internshipC_in;
         fulltimeC = fulltimeC_in;
@@ -64,6 +69,8 @@ class organization {
         favorited = false;
         date = "";
         location = "";
+        jobLocation = "Midwest";
+        attendingReceptions = false;
         
         internshipC = false;
         fulltimeC = false;

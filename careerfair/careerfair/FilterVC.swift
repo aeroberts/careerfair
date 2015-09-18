@@ -102,40 +102,40 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        internshipCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        internshipCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        internshipCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        internshipCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         internshipCB.selected = false;
 
-        fulltimeCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        fulltimeCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        fulltimeCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        fulltimeCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         fulltimeCB.selected = false;
         
-        coopCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        coopCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        coopCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        coopCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         coopCB.selected = false;
         
-        bachelorsCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        bachelorsCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        bachelorsCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        bachelorsCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         bachelorsCB.selected = false;
         
-        mastersCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        mastersCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        mastersCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        mastersCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         mastersCB.selected = false;
         
-        doctoralCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        doctoralCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        doctoralCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        doctoralCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         doctoralCB.selected = false;
 
-        sponsorYesCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        sponsorYesCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        sponsorYesCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        sponsorYesCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorYesCB.selected = false;
         
-        sponsorNoCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        sponsorNoCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        sponsorNoCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        sponsorNoCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorNoCB.selected = false;
         
-        sponsorOnOccasionCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
-        sponsorOnOccasionCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
+        sponsorOnOccasionCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        sponsorOnOccasionCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorOnOccasionCB.selected = false;
 
         // Do any additional setup after loading the view.
