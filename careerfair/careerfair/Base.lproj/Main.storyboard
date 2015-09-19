@@ -1000,7 +1000,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bTr-mI-8t9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zyk-Wv-rC3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zyk-Wv-rC3" customClass="navigationController" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zt2-Yw-DFz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

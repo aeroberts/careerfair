@@ -37,11 +37,14 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         scrollView = UIScrollView();
         scrollView.delegate = self;
+        
         scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, 2000);
 
         containerView = UIView();
         
         buildControls();
+        
+        scrollView.contentSize.height = aboutBottomContraint + 500;
         
         scrollView.addSubview(containerView);
         view.addSubview(scrollView);
@@ -66,7 +69,10 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         positionsContent.frame = CGRectMake(24, aboutBottomContraint+182, UIScreen.mainScreen().bounds.width-28, 25);
         degreeHeader.frame = CGRectMake(16, aboutBottomContraint+237, UIScreen.mainScreen().bounds.width/2, 21);
         degreeContent.frame = CGRectMake(24, aboutBottomContraint+266, UIScreen.mainScreen().bounds.width-28, 25);
-
+        jobLocHeader.frame = CGRectMake(16, aboutBottomContraint+321, UIScreen.mainScreen().bounds.width/2, 21);
+        jobLocContent.frame = CGRectMake(24, aboutBottomContraint+340, UIScreen.mainScreen().bounds.width-28, 50);
+        sponsorHeader.frame = CGRectMake(16, aboutBottomContraint+420, UIScreen.mainScreen().bounds.width/2, 21);
+        sponsorContent.frame = CGRectMake(24, aboutBottomContraint+449, UIScreen.mainScreen().bounds.width-28, 25);
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,6 +136,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         majorContent = UITextView();
         majorContent.text = "FE, MSE, DS, ISD, CEE, MFE, BME, CIVIL, ROB, AOSS, IP, IOE, CLASP, CHE, EE, AUTO, NERS, AERO, CE, ESE, ENT, CS, EP, MECHE, NAME, APhys, PHARM, EE:S"
+        majorContent.editable = false;
         majorContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(majorContent);
@@ -142,6 +149,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         positionsContent = UITextView();
         positionsContent.text = "Full-Time, Internship, Co-op";
+        positionsContent.editable = false;
         positionsContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(positionsContent);
@@ -155,11 +163,37 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         degreeContent = UITextView();
         degreeContent.text = "Bachelor's, Master's, Ph.D.";
+        degreeContent.editable = false;
         degreeContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(degreeContent);
-
         
+        
+        jobLocHeader = UILabel();
+        jobLocHeader.text = Constants.OD_JobLocHeader;
+        jobLocHeader.font = UIFont.systemFontOfSize(17);
+        
+        containerView.addSubview(jobLocHeader);
+        
+        jobLocContent = UITextView();
+        jobLocContent.text = "West Coast, Northwest, Southwest, Midwest, Northeast, Southeast";
+        jobLocContent.editable = false;
+        jobLocContent.font = UIFont.systemFontOfSize(14);
+        
+        containerView.addSubview(jobLocContent);
+
+        sponsorHeader = UILabel();
+        sponsorHeader.text = Constants.OD_HiringHeader;
+        sponsorHeader.font = UIFont.systemFontOfSize(17);
+        
+        containerView.addSubview(sponsorHeader);
+        
+        sponsorContent = UITextView();
+        sponsorContent.text = "Yes, On Occasion";
+        sponsorContent.editable = false;
+        sponsorContent.font = UIFont.systemFontOfSize(14);
+        
+        containerView.addSubview(sponsorContent);
     }
     
 
