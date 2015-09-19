@@ -147,7 +147,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             performSegueWithIdentifier("navigationTileToNoted", sender: self);
             break;
         case 4: // Todo list
-            // Segue to
+            performSegueWithIdentifier("mainToTest", sender: self);
             break;
         case 5: // Events
             performSegueWithIdentifier("navigationTileToEvents", sender: self);

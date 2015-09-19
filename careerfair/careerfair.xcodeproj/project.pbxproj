@@ -25,6 +25,7 @@
 		ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988901B6AF69F0024C113 /* currentOrgArray.swift */; };
 		ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
+		F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
 		F75E4C301BAB2E4100080DEF /* bbb.png in Resources */ = {isa = PBXBuildFile; fileRef = F75E4C2F1BAB2E4100080DEF /* bbb.png */; };
 		F75E4C321BAB3E2B00080DEF /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C311BAB3E2B00080DEF /* navigationController.swift */; };
@@ -78,6 +79,7 @@
 		ACF988901B6AF69F0024C113 /* currentOrgArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrgArray.swift; sourceTree = "<group>"; };
 		ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationsTableViewController.swift; path = ../OrganizationsTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
+		F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testScrollViewController.swift; path = ../testScrollViewController.swift; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
 		F75E4C2F1BAB2E4100080DEF /* bbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbb.png; sourceTree = SOURCE_ROOT; };
 		F75E4C311BAB3E2B00080DEF /* navigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				AC0310211B5C26B800554DD2 /* Main.storyboard */,
 				F75E4C311BAB3E2B00080DEF /* navigationController.swift */,
 				AC0310191B5C26B800554DD2 /* Info.plist */,
+				F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC9D7FF41B5F3AA20049107F /* cat.png */,
 				F75E4C2F1BAB2E4100080DEF /* bbb.png */,
@@ -328,6 +331,7 @@
 				F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */,
 				F746FB561BA8869600885476 /* MapImageVC.swift in Sources */,
 				F7BA7C361BA9E39E005D036D /* Events.swift in Sources */,
+				F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */,
 				F75E4C341BAB4EEE00080DEF /* MainCollectionViewHeader.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 				F7DDE5F41BAAFB5A00395C62 /* ErrorHandler.swift in Sources */,

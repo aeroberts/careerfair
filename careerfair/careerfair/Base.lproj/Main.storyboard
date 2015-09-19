@@ -104,6 +104,7 @@
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToFavorited" id="J9m-7H-na6"/>
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToNoted" id="icf-xj-b9h"/>
                         <segue destination="igc-Bv-vFn" kind="show" identifier="navigationTileToEvents" id="kE5-J3-mPR"/>
+                        <segue destination="zzY-T9-w3d" kind="show" identifier="mainToTest" id="RQS-lu-fIk"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2o-Gz-tqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -951,6 +952,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VuZ-cQ-Ssx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="770" y="778"/>
+        </scene>
+        <!--Test Scroll View Controller-->
+        <scene sceneID="nXH-eR-Rem">
+            <objects>
+                <viewController id="zzY-T9-w3d" customClass="testScrollViewController" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7K-jd-M1D"/>
+                        <viewControllerLayoutGuide type="bottom" id="49m-o1-rYO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8tq-21-7X6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIH-M2-7ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="1461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gha-Jt-iQM">
