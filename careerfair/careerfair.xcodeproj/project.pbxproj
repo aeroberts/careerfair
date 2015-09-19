@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21E4D1621BACFBE20006005E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4D1611BACFBE20006005E /* Constants.swift */; };
 		21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */; };
 		21F382A31B84E98600E5700C /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382A21B84E98600E5700C /* FilterVC.swift */; };
 		21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21E4D1611BACFBE20006005E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritedOrganizations.swift; sourceTree = "<group>"; };
 		21F382A21B84E98600E5700C /* FilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDescriptionVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				F75E4C311BAB3E2B00080DEF /* navigationController.swift */,
 				AC0310191B5C26B800554DD2 /* Info.plist */,
 				F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */,
+				21E4D1611BACFBE20006005E /* Constants.swift */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
 				AC9D7FF41B5F3AA20049107F /* cat.png */,
 				F75E4C2F1BAB2E4100080DEF /* bbb.png */,
@@ -338,6 +341,7 @@
 				F75E4C321BAB3E2B00080DEF /* navigationController.swift in Sources */,
 				F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,
+				21E4D1621BACFBE20006005E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
