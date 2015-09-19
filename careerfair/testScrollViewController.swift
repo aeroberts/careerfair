@@ -8,11 +8,11 @@
 
 import UIKit
 
-class testScrollViewController: UIViewController, UIScrollViewDelegate {
+class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
     var scrollView:UIScrollView!
     var containerView:UIView!
     
-    var contentLabel:UILabel!
+    var contentLabel:UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate {
 
         containerView = UIView();
         
-        buildControls()
+        buildControls();
         
         scrollView.addSubview(containerView);
         view.addSubview(scrollView);
@@ -36,13 +36,21 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate {
         scrollView.frame = view.bounds
         containerView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
         
-        contentLabel = UILabel();
-        contentLabel.frame =
+        contentLabel.frame = CGRectMake(20, 20, 100, 100);
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func buildControls() {
+        contentLabel = UITextView();
+        contentLabel.text = "Hey I'm placeholder text";
+        contentLabel.delegate = self;
+        
+        containerView.addSubview(contentLabel);
+        
     }
     
 
