@@ -9,7 +9,7 @@
 import Foundation
 
 func handleError(details:String, error:NSErrorPointer) {
-    println("Error: " + error.debugDescription);
-    println("Details: " + details);
+    print("Error: " + error.debugDescription);
+    print("Details: " + details);
     return;
 }

@@ -61,7 +61,7 @@ class MapTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mapCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("mapCell", forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.textLabel?.text = MAP_NAMES[indexPath.row];

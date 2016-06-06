@@ -85,14 +85,14 @@ class OrganizationsTableViewController: UITableViewController {
         }
         
         if (orgDataIndex == -1) {
-            println("ERRRRRRRORRRRRRR");
+            print("ERRRRRRRORRRRRRR");
             orgDataIndex = 0;
         }
-        var org = orgData[orgDataIndex]; // Use org to populate table information
+        let org = orgData[orgDataIndex]; // Use org to populate table information
 
         cell.orgTitleLabel.text = org?.title;
-        var temp = org?.date;
-        var temp2 = org?.location;
+        let temp = org?.date;
+        let temp2 = org?.location;
         cell.orgDateLabel.text = temp! + ", " + temp2!;
         
         if (org?.favorited === true) {
@@ -113,7 +113,7 @@ class OrganizationsTableViewController: UITableViewController {
     @IBAction func touchFavorite(sender: UIButton) {
         let orgId = sender.tag;
         if (orgData[orgId] == nil) {
-            println("ERROR");
+            print("ERROR");
             return;
         }
         
@@ -121,16 +121,19 @@ class OrganizationsTableViewController: UITableViewController {
         orgData[orgId]!.favorited = !favoritedStatus;
         if (favoritedStatus == false) {
             //Write to core data
-            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
             
-            var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+            let newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) ;
             newFavorite.setValue(orgId, forKey: "orgId");
-            context.save(nil);
+            do {
+                try context.save()
+            } catch _ {
+            };
             
             //Add to list of favorites
             if (favoritedOrgs.contains(orgId)) {
-                println("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
+                print("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
             }
             favoritedOrgs.insert(orgId);
             //Switch button image to faved
@@ -139,22 +142,34 @@ class OrganizationsTableViewController: UITableViewController {
         }
         else {
             //Remove from core data
-            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
             var error : NSError?
 
-            var pred = NSPredicate(format: "orgId == " + toString(orgId));
+            let pred = NSPredicate(format: "orgId == " + String(orgId));
             let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
             fetchRequest.predicate = pred;
             
-            let results = context.executeFetchRequest(fetchRequest, error: &error) as? [FavoritedOrganizations];
-            if ((error) != nil) { handleError("OrgTVC touchFavorite Remove From Core Data", &error); }
-            context.deleteObject(results!.first!);
-            context.save(nil);
+            let results: [FavoritedOrganizations];
+            
+            do {
+                results = try context.executeFetchRequest(fetchRequest) as! [FavoritedOrganizations];
+            }
+            catch _ {
+                handleError("OrgTVC touchFavorite Remove From Core Data", error: &error);
+                return;
+            }
+
+            
+            context.deleteObject(results.first!);
+            do {
+                try context.save()
+            } catch _ {
+            };
             
             //Remove from list of favorites
             if (!favoritedOrgs.contains(orgId)) {
-                println("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
+                print("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
             }
             favoritedOrgs.remove(orgId);
             
@@ -215,10 +230,10 @@ class OrganizationsTableViewController: UITableViewController {
             }
             
             if (orgDataIndex == -1) {
-                println("ERRRRRRRORRRRRRR");
+                print("ERRRRRRRORRRRRRR");
                 orgDataIndex = 0;
             }
-            var org = orgData[orgDataIndex]; // Use org to populate table information
+            let org = orgData[orgDataIndex]; // Use org to populate table information
             
             let destinationVC = segue.destinationViewController as! OrganizationDescriptionVC;
             destinationVC.org = org!;

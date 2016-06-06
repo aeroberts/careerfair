@@ -80,6 +80,10 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.writeNoteContent.resignFirstResponder();
+    }
+    
     func buildControls() {
         dateAndLocationHeader = UILabel();
         dateAndLocationHeader.text = Constants.OD_DateLocationHeader;
@@ -105,8 +109,10 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         writeNoteContent.font = UIFont.systemFontOfSize(14);
         writeNoteContent.layer.borderWidth = 1.0;
         writeNoteContent.layer.cornerRadius = 5;
-        var tfBorderColor:UIColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        let tfBorderColor:UIColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
         writeNoteContent.layer.borderColor = tfBorderColor.CGColor;
+        writeNoteContent.delegate = self;
+
         
         containerView.addSubview(writeNoteContent);
         

@@ -11,7 +11,7 @@ import UIKit
 let reuseIdentifier = "Cell"
 var currentArray:currentOrgArray = currentOrgArray.none;
 
-class MainCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MainCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     private let navigationTileReuse = "navigationTile";
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
@@ -60,7 +60,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             for orgId in favoritedOrgs {
                 orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
             }
-            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+            orgNameToIdList.sortInPlace({ $0.orgName < $1.orgName });
             /*for x in orgNameToIdList {
                 println("x: " + toString(x.orgId) + " " + x.orgName);
             }*/
@@ -72,7 +72,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             for orgId in notedOrgs {
                 orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
             }
-            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+            orgNameToIdList.sortInPlace({ $0.orgName < $1.orgName });
         }
         else if (segue.identifier == "navigationTileToOrgs") {
             currentArray = currentOrgArray.all;
@@ -81,7 +81,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             for (orgId, org) in orgData {
                 orgNameToIdList.append(orgNameToId(orgName_in: org.title, orgId_in: orgId));
             }
-            orgNameToIdList.sort({ $0.orgName < $1.orgName });
+            orgNameToIdList.sortInPlace({ $0.orgName < $1.orgName });
         }
     }
 
@@ -163,7 +163,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             break;
         default:
             // ERROR
-            println("ERROR");
+            print("ERROR");
             break;
         }
         return true;

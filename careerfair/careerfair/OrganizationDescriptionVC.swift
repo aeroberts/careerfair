@@ -32,7 +32,7 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         favoriteFromDescCB.selected = !favoriteFromDescCB.selected;
         let orgId = self.orgId;
         if (orgData[orgId] == nil) {
-            println("ERROR");
+            print("ERROR");
             return;
         }
         
@@ -40,17 +40,20 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         orgData[orgId]!.favorited = !favoritedStatus;
         if (favoritedStatus == false) {
             //Write to core data
-            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-            var context:NSManagedObjectContext = appDel.managedObjectContext!;
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
             
-            var newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+            let newFavorite = NSEntityDescription.insertNewObjectForEntityForName("FavoritedOrganizations", inManagedObjectContext: context) ;
             newFavorite.setValue(orgId, forKey: "orgId");
-            context.save(nil);
+            do {
+                try context.save()
+            } catch _ {
+            };
             
             
             //Add to list of favorites
             if (favoritedOrgs.contains(orgId)) {
-                println("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
+                print("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
             }
             favoritedOrgs.insert(orgId);
             //Switch button image to faved
@@ -59,19 +62,22 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         }
         else {
             //Remove from core data
-            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-            var context:NSManagedObjectContext = appDel.managedObjectContext!;
-            var pred = NSPredicate(format: "orgId == " + toString(orgId));
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
+            let pred = NSPredicate(format: "orgId == " + String(orgId));
             let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
             fetchRequest.predicate = pred;
             
-            let results = context.executeFetchRequest(fetchRequest, error: nil) as? [FavoritedOrganizations];
+            let results = (try? context.executeFetchRequest(fetchRequest)) as? [FavoritedOrganizations];
             context.deleteObject(results!.first!);
-            context.save(nil);
+            do {
+                try context.save()
+            } catch _ {
+            };
             
             //Remove from list of favorites
             if (!favoritedOrgs.contains(orgId)) {
-                println("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
+                print("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
             }
             favoritedOrgs.remove(orgId);
             
@@ -93,7 +99,7 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         // Set up TextView Styling
         self.noteTV.layer.borderWidth = 1.0;
         self.noteTV.layer.cornerRadius = 5;
-        var tfBorderColor:UIColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        let tfBorderColor:UIColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
         self.noteTV.layer.borderColor = tfBorderColor.CGColor;
         
         favoriteFromDescCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
@@ -104,17 +110,17 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         descTV.text = org.desc;
 
         // Attempt to load note from core data
-        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-        var context:NSManagedObjectContext = appDel.managedObjectContext!;
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        let context:NSManagedObjectContext = appDel.managedObjectContext!;
         
         // Check if orgId for org exists in NotedOrganizations
-        var pred = NSPredicate(format: "orgId == " + toString(orgId));
+        let pred = NSPredicate(format: "orgId == " + String(orgId));
         let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
         fetchRequest.predicate = pred;
         
-        let results = context.executeFetchRequest(fetchRequest, error: nil) as? [NotedOrganizations];
+        let results = (try? context.executeFetchRequest(fetchRequest)) as? [NotedOrganizations];
         if (results?.count != 0) {
-            var managedObject = results?[0];
+            let managedObject = results?[0];
             noteTV.text = managedObject?.note;
             noteTVHasPlaceholder = false;
         }
@@ -133,7 +139,7 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.noteTV.resignFirstResponder();
     }
     
@@ -164,45 +170,63 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
         
         if (self.isMovingFromParentViewController()){
             if (noteTV.text != originalText) {
-                if (noteTVHasPlaceholder || count(noteTV.text) == 0) {
+                if (noteTVHasPlaceholder || noteTV.text.characters.count == 0) {
                     // Delete from core data
-                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+                    let context:NSManagedObjectContext = appDel.managedObjectContext!;
                     var error : NSError?
                     
-                    var pred = NSPredicate(format: "orgId == " + toString(orgId));
+                    let pred = NSPredicate(format: "orgId == " + String(orgId));
                     let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
                     fetchRequest.predicate = pred;
                 
-                    let results = context.executeFetchRequest(fetchRequest, error: &error) as? [NotedOrganizations];
-                    if ((error) != nil) { handleError("OrgDescVC willDisappear Delete from CD", &error); }
-                    if (results!.count > 0) {
-                        context.deleteObject(results!.first!);
+                    
+                    let results: [NotedOrganizations];
+                    do {
+                        results = try context.executeFetchRequest(fetchRequest) as! [NotedOrganizations];
                     }
-                    context.save(nil);
+                    catch _ {
+                        handleError("OrgDescVC willDisappear Delete from CD", error: &error);
+                        return;
+                    }
+                    
+                    if (results.count > 0) {
+                        context.deleteObject(results.first!);
+                    }
+                    do {
+                        try context.save()
+                    } catch _ {
+                    };
                     
                     // Remove from Noted Data Structure
                     notedOrgs.remove(orgId);
                 }
-                else if (count(noteTV.text) > 0) {
+                else if (noteTV.text.characters.count > 0) {
                     // Write to core data
-                    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-                    var context:NSManagedObjectContext = appDel.managedObjectContext!;
+                    let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+                    let context:NSManagedObjectContext = appDel.managedObjectContext!;
                     var error : NSError?
 
                     // Check if org already exists in core data
-                    var pred = NSPredicate(format: "orgId == " + toString(orgId));
+                    let pred = NSPredicate(format: "orgId == " + String(orgId));
                     let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
                     fetchRequest.predicate = pred;
                     
-                    let results = context.executeFetchRequest(fetchRequest, error: &error) as? [NotedOrganizations];
-                    if ((error) != nil) { handleError("OrgDescVC willDissappear Check if already exists", &error); }
-                    if (results?.count != 0) {
-                        var managedObject = results?[0];
-                        managedObject?.setValue(noteTV.text, forKey: "note");
+                    let results: [NotedOrganizations];
+                    do {
+                        results = try context.executeFetchRequest(fetchRequest) as! [NotedOrganizations];
+                    }
+                    catch _ {
+                        handleError("OrgDescVC willDissappear Check if already exists", error: &error);
+                        return;
+                    }
+                    
+                    if (results.count != 0) {
+                        let managedObject = results[0];
+                        managedObject.setValue(noteTV.text, forKey: "note");
                     }
                     else {
-                        var newNote = NSEntityDescription.insertNewObjectForEntityForName("NotedOrganizations", inManagedObjectContext: context) as! NSManagedObject;
+                        let newNote = NSEntityDescription.insertNewObjectForEntityForName("NotedOrganizations", inManagedObjectContext: context) ;
                         newNote.setValue(orgId, forKey: "orgId");
                         newNote.setValue(noteTV.text, forKey: "note");
                         
@@ -210,7 +234,10 @@ class OrganizationDescriptionVC: UIViewController, UITextViewDelegate {
                         notedOrgs.insert(orgId);
                     }
                     
-                    context.save(nil);
+                    do {
+                        try context.save()
+                    } catch _ {
+                    };
                 }
             }
         }

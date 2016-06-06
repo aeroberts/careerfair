@@ -19,7 +19,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set Status Bar appearence app wide to light
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true);
         
-        // Load orgData from database
+        // Load orgData from database or JSON blob
+        
+        // Load JSON data
+        //XXX
+        let urlPath: String = "https://api.ipify.org?format=json"
+        let url: NSURL = NSURL(string: urlPath)!
+        
+        
+        let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        var dataTask: NSURLSessionDataTask?
+        
+        if (dataTask != nil) {
+            dataTask?.cancel();
+        }
+        
+        func updateSearchResults(data: NSData?) {
+            do {
+                if let data = data, response = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(rawValue:0)) as? [String: AnyObject] {
+                    print (response)
+                    print (response["ip"])
+                    
+                } else {
+                    print("JSON Error")
+                }
+            } catch let error as NSError {
+                print("Error parsing results: \(error.localizedDescription)")
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+            }
+        }
+        
+        dataTask = defaultSession.dataTaskWithURL(url) {
+            data, response, error in
+            dispatch_async(dispatch_get_main_queue()) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            }
+            // 7
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    updateSearchResults(data)
+                }
+            }
+        }
+        // 8
+        dataTask?.resume()
+        
+        
+
+        
+        
+        //XXX
         
         orgData[0]=(organization(fromTitle: "Microsoft", desc_in: "This is bob", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Duderstadt Center", jobLoc_in: "Midwest", attendingRec_in: true, internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5, 6, 7, 8]));
         orgData[1]=(organization(fromTitle: "Facebook", desc_in: "Is the...", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "EECS", jobLoc_in: "Southwest, Northwest", attendingRec_in: true, internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [8]));
@@ -30,33 +84,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Load favorited/noted from memory
-        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-        var context:NSManagedObjectContext = appDel.managedObjectContext!;
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        let context:NSManagedObjectContext = appDel.managedObjectContext!;
         var error : NSError?
         
-        var favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+        let favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
         favoriteRequest.returnsObjectsAsFaults = false;
-        var favoritedResults = context.executeFetchRequest(favoriteRequest, error: &error) as? [FavoritedOrganizations];
-        if ((error) != nil) { handleError("AppDelegate favoritedResults fetchRequest", &error); }
+        
+        let favoritedResults: [FavoritedOrganizations];
+        do {
+            favoritedResults = try context.executeFetchRequest(favoriteRequest) as! [FavoritedOrganizations];
+            for result:NSManagedObject in favoritedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.favorited = true;
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate favoritedResults fetchRequest", error: &error);
+        }
 
-        for result:NSManagedObject in favoritedResults! {
-            var orgId = result.valueForKey("orgId") as! Int;
-            if (orgData[orgId] != nil) {
-                orgData[orgId]?.favorited = true;
-            }
-        }
         
-        var notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
+        // Set up noted request
+        let notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
         notedRequest.returnsObjectsAsFaults = false;
-        var notedResults = context.executeFetchRequest(notedRequest, error: &error) as? [NotedOrganizations];
-        if ((error) != nil) { handleError("AppDelegate notedResults fetchRequest", &error); }
         
-        for result:NSManagedObject in notedResults! {
-            var orgId = result.valueForKey("orgId") as! Int;
-            if (orgData[orgId] != nil) {
-                orgData[orgId]?.note = result.valueForKey("note") as! String;
+        let notedResults: [NotedOrganizations];
+        do {
+            notedResults = try context.executeFetchRequest(notedRequest) as! [NotedOrganizations];
+            for result:NSManagedObject in notedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.note = result.valueForKey("note") as! String;
+                }
             }
         }
+        catch _ {
+            handleError("AppDelegate notedResults fetchRequest", error: &error);
+            
+        }
+        
+        
         
         
         // Insert favorited and noted orgs (could be done above and would be faster)
@@ -114,7 +183,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.AlexRobertsKatePanter.careerfair" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as! NSURL
+        return urls[urls.count-1] 
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -130,7 +199,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("careerfair.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+        do {
+            try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+        } catch var error1 as NSError {
+            error = error1
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -142,6 +214,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
             abort()
+        } catch {
+            fatalError()
         }
         
         return coordinator
@@ -163,11 +237,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveContext () {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil
-            if moc.hasChanges && !moc.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog("Unresolved error \(error), \(error!.userInfo)")
-                abort()
+            if moc.hasChanges {
+                do {
+                    try moc.save()
+                } catch let error1 as NSError {
+                    error = error1
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    NSLog("Unresolved error \(error), \(error!.userInfo)")
+                    abort()
+                }
             }
         }
     }
