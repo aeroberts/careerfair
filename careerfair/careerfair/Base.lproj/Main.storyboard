@@ -208,6 +208,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="eventDateLabel" destination="eTQ-ti-iaO" id="BbR-Xk-5tr"/>
+                                    <outlet property="eventTitleLabel" destination="wFr-s7-UsJ" id="vOg-68-kRy"/>
                                     <outlet property="orgDateLabel" destination="eTQ-ti-iaO" id="hob-MR-fBd"/>
                                     <outlet property="orgTitleLabel" destination="wFr-s7-UsJ" id="F4v-qf-5j1"/>
                                 </connections>
@@ -522,7 +524,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2289" y="0.0"/>
+            <point key="canvasLocation" x="2289" y="24"/>
         </scene>
         <!--MapTVC-->
         <scene sceneID="kKP-Rp-NAX">
@@ -1032,7 +1034,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jzw-yR-z2I">
-                        <barButtonItem key="leftBarButtonItem" title="WE'RE UP ALL NIGHT" id="PIp-PT-u3A">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="PIp-PT-u3A">
                             <connections>
                                 <segue destination="7WS-tX-w9l" kind="unwind" unwindAction="unwindToMainVC:" id="Epg-Il-Ffi"/>
                             </connections>

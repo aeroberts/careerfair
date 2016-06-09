@@ -13,7 +13,9 @@ class OrganizationTableViewCell: UITableViewCell {
     @IBOutlet weak var orgDateLabel: UILabel!
     
     @IBAction func touchFavoriteButton(sender: AnyObject) {
+        
     }
+    
     @IBOutlet weak var favoritedButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()

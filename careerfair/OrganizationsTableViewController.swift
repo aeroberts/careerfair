@@ -85,7 +85,7 @@ class OrganizationsTableViewController: UITableViewController {
         }
         
         if (orgDataIndex == -1) {
-            print("ERRRRRRRORRRRRRR");
+            print("ERRROR");
             orgDataIndex = 0;
         }
         let org = orgData[orgDataIndex]; // Use org to populate table information
@@ -230,7 +230,7 @@ class OrganizationsTableViewController: UITableViewController {
             }
             
             if (orgDataIndex == -1) {
-                print("ERRRRRRRORRRRRRR");
+                print("ERRROR");
                 orgDataIndex = 0;
             }
             let org = orgData[orgDataIndex]; // Use org to populate table information

@@ -66,13 +66,13 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         majorHeader.frame = CGRectMake(16, aboutBottomContraint+20, UIScreen.mainScreen().bounds.width/2, 21);
         majorContent.frame = CGRectMake(24, aboutBottomContraint+49, UIScreen.mainScreen().bounds.width-28, 74);
         positionsHeader.frame = CGRectMake(16, aboutBottomContraint+153, UIScreen.mainScreen().bounds.width/2, 21);
-        positionsContent.frame = CGRectMake(24, aboutBottomContraint+182, UIScreen.mainScreen().bounds.width-28, 25);
+        positionsContent.frame = CGRectMake(24, aboutBottomContraint+182, UIScreen.mainScreen().bounds.width-28, 23);
         degreeHeader.frame = CGRectMake(16, aboutBottomContraint+237, UIScreen.mainScreen().bounds.width/2, 21);
-        degreeContent.frame = CGRectMake(24, aboutBottomContraint+266, UIScreen.mainScreen().bounds.width-28, 25);
+        degreeContent.frame = CGRectMake(24, aboutBottomContraint+266, UIScreen.mainScreen().bounds.width-28, 24);
         jobLocHeader.frame = CGRectMake(16, aboutBottomContraint+321, UIScreen.mainScreen().bounds.width/2, 21);
         jobLocContent.frame = CGRectMake(24, aboutBottomContraint+340, UIScreen.mainScreen().bounds.width-28, 50);
         sponsorHeader.frame = CGRectMake(16, aboutBottomContraint+420, UIScreen.mainScreen().bounds.width/2, 21);
-        sponsorContent.frame = CGRectMake(24, aboutBottomContraint+449, UIScreen.mainScreen().bounds.width-28, 25);
+        sponsorContent.frame = CGRectMake(24, aboutBottomContraint+449, UIScreen.mainScreen().bounds.width-28, 24);
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +125,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         
         aboutContent = UITextView();
+        aboutContent.scrollEnabled = false
         aboutContent.text = "Another long temp text used in aboutNoteContent in order to test hte size and fot heisfjkls; and see how wrapping and scrolling works.  Here is more temp text!";
         aboutContent.editable = false;
         aboutContent.font = UIFont.systemFontOfSize(14);
@@ -141,6 +142,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         containerView.addSubview(majorHeader);
         
         majorContent = UITextView();
+        majorContent.scrollEnabled = false
         majorContent.text = "FE, MSE, DS, ISD, CEE, MFE, BME, CIVIL, ROB, AOSS, IP, IOE, CLASP, CHE, EE, AUTO, NERS, AERO, CE, ESE, ENT, CS, EP, MECHE, NAME, APhys, PHARM, EE:S"
         majorContent.editable = false;
         majorContent.font = UIFont.systemFontOfSize(14);
@@ -154,6 +156,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         containerView.addSubview(positionsHeader);
         
         positionsContent = UITextView();
+        positionsContent.scrollEnabled = false
         positionsContent.text = "Full-Time, Internship, Co-op";
         positionsContent.editable = false;
         positionsContent.font = UIFont.systemFontOfSize(14);
@@ -168,6 +171,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         containerView.addSubview(degreeHeader);
         
         degreeContent = UITextView();
+        degreeContent.scrollEnabled = false
         degreeContent.text = "Bachelor's, Master's, Ph.D.";
         degreeContent.editable = false;
         degreeContent.font = UIFont.systemFontOfSize(14);
@@ -182,6 +186,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         containerView.addSubview(jobLocHeader);
         
         jobLocContent = UITextView();
+        jobLocContent.scrollEnabled = false
         jobLocContent.text = "West Coast, Northwest, Southwest, Midwest, Northeast, Southeast";
         jobLocContent.editable = false;
         jobLocContent.font = UIFont.systemFontOfSize(14);
@@ -195,6 +200,7 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         containerView.addSubview(sponsorHeader);
         
         sponsorContent = UITextView();
+        sponsorContent.scrollEnabled = false
         sponsorContent.text = "Yes, On Occasion";
         sponsorContent.editable = false;
         sponsorContent.font = UIFont.systemFontOfSize(14);

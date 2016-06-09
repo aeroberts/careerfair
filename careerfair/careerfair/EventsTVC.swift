@@ -26,24 +26,28 @@ class EventsTVC: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return events.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! EventsTableViewCell
 
-        // Configure the cell...
-
+        let row = indexPath.row
+        let event = events[row]
+        
+        cell.eventTitleLabel.text = event.title
+        cell.eventDateLabel.text = event.date + ", " + event.location + ", " + event.time
+        
         return cell
     }
-    */
+ 
 
     
     
@@ -61,10 +65,9 @@ class EventsTVC: UITableViewController {
         if (segue.identifier == "eventsTVCtoEventDesc") {
             let ip = (sender as! NSIndexPath);
             let row = ip.row;
-            //let mapName = MAP_NAMES[row];
             
-            //let destinationVC = segue.destinationViewController as! MapImageVC;
-            //destinationVC.mapLocation = parseLocation(mapName);
+            let destinationVC = segue.destinationViewController as! EventsDescriptionVC;
+            destinationVC.event = events[row]
         }
     }
 

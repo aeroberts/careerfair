@@ -15,15 +15,55 @@ enum JSONError: String, ErrorType {
 
 
 class LoadingSplashVC: UIViewController {
+    var orgDataHandled = false
+    var eventDataHandled = false
+    var announcementDataHandled = false
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    // Load orgData
-    func activityFinished(data: NSDictionary) {
+    func attemptTransition() {
+        if (orgDataHandled && eventDataHandled && announcementDataHandled) {
+            self.performSegueWithIdentifier("activityDone", sender: self);
+        }
+    }
+    
+    func orgDataReceived(data: NSDictionary) {
         //if let origin = data["origin"] as? String {
         //  print(origin)
         //}
-        self.performSegueWithIdentifier("activityDone", sender: self);
+        
+        // Load org data into orgData
+    
+        // If all data is loaded, then transition
+        orgDataHandled = true
+        print("OD Handled")
+        attemptTransition()
+    }
+    
+    func eventDataReceived(data: NSDictionary) {
+        //if let origin = data["origin"] as? String {
+        //  print(origin)
+        //}
+        
+        // Load event data into eventData
+        
+        // If all data is loaded, then transition
+        print("ED Handled")
+        eventDataHandled = true
+        attemptTransition()
+    }
+    
+    func announcementDataReceived(data: NSDictionary) {
+        //if let origin = data["origin"] as? String {
+        //  print(origin)
+        //}
+        
+        // Load announcement data into announcementData
+        
+        // If all data is loaded, then transition
+        print("AD Handled")
+        announcementDataHandled = true
+        attemptTransition()
     }
     
     func get(url : String, successHandler: (response: NSDictionary) -> Void) {
@@ -54,11 +94,9 @@ class LoadingSplashVC: UIViewController {
         
         activityIndicator.startAnimating()
         
-        get("http://httpbin.org/ip", successHandler: activityFinished)
-        
-        //_ = NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: #selector(LoadingSplash.activityFinished), userInfo: nil, repeats: false)
-        
-        // Do any additional setup after loading the view.
+        get("http://httpbin.org/ip", successHandler: orgDataReceived)
+        get("http://httpbin.org/user-agent", successHandler: eventDataReceived)
+        get("http://httpbin.org/get", successHandler: announcementDataReceived)
     }
     
     

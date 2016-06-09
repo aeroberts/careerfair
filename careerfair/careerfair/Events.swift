@@ -8,6 +8,8 @@
 
 import Foundation
 
+var events = [Event]()
+
 class Event {
     var date:String;
     var location:String;
