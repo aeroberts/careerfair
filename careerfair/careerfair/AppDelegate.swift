@@ -19,68 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set Status Bar appearence app wide to light
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true);
         
-        // Load orgData from database or JSON blob
         
-        // Load JSON data
-        //XXX
-        let urlPath: String = "https://api.ipify.org?format=json"
-        let url: NSURL = NSURL(string: urlPath)!
-        
-        
-        let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        var dataTask: NSURLSessionDataTask?
-        
-        if (dataTask != nil) {
-            dataTask?.cancel();
-        }
-        
-        func updateSearchResults(data: NSData?) {
-            do {
-                if let data = data, response = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(rawValue:0)) as? [String: AnyObject] {
-                    print (response)
-                    print (response["ip"])
-                    
-                } else {
-                    print("JSON Error")
-                }
-            } catch let error as NSError {
-                print("Error parsing results: \(error.localizedDescription)")
-            }
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-            }
-        }
-        
-        dataTask = defaultSession.dataTaskWithURL(url) {
-            data, response, error in
-            dispatch_async(dispatch_get_main_queue()) {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            }
-            // 7
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    updateSearchResults(data)
-                }
-            }
-        }
-        // 8
-        dataTask?.resume()
-        
-        
-
-        
-        
-        //XXX
-        
+        // Insert stubbed data
         orgData[0]=(organization(fromTitle: "Microsoft", desc_in: "This is bob", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Duderstadt Center", jobLoc_in: "Midwest", attendingRec_in: true, internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: true, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [1, 2, 3, 4, 5, 6, 7, 8]));
         orgData[1]=(organization(fromTitle: "Facebook", desc_in: "Is the...", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "EECS", jobLoc_in: "Southwest, Northwest", attendingRec_in: true, internshipC_in: true, fulltimeC_in: false, coopC_in: false, bachelorsC_in: true, mastersC_in: false, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: false, sponsorOnOccasionC_in: false, majorC_in: [8]));
         orgData[2]=(organization(fromTitle: "Hewlett-Packard", desc_in: "Best", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "GG Brown", jobLoc_in: "Midwest, Northeast", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[3]=(organization(fromTitle: "Dow Company", desc_in: "In", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Dow", jobLoc_in: "Midwest, Southwest, Northwest", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[100]=(organization(fromTitle: "RetailMeNot", desc_in: "A cool company", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "BBB", jobLoc_in: "West Coast", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
-        
         
         
         // Load favorited/noted from memory

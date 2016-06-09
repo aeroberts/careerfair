@@ -103,7 +103,7 @@ class OrganizationsTableViewController: UITableViewController {
         }
         
         cell.favoritedButton.tag = orgDataIndex;
-        cell.favoritedButton.addTarget(self, action: "touchFavorite:", forControlEvents: .TouchUpInside);
+        cell.favoritedButton.addTarget(self, action: #selector(OrganizationsTableViewController.touchFavorite(_:)), forControlEvents: .TouchUpInside);
         
         return cell;
     }

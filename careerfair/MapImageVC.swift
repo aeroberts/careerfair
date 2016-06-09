@@ -20,15 +20,7 @@ enum mapLocations {
     case none
 }
 
-class mapMarker {
-    var position: CGPoint
-    var image: UIImage
-    
-    init(position_in: CGPoint, image_in: UIImage) {
-        position = position_in
-        image = image_in
-    }
-}
+
 
 class MapImageVC: UIViewController, UIScrollViewDelegate {
     var mapLocation:mapLocations = mapLocations.none;
@@ -46,20 +38,28 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
     func getMapImage(mapLocation: mapLocations) -> String {
         switch (mapLocation) {
             case mapLocations.dude:
+                mapMarkers = mapMarkersDude
                 return "dude.png";
             case mapLocations.dow:
+                mapMarkers = mapMarkersDow
                 return "dow.png";
             case mapLocations.eecs:
+                mapMarkers = mapMarkersEecs
                 return "eecs.png";
             case mapLocations.fxb:
+                mapMarkers = mapMarkersFxb
                 return "fxb.png";
             case mapLocations.ggBrown:
+                mapMarkers = mapMarkersGGbrown
                 return "ggbrown.png";
             case mapLocations.pierpont:
+                mapMarkers = mapMarkersPierpont
                 return "pierpont.png";
             case mapLocations.BBB:
+                mapMarkers = mapMarkersBbb
                 return "bbb.png";
             case mapLocations.dudeConnector:
+                mapMarkers = mapMarkersDudeConnector
                 return "dude_connector.png";
             default:
                 return "cat.png";
@@ -70,8 +70,8 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         let height = mapImage.size.height
         let width = mapImage.size.width
         
-        let screenHeight = UIScreen.mainScreen().bounds.height
-        let screenWidth = UIScreen.mainScreen().bounds.width
+        let screenHeight = view.bounds.height-60
+        let screenWidth = view.bounds.width
         
         let scalingFactor = max(height/screenHeight, width/screenWidth)
         
@@ -79,18 +79,19 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         let imageWidth = width/scalingFactor
         
         let mapSize = CGSizeMake(imageWidth, imageHeight)
-        let checkSize = CGSizeMake(10, 10)
         UIGraphicsBeginImageContextWithOptions(mapSize, false, 0.0)
         
         mapImage.drawInRect(CGRect(origin: CGPointZero, size: mapSize))
+        
         for marker in mapMarkers {
-            marker.image.drawInRect(CGRect(origin: marker.position, size: checkSize))
+            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         mapImageView.image = newImage
         
-        mapScrollView.bounds.size = view.bounds.size
+        mapScrollView.bounds.size.height = view.bounds.size.height-60
+        mapScrollView.bounds.size.width = view.bounds.size.width
         mapImageView.bounds.size = mapSize
         
         UIGraphicsEndImageContext()

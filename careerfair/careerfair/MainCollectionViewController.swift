@@ -100,10 +100,43 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(navigationTileReuse, forIndexPath: indexPath) as! MainCollectionViewCell
-        cell.backgroundColor = UIColor.blackColor();
+        cell.backgroundColor = UIColor.lightGrayColor();
         
         // Configure the cell
         cell.imageView.image = UIImage(named: "cat.png");
+        
+        switch (indexPath.row) {
+            case 0:
+                cell.tileLabel.text = "Organizations"
+                break;
+            case 1:
+                cell.tileLabel.text = "Map"
+                break;
+            case 2:
+                cell.tileLabel.text = "Favorited"
+                break;
+            case 3:
+                cell.tileLabel.text = "Noted"
+                break;
+            case 4:
+                cell.tileLabel.text = "To-do List"
+                break;
+            case 5:
+                cell.tileLabel.text = "Events"
+                break;
+            case 6:
+                cell.tileLabel.text = "Announcements"
+                break;
+            case 7:
+                cell.tileLabel.text = "Career Fair Tips"
+                break;
+            case 8:
+                cell.tileLabel.text = "General Info"
+                break;
+            default:
+                print("Too many cells created")
+        }
+        print(indexPath.row)
         return cell
     }
     
@@ -194,14 +227,14 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 110, height: 120)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
-            return UIEdgeInsetsMake(30, 10, 30, 10);
+            return UIEdgeInsetsMake(30, 20, 30, 20);
         }
-        return UIEdgeInsetsMake(48, 10, 30, 10);
+        return UIEdgeInsetsMake(48, 20, 30, 20);
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
