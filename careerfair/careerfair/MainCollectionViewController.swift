@@ -136,7 +136,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             default:
                 print("Too many cells created")
         }
-        print(indexPath.row)
         return cell
     }
     

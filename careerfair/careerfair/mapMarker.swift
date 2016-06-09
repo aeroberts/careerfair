@@ -21,6 +21,35 @@ class mapMarker {
     }
 }
 
+func getMapMarkerArray(location_in:mapLocations) -> [mapMarker] {
+    switch(location_in) {
+        case mapLocations.BBB:
+            return mapMarkersBbb
+            break;
+        case mapLocations.dow:
+            return mapMarkersDow
+            break;
+        case mapLocations.dude:
+            return mapMarkersDude
+            break;
+        case mapLocations.dudeConnector:
+            return mapMarkersDudeConnector
+            break;
+        case mapLocations.eecs:
+            return mapMarkersEecs
+            break;
+        case mapLocations.fxb:
+            return mapMarkersFxb
+            break;
+        case mapLocations.ggBrown:
+            return mapMarkersGGbrown
+            break;
+        case mapLocations.pierpont:
+            return mapMarkersPierpont
+            break;
+    }
+}
+
 var orgIdToMapMarker: [Int:mapMarker] = [:]
 
 var mapMarkersDow: [mapMarker] = [

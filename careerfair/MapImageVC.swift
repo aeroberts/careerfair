@@ -25,6 +25,9 @@ enum mapLocations {
 class MapImageVC: UIViewController, UIScrollViewDelegate {
     var mapLocation:mapLocations = mapLocations.none;
     var mapMarkers = [mapMarker]()
+    var displayMapMarkers = [mapMarker]()
+    
+    var selectedOrgId = -1
     
     @IBOutlet weak var mapScrollView: UIScrollView!
     @IBOutlet weak var mapImageView: UIImageView!
@@ -83,8 +86,15 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         
         mapImage.drawInRect(CGRect(origin: CGPointZero, size: mapSize))
         
-        for marker in mapMarkers {
+        for marker in displayMapMarkers {
             UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
+        }
+        
+        if (selectedOrgId != -1) {
+            /// ERROR CHECK
+            let selectedOrgBooth = orgData[selectedOrgId]!.booth
+            let selectedMarker = mapMarkers[selectedOrgBooth]
+            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
         }
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -119,6 +129,13 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let mapImage = UIImage(named: getMapImage(mapLocation))!;
+        
+        for orgId in favoritedOrgs {
+            let currentOrg = orgData[orgId]
+            if (parseLocation(currentOrg!.location) == mapLocation && orgId != selectedOrgId) {
+                displayMapMarkers.append(mapMarkers[currentOrg!.booth])
+            }
+        }
         
         self.mapScrollView.minimumZoomScale = 1.0
         self.mapScrollView.maximumZoomScale = 2.0
