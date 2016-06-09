@@ -443,7 +443,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
             let location = parseLocation(org.location)
 
             destinationVC.mapLocation = location;
-            destinationVC.selectedOrgBooth = org.booth
+            destinationVC.selectedOrgId = orgId
         }
     }
 }

@@ -47,6 +47,9 @@ func getMapMarkerArray(location_in:mapLocations) -> [mapMarker] {
         case mapLocations.pierpont:
             return mapMarkersPierpont
             break;
+        default:
+            return mapMarkersDude
+            break;
     }
 }
 

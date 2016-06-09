@@ -91,10 +91,12 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         }
         
         if (selectedOrgId != -1) {
-            /// ERROR CHECK
             let selectedOrgBooth = orgData[selectedOrgId]!.booth
-            let selectedMarker = mapMarkers[selectedOrgBooth]
-            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
+            
+            if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
+                let selectedMarker = mapMarkers[selectedOrgBooth]
+                UIImage(named: "heartunfaved")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
+            }
         }
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
