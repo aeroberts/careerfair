@@ -151,7 +151,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         return majorsArray.count;
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return majorsArray[row];
     }
 
