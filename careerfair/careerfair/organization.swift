@@ -9,7 +9,7 @@
 import Foundation
 
 // Define global data structures here
-var orgData = [Int: organization](); // Maps orgId to organization struct
+var / = [Int: organization](); // Maps orgId to organization struct
 var favoritedOrgs = Set<Int>();
 var notedOrgs = Set<Int>();
 
