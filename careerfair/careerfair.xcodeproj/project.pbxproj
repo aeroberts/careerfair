@@ -26,7 +26,7 @@
 		AC5851AF1D0B6015002149AB /* AnnouncementsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */; };
 		AC5851B11D0B604F002149AB /* announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B01D0B604F002149AB /* announcements.swift */; };
 		AC5851B31D0B61B8002149AB /* AnnouncmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */; };
-		AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */; };
+		AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVC.swift */; };
 		AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */; };
 		AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */; };
 		ACD00D491D0B6CC500E86D21 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D481D0B6CC500E86D21 /* FAQVC.swift */; };
@@ -81,7 +81,7 @@
 		AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTVC.swift; sourceTree = "<group>"; };
 		AC5851B01D0B604F002149AB /* announcements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = announcements.swift; sourceTree = "<group>"; };
 		AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncmentsTableViewCell.swift; sourceTree = "<group>"; };
-		AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsDescriptionVCViewController.swift; sourceTree = "<group>"; };
+		AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsDescriptionVC.swift; sourceTree = "<group>"; };
 		AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACD00D481D0B6CC500E86D21 /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
@@ -191,10 +191,10 @@
 		AC5851AB1D0B5F60002149AB /* Annoucements */ = {
 			isa = PBXGroup;
 			children = (
-				AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */,
-				AC5851B01D0B604F002149AB /* announcements.swift */,
+				AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVC.swift */,
 				AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */,
 				AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */,
+				AC5851B01D0B604F002149AB /* announcements.swift */,
 			);
 			name = Annoucements;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 		AC5851BA1D0B6234002149AB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
 				F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */,
 				F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */,
-				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
 				F7BA7C351BA9E39E005D036D /* Events.swift */,
 			);
 			name = Events;
@@ -391,7 +391,7 @@
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC5851B11D0B604F002149AB /* announcements.swift in Sources */,
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
-				AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift in Sources */,
+				AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVC.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */,
 				21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */,

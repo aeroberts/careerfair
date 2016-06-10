@@ -255,7 +255,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDl-F8-Ve3">
-                                            <rect key="frame" x="50" y="39.5" width="42" height="21"/>
+                                            <rect key="frame" x="18" y="39.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -263,7 +263,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="QDl-F8-Ve3" firstAttribute="centerY" secondItem="qeq-uI-JD2" secondAttribute="centerY" id="2NQ-5y-Bzs"/>
-                                        <constraint firstItem="QDl-F8-Ve3" firstAttribute="leading" secondItem="qeq-uI-JD2" secondAttribute="leadingMargin" constant="42" id="4Nb-2W-8Q8"/>
+                                        <constraint firstItem="QDl-F8-Ve3" firstAttribute="leading" secondItem="qeq-uI-JD2" secondAttribute="leadingMargin" constant="10" id="4Nb-2W-8Q8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -431,7 +431,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-N8-OY5">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-N8-OY5">
                                             <rect key="frame" x="18" y="97" width="497" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="444" id="9E1-vu-mTe"/>
@@ -456,7 +456,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-TX-MRd">
-                                            <rect key="frame" x="18" y="39" width="497" height="20.5"/>
+                                            <rect key="frame" x="18" y="38" width="497" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -736,10 +736,10 @@
             </objects>
             <point key="canvasLocation" x="2289" y="1545"/>
         </scene>
-        <!--Title-->
+        <!--Announcements-->
         <scene sceneID="exM-uS-OhU">
             <objects>
-                <viewController id="g5m-Jp-bkC" sceneMemberID="viewController">
+                <viewController id="g5m-Jp-bkC" customClass="AnnouncementsDescriptionVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dgJ-eK-kET"/>
                         <viewControllerLayoutGuide type="bottom" id="1GM-WH-LLA"/>
@@ -749,7 +749,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="bSB-pA-Pgd">
+                    <navigationItem key="navigationItem" title="Announcements" id="bSB-pA-Pgd">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="TKc-sq-dhg">
                             <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

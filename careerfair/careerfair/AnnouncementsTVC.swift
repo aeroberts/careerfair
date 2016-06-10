@@ -63,7 +63,7 @@ class AnnouncementsTVC: UITableViewController {
             let ip = (sender as! NSIndexPath);
             let row = ip.row;
             
-            let destinationVC = segue.destinationViewController as! AnnouncementsDescriptionVCViewController
+            let destinationVC = segue.destinationViewController as! AnnouncementsDescriptionVC
             destinationVC.announcement = announcements[row]
         }
     }

@@ -62,6 +62,7 @@ class LoadingSplashVC: UIViewController {
         //}
         
         // Load announcement data into announcementData
+        announcements.append(Announcement(information_in: "Fitbit has sponsored pizza at the dB Cafe!  Visit the fitbit booth to get a token for pizza", title_in: "Fitbit sponsors pizza at dB Cafe"))
         
         // If all data is loaded, then transition
         announcementDataHandled = true
