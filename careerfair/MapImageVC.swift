@@ -90,13 +90,11 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
-        print(selectedOrgId)
         if (selectedOrgId != -1) {
             let selectedOrgBooth = orgData[selectedOrgId]!.booth
             
             if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
                 let selectedMarker = mapMarkers[selectedOrgBooth]
-                print(selectedMarker.position)
                 UIImage(named: "heartunfaved")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
             }
         }

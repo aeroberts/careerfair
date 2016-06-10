@@ -209,9 +209,7 @@ class OrganizationsTableViewController: UITableViewController {
         self.performSegueWithIdentifier("orgCellToDesc", sender: indexPath);
     }
     
-    @IBAction func unwindToOrgTVC(segue:UIStoryboardSegue) {
-        print("Does this get called")
-    }
+    @IBAction func unwindToOrgTVC(segue:UIStoryboardSegue) { }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

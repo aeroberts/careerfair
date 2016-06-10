@@ -158,7 +158,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
     @IBAction func unwindToMainVC(segue:UIStoryboardSegue) {
-        print("Is this also called")
         isFiltered = false;
         self.collectionView?.collectionViewLayout.invalidateLayout();
     }
@@ -180,19 +179,21 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             performSegueWithIdentifier("navigationTileToNoted", sender: self);
             break;
         case 4: // Todo list
-            performSegueWithIdentifier("mainToTest", sender: self);
+            performSegueWithIdentifier("navigationTileToToDo", sender: self);
             break;
         case 5: // Events
             performSegueWithIdentifier("navigationTileToEvents", sender: self);
             break;
         case 6: // Announcements
-            // Segue to
+            performSegueWithIdentifier("navigationTileToAnnouncements", sender: self);
             break;
-        case 7: // Career Fair Tips / FAQ
+        case 7: // Career Fair Tips
             // Segue to
+            performSegueWithIdentifier("navigationTileToTips", sender: self);
             break;
-        case 8: // General Info
+        case 8: // General Info / FAQ
             // Segue to
+            performSegueWithIdentifier("navigationTileToFAQ", sender: self);
             break;
         default:
             // ERROR

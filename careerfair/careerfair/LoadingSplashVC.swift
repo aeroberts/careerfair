@@ -36,7 +36,6 @@ class LoadingSplashVC: UIViewController {
     
         // If all data is loaded, then transition
         orgDataHandled = true
-        print("OD Handled")
         attemptTransition()
     }
     
@@ -53,7 +52,6 @@ class LoadingSplashVC: UIViewController {
         events.sortInPlace({ $0.date.timeIntervalSinceReferenceDate < $1.date.timeIntervalSinceReferenceDate })
         
         // If all data is loaded, then transition
-        print("ED Handled")
         eventDataHandled = true
         attemptTransition()
     }
@@ -66,7 +64,6 @@ class LoadingSplashVC: UIViewController {
         // Load announcement data into announcementData
         
         // If all data is loaded, then transition
-        print("AD Handled")
         announcementDataHandled = true
         attemptTransition()
     }

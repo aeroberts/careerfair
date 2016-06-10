@@ -148,7 +148,10 @@
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToFavorited" id="J9m-7H-na6"/>
                         <segue destination="fGL-ke-y4A" kind="show" identifier="navigationTileToNoted" id="icf-xj-b9h"/>
                         <segue destination="igc-Bv-vFn" kind="show" identifier="navigationTileToEvents" id="kE5-J3-mPR"/>
-                        <segue destination="lCr-16-FCw" kind="show" id="A03-oZ-tfq"/>
+                        <segue destination="lCr-16-FCw" kind="show" identifier="navigationTileToAnnouncements" id="A03-oZ-tfq"/>
+                        <segue destination="oeE-Qo-XOW" kind="show" identifier="navigationTileToTips" id="BdY-6H-Z7R"/>
+                        <segue destination="0nO-mD-B1C" kind="show" identifier="navigationTileToFAQ" id="QC0-a5-w2N"/>
+                        <segue destination="YOg-bV-rSf" kind="show" identifier="navigationTileToToDo" id="UCW-zM-jw2"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2o-Gz-tqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,6 +223,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QAy-gf-4HG">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="eI1-Q7-PXb">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="H3v-1H-ASQ" kind="unwind" unwindAction="unwindToMainVC:" id="c0P-K0-Wgp"/>
                             </connections>
@@ -234,16 +238,16 @@
             </objects>
             <point key="canvasLocation" x="1490" y="1545"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Announcements-->
         <scene sceneID="tPd-cp-AQX">
             <objects>
-                <tableViewController id="6Ya-WP-WKA" sceneMemberID="viewController">
+                <tableViewController id="6Ya-WP-WKA" customClass="AnnouncementsTVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="G5t-Fd-t9z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hZa-6E-Nhv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="announcementCell" id="hZa-6E-Nhv" customClass="AnnouncmentsTableViewCell" customModule="careerfair" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hZa-6E-Nhv" id="qeq-uI-JD2">
@@ -253,7 +257,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDl-F8-Ve3">
                                             <rect key="frame" x="50" y="39.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -262,6 +266,9 @@
                                         <constraint firstItem="QDl-F8-Ve3" firstAttribute="leading" secondItem="qeq-uI-JD2" secondAttribute="leadingMargin" constant="42" id="4Nb-2W-8Q8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="QDl-F8-Ve3" id="aJe-jD-6k9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -269,19 +276,78 @@
                             <outlet property="delegate" destination="6Ya-WP-WKA" id="5DG-NU-Gu1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Q8p-Gf-5B1"/>
+                    <navigationItem key="navigationItem" title="Announcements" id="66w-zG-lnZ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ySs-pe-Y6J">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="F6p-vs-veO" kind="unwind" unwindAction="unwindToMainVC:" id="jVc-Vl-vT3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="g5m-Jp-bkC" kind="show" identifier="announceTCtoAnnounceDesc" id="LdY-hh-AOC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WO-3R-KNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="F6p-vs-veO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1538" y="2408"/>
+        </scene>
+        <!--To DoVC-->
+        <scene sceneID="AFe-OJ-LVb">
+            <objects>
+                <viewController id="YOg-bV-rSf" customClass="ToDoVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z2N-l1-vAO"/>
+                        <viewControllerLayoutGuide type="bottom" id="bMb-ko-rE0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10y-H3-Znp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbZ-3a-QdO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="yfV-Aq-3ia"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="To Do" id="Ejr-nq-8hN">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="LbH-AZ-P5c">
+                                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="p1U-m8-nX6" kind="unwind" unwindAction="unwindToMainVC:" id="LeK-JU-paH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IbZ-3a-QdO" firstAttribute="top" secondItem="10y-H3-Znp" secondAttribute="topMargin" id="5Oa-mf-ZDC"/>
+                            <constraint firstItem="IbZ-3a-QdO" firstAttribute="leading" secondItem="10y-H3-Znp" secondAttribute="leadingMargin" constant="-20" id="AOk-df-32g"/>
+                            <constraint firstItem="IbZ-3a-QdO" firstAttribute="top" secondItem="z2N-l1-vAO" secondAttribute="bottom" constant="-20" id="Kxr-4g-cdB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IbZ-3a-QdO" secondAttribute="trailing" constant="-20" id="LC4-yo-U4z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Kxr-4g-cdB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="IbZ-3a-QdO" id="yoh-wK-A4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7s-KT-vtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="p1U-m8-nX6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="1545"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2rk-2J-HaT">
             <objects>
-                <navigationController id="lCr-16-FCw" sceneMemberID="viewController">
+                <navigationController id="lCr-16-FCw" customClass="navigationController" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qu0-kE-jnS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -293,6 +359,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTF-iW-2ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-814" y="2408"/>
+        </scene>
+        <!--TipsVC-->
+        <scene sceneID="ceX-gO-xSt">
+            <objects>
+                <exit id="YRu-YN-rTS" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8KW-JC-JOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="oeE-Qo-XOW" customClass="TipsVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8uv-P8-P2P"/>
+                        <viewControllerLayoutGuide type="bottom" id="rNe-vw-dzI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HsR-dk-k6a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-bk-sLe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="MZW-Qb-7Ie"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Career Fair Tips" id="LeV-qY-3HG">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="75n-sY-4lt">
+                                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="YRu-YN-rTS" kind="unwind" unwindAction="unwindToMainVC:" id="mgz-Fn-J5b"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HE2-bk-sLe" firstAttribute="leading" secondItem="HsR-dk-k6a" secondAttribute="leadingMargin" id="1ii-Pb-Ho8"/>
+                            <constraint firstItem="HE2-bk-sLe" firstAttribute="top" secondItem="HsR-dk-k6a" secondAttribute="topMargin" constant="15" id="5Jv-sQ-U5z"/>
+                            <constraint firstItem="HE2-bk-sLe" firstAttribute="trailing" secondItem="HsR-dk-k6a" secondAttribute="trailingMargin" constant="20" id="BwW-Xh-xG1"/>
+                            <constraint firstItem="HE2-bk-sLe" firstAttribute="leading" secondItem="HsR-dk-k6a" secondAttribute="leadingMargin" constant="-20" id="Fve-Ki-aDL"/>
+                            <constraint firstItem="HE2-bk-sLe" firstAttribute="top" secondItem="HsR-dk-k6a" secondAttribute="topMargin" id="cyc-Uk-yck"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HE2-bk-sLe" secondAttribute="trailing" id="dYd-xs-d0O"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1ii-Pb-Ho8"/>
+                                <exclude reference="5Jv-sQ-U5z"/>
+                                <exclude reference="dYd-xs-d0O"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="HE2-bk-sLe" id="bVF-XR-FyP"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-26" y="2408"/>
         </scene>
         <!--Organizations Table View Controller-->
         <scene sceneID="Sn6-fB-f89">
@@ -537,7 +658,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-fD-7lK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-fD-7lK">
                                 <rect key="frame" x="4" y="64" width="592" height="492"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fpg-5V-oLr"/>
@@ -587,6 +708,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="GwG-KH-GDw">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Pxh-AS-AXO">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="mQL-gl-vgR" kind="unwind" unwindAction="unwindToEventsTVC:" id="iSs-9E-AZR"/>
                             </connections>
@@ -614,7 +736,7 @@
             </objects>
             <point key="canvasLocation" x="2289" y="1545"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="exM-uS-OhU">
             <objects>
                 <viewController id="g5m-Jp-bkC" sceneMemberID="viewController">
@@ -627,8 +749,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="bSB-pA-Pgd">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="TKc-sq-dhg">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="ztO-vt-djB" kind="unwind" unwindAction="unwindToAnnouncementsTVC:" id="UWW-8Q-ORp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaH-hg-9Zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ztO-vt-djB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2291" y="2408"/>
         </scene>
@@ -1037,6 +1168,67 @@
             </objects>
             <point key="canvasLocation" x="770" y="1545"/>
         </scene>
+        <!--FAQVC-->
+        <scene sceneID="Leb-MQ-Uqv">
+            <objects>
+                <viewController id="0nO-mD-B1C" customClass="FAQVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pjn-Qt-2nY"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1b-FW-5cb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KAk-tk-IOC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZf-lC-aVv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1xH-3k-uQO"/>
+                                    <constraint firstAttribute="height" constant="66" id="gkJ-G1-mPD"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="General Information" id="bYA-QJ-7F2">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ut9-qf-Yj8">
+                                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="qBR-eE-ObB" kind="unwind" unwindAction="unwindToMainVC:" id="UEU-y2-XHs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1xH-3k-uQO"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mZf-lC-aVv" firstAttribute="leading" secondItem="KAk-tk-IOC" secondAttribute="leadingMargin" constant="-20" id="2b3-f0-yIG"/>
+                            <constraint firstItem="mZf-lC-aVv" firstAttribute="top" secondItem="Pjn-Qt-2nY" secondAttribute="bottom" id="37a-Aw-2tg"/>
+                            <constraint firstItem="mZf-lC-aVv" firstAttribute="top" secondItem="KAk-tk-IOC" secondAttribute="topMargin" id="5mD-8C-hX6"/>
+                            <constraint firstItem="mZf-lC-aVv" firstAttribute="leading" secondItem="KAk-tk-IOC" secondAttribute="leadingMargin" constant="-20" id="Abx-ib-U84"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mZf-lC-aVv" secondAttribute="trailing" constant="-20" id="ILj-gA-1eR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mZf-lC-aVv" secondAttribute="trailing" constant="-20" id="sUM-0A-PaR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2b3-f0-yIG"/>
+                                <exclude reference="37a-Aw-2tg"/>
+                                <exclude reference="sUM-0A-PaR"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="mZf-lC-aVv" id="PRW-kh-ZwJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIH-Z6-zIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qBR-eE-ObB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="2408"/>
+        </scene>
     </scenes>
     <resources>
         <image name="checkedcb" width="48" height="48"/>
@@ -1044,6 +1236,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mc2-iF-7X2"/>
-        <segue reference="Qi0-V8-ixW"/>
+        <segue reference="MNR-6g-NH2"/>
     </inferredMetricsTieBreakers>
 </document>

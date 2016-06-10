@@ -23,8 +23,15 @@
 		AC366B861D09DEF700C29D80 /* LoadingSplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC366B851D09DEF700C29D80 /* LoadingSplashVC.swift */; };
 		AC366B881D0B4D0300C29D80 /* dateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC366B871D0B4D0300C29D80 /* dateHelpers.swift */; };
 		AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5536FB1B670D6B00C66C7D /* organization.swift */; };
+		AC5851AF1D0B6015002149AB /* AnnouncementsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */; };
+		AC5851B11D0B604F002149AB /* announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B01D0B604F002149AB /* announcements.swift */; };
+		AC5851B31D0B61B8002149AB /* AnnouncmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */; };
+		AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */; };
 		AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */; };
 		AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */; };
+		ACD00D491D0B6CC500E86D21 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D481D0B6CC500E86D21 /* FAQVC.swift */; };
+		ACD00D4B1D0B6CD300E86D21 /* TipsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D4A1D0B6CD300E86D21 /* TipsVC.swift */; };
+		ACD00D501D0B72F600E86D21 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */; };
 		ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988901B6AF69F0024C113 /* currentOrgArray.swift */; };
 		ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
@@ -71,8 +78,15 @@
 		AC366B851D09DEF700C29D80 /* LoadingSplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSplashVC.swift; sourceTree = "<group>"; };
 		AC366B871D0B4D0300C29D80 /* dateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateHelpers.swift; sourceTree = "<group>"; };
 		AC5536FB1B670D6B00C66C7D /* organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = organization.swift; sourceTree = "<group>"; };
+		AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTVC.swift; sourceTree = "<group>"; };
+		AC5851B01D0B604F002149AB /* announcements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = announcements.swift; sourceTree = "<group>"; };
+		AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncmentsTableViewCell.swift; sourceTree = "<group>"; };
+		AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsDescriptionVCViewController.swift; sourceTree = "<group>"; };
 		AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		ACD00D481D0B6CC500E86D21 /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
+		ACD00D4A1D0B6CD300E86D21 /* TipsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsVC.swift; sourceTree = "<group>"; };
+		ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
 		ACF988901B6AF69F0024C113 /* currentOrgArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrgArray.swift; sourceTree = "<group>"; };
 		ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationsTableViewController.swift; path = ../OrganizationsTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,31 +144,18 @@
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
 				F7DDE5F31BAAFB5A00395C62 /* ErrorHandler.swift */,
 				AC366B851D09DEF700C29D80 /* LoadingSplashVC.swift */,
-				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
-				F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */,
-				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
-				21F382A21B84E98600E5700C /* FilterVC.swift */,
-				21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */,
-				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
-				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
-				AC5536FB1B670D6B00C66C7D /* organization.swift */,
-				ACF988901B6AF69F0024C113 /* currentOrgArray.swift */,
-				F746FB551BA8869600885476 /* MapImageVC.swift */,
-				21F5D02F1BA90D72006E1237 /* MapTVC.swift */,
-				21F5D0311BA915F5006E1237 /* location.swift */,
-				AC366B831D09D3D400C29D80 /* mapMarker.swift */,
-				F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */,
-				F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */,
-				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
-				F7BA7C351BA9E39E005D036D /* Events.swift */,
-				AC0310211B5C26B800554DD2 /* Main.storyboard */,
 				F75E4C311BAB3E2B00080DEF /* navigationController.swift */,
-				F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */,
-				AC366B871D0B4D0300C29D80 /* dateHelpers.swift */,
-				21E4D1611BACFBE20006005E /* Constants.swift */,
+				AC0310211B5C26B800554DD2 /* Main.storyboard */,
+				AC5851B71D0B61F7002149AB /* MainCollection */,
+				AC5851B81D0B6211002149AB /* Organizations */,
+				AC5851B91D0B6223002149AB /* Map */,
+				ACD00D4E1D0B72B400E86D21 /* ToDo */,
+				AC5851BA1D0B6234002149AB /* Events */,
+				AC5851AB1D0B5F60002149AB /* Annoucements */,
+				AC5851BB1D0B627A002149AB /* Helpers */,
+				ACD00D471D0B6CA600E86D21 /* Tips */,
+				ACD00D461D0B6C9400E86D21 /* FAQ */,
 				AC0310241B5C26B800554DD2 /* Images.xcassets */,
-				F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */,
-				21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC0310191B5C26B800554DD2 /* Info.plist */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
@@ -185,6 +186,98 @@
 				AC0310321B5C26B900554DD2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC5851AB1D0B5F60002149AB /* Annoucements */ = {
+			isa = PBXGroup;
+			children = (
+				AC5851B41D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift */,
+				AC5851B01D0B604F002149AB /* announcements.swift */,
+				AC5851B21D0B61B8002149AB /* AnnouncmentsTableViewCell.swift */,
+				AC5851AE1D0B6015002149AB /* AnnouncementsTVC.swift */,
+			);
+			name = Annoucements;
+			sourceTree = "<group>";
+		};
+		AC5851B71D0B61F7002149AB /* MainCollection */ = {
+			isa = PBXGroup;
+			children = (
+				AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */,
+				F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */,
+				AC9D7FF01B5F07CB0049107F /* MainCollectionViewController.swift */,
+			);
+			name = MainCollection;
+			sourceTree = "<group>";
+		};
+		AC5851B81D0B6211002149AB /* Organizations */ = {
+			isa = PBXGroup;
+			children = (
+				21F382A21B84E98600E5700C /* FilterVC.swift */,
+				ACF988901B6AF69F0024C113 /* currentOrgArray.swift */,
+				F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */,
+				21E6068C1BAA5C7600093FB6 /* FavoritedOrganizations.swift */,
+				21F382AC1B8BA85200E5700C /* OrganizationDescriptionVC.swift */,
+				ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */,
+				ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */,
+				AC5536FB1B670D6B00C66C7D /* organization.swift */,
+			);
+			name = Organizations;
+			sourceTree = "<group>";
+		};
+		AC5851B91D0B6223002149AB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F746FB551BA8869600885476 /* MapImageVC.swift */,
+				21F5D02F1BA90D72006E1237 /* MapTVC.swift */,
+				AC366B831D09D3D400C29D80 /* mapMarker.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		AC5851BA1D0B6234002149AB /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */,
+				F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */,
+				F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */,
+				F7BA7C351BA9E39E005D036D /* Events.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		AC5851BB1D0B627A002149AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */,
+				21F5D0311BA915F5006E1237 /* location.swift */,
+				AC366B871D0B4D0300C29D80 /* dateHelpers.swift */,
+				21E4D1611BACFBE20006005E /* Constants.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		ACD00D461D0B6C9400E86D21 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				ACD00D481D0B6CC500E86D21 /* FAQVC.swift */,
+			);
+			name = FAQ;
+			sourceTree = "<group>";
+		};
+		ACD00D471D0B6CA600E86D21 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				ACD00D4A1D0B6CD300E86D21 /* TipsVC.swift */,
+			);
+			name = Tips;
+			sourceTree = "<group>";
+		};
+		ACD00D4E1D0B72B400E86D21 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */,
+			);
+			name = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,21 +386,28 @@
 				F7BA7C321BA9E2B5005D036D /* EventsTVC.swift in Sources */,
 				21F382A31B84E98600E5700C /* FilterVC.swift in Sources */,
 				ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */,
+				AC5851AF1D0B6015002149AB /* AnnouncementsTVC.swift in Sources */,
 				ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
+				AC5851B11D0B604F002149AB /* announcements.swift in Sources */,
 				AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */,
+				AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVCViewController.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */,
 				21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */,
+				ACD00D4B1D0B6CD300E86D21 /* TipsVC.swift in Sources */,
+				AC5851B31D0B61B8002149AB /* AnnouncmentsTableViewCell.swift in Sources */,
 				AC366B861D09DEF700C29D80 /* LoadingSplashVC.swift in Sources */,
 				21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */,
 				F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */,
+				ACD00D501D0B72F600E86D21 /* ToDoVC.swift in Sources */,
 				AC366B841D09D3D400C29D80 /* mapMarker.swift in Sources */,
 				F746FB561BA8869600885476 /* MapImageVC.swift in Sources */,
 				F7BA7C361BA9E39E005D036D /* Events.swift in Sources */,
 				F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */,
+				ACD00D491D0B6CC500E86D21 /* FAQVC.swift in Sources */,
 				F75E4C341BAB4EEE00080DEF /* MainCollectionViewHeader.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 				F7DDE5F41BAAFB5A00395C62 /* ErrorHandler.swift in Sources */,
