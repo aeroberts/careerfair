@@ -126,10 +126,10 @@ class testScrollViewController: UIViewController, UIScrollViewDelegate, UITextVi
         
         aboutContent = UITextView();
         aboutContent.scrollEnabled = false
-        aboutContent.text = "Another long temp text used in aboutNoteContent in order to test hte size and fot heisfjkls; and see how wrapping and scrolling works.  Here is more temp text!";
+        aboutContent.text = "Another long temp text used in aboutNoteContent in order to test hte size and fot heisfjkls; and see how wrapping and scrolling works.  Here is more temp text!  And now I'm just adding text to determine if the height of the textview will be reflected in the changed of the height of the text becuase thats what I'm tryna do";
         aboutContent.editable = false;
         aboutContent.font = UIFont.systemFontOfSize(14);
-        self.aboutHeight = 130;
+        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat(FLT_MAX)))).height
         self.aboutBottomContraint = 338 + aboutHeight;
         
         containerView.addSubview(aboutContent);

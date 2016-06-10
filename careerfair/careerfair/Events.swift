@@ -11,25 +11,28 @@ import Foundation
 var events = [Event]()
 
 class Event {
-    var date:String;
+    var date:NSDate;
     var location:String;
-    var time:String;
     var title:String;
     var information:String;
+    var interested:Bool;
+    var eventId:Int;
     
-    init(fromTitle title_in:String, date_in:String, location_in:String, time_in:String, information_in:String) {
+    init(fromTitle title_in:String, date_in:NSDate, location_in:String, information_in:String, interested_in:Bool, eventId_in:Int) {
         date = date_in;
         location = location_in;
-        time = time_in;
         title = title_in;
         information = information_in;
+        interested = interested_in;
+        eventId = eventId_in;
     }
     
     init() {
-        date = "";
+        date = NSDate();
         location = "";
-        time = "";
         title = "";
         information = "";
+        interested = false
+        eventId = -1;
     }
 }

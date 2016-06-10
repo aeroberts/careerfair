@@ -144,6 +144,8 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = org.title
+        
         favoriteFromDescCB.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
         favoriteFromDescCB.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Selected);
         favoriteFromDescCB.selected = org.favorited;
@@ -300,7 +302,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         viewOnMapButton.setTitle("View on Map", forState: UIControlState.Normal)
         viewOnMapButton.addTarget(self, action: #selector(touchViewOnMap), forControlEvents: .TouchDown)
         viewOnMapButton.setTitleColor(UIColor.init(red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0), forState: .Normal)
-        viewOnMapButton.titleLabel!.font = UIFont(name:"System - System", size: 13)
+        viewOnMapButton.titleLabel!.font = UIFont.systemFontOfSize(14)
         containerView.addSubview(viewOnMapButton)
         
         dateAndLocationHeader = UILabel();
@@ -354,7 +356,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         aboutContent.text = org.desc
         aboutContent.editable = false;
         aboutContent.font = UIFont.systemFontOfSize(14);
-        self.aboutHeight = 130;
+        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat(FLT_MAX)))).height
         self.aboutBottomContraint = 338 + aboutHeight;
         
         containerView.addSubview(aboutContent);

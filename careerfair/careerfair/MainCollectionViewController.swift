@@ -158,6 +158,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
     @IBAction func unwindToMainVC(segue:UIStoryboardSegue) {
+        print("Is this also called")
         isFiltered = false;
         self.collectionView?.collectionViewLayout.invalidateLayout();
     }

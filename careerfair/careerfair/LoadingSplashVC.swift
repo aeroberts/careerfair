@@ -46,6 +46,11 @@ class LoadingSplashVC: UIViewController {
         //}
         
         // Load event data into eventData
+        events.append(Event(fromTitle: "Resume Check Sesh", date_in: makeDate(28, month_in: 9, year_in: 2016, hour_in: 14, minute_in: 30), location_in: "Duderstadt", information_in: "Come get your resume checked by the ecrc", interested_in: false, eventId_in: 10))
+        events.append(Event(fromTitle: "Interviewing Prep Sesh", date_in: makeDate(29, month_in: 9, year_in: 2016, hour_in: 12, minute_in: 30), location_in: "ECRC", information_in: "Learn how to improve your interview skills in a mock interview", interested_in: false, eventId_in: 12))
+        events.append(Event(fromTitle: "Tech Talk X", date_in: makeDate(24, month_in: 9, year_in: 2016, hour_in: 15, minute_in: 00), location_in: "EECS", information_in: "Literally everyones favorite compnay is giving a tech talk.  Hosted by HKN.  Food will be involved.", interested_in: false, eventId_in: 3))
+        
+        events.sortInPlace({ $0.date.timeIntervalSinceReferenceDate < $1.date.timeIntervalSinceReferenceDate })
         
         // If all data is loaded, then transition
         print("ED Handled")

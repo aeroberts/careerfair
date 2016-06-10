@@ -37,19 +37,19 @@ class EventsTVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! EventsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as! EventsTableViewCell
 
         let row = indexPath.row
         let event = events[row]
         
         cell.eventTitleLabel.text = event.title
-        cell.eventDateLabel.text = event.date + ", " + event.location + ", " + event.time
+        cell.eventDateLabel.text = dateToString(event.date) + " - " + event.location
         
         return cell
     }
  
 
-    
+    @IBAction func unwindToEventsTVC(segue:UIStoryboardSegue) { }
     
     // MARK: - Navigation
 
