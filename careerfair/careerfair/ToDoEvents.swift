@@ -1,17 +1,17 @@
 //
-//  NotedOrganizations.swift
+//  ToDoEvents.swift
 //  careerfair
 //
-//  Created by Roberts, Alexander on 9/16/15.
-//  Copyright (c) 2015 AlexRobertsKatePanter. All rights reserved.
+//  Created by Alex Roberts on 8/16/16.
+//  Copyright © 2016 AlexRobertsKatePanter. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-@objc(ToDoEvents)
+
 class ToDoEvents: NSManagedObject {
-    
-    @NSManaged var orgId: NSNumber
-    
+
+// Insert code here to add functionality to your managed object subclass
+
 }

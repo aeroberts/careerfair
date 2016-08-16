@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
     var event:Event = Event();
@@ -28,10 +29,46 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
     @IBAction func touchToDo(sender: AnyObject) {
         if (!event.interested) {
             // Add to To-Do List
+            
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
+            
+            let newFavorite = NSEntityDescription.insertNewObjectForEntityForName("ToDoEvents", inManagedObjectContext: context) ;
+            newFavorite.setValue(event.eventId, forKey: "eventId");
+            do {
+                try context.save()
+                print("context saved");
+            } catch _ {
+            };
+            
+            if (toDoEvents.contains(event.eventId)) {
+                print("ERROR, INSERTING ORG ID INTO FAVORITED THAT ALREADY EXISTS");
+            }
+            toDoEvents.insert(event.eventId);
+            
             sender.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);
         }
         else {
             // Remove from To-Do List
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+            let context:NSManagedObjectContext = appDel.managedObjectContext!;
+            let pred = NSPredicate(format: "eventId == " + String(event.eventId));
+            let fetchRequest = NSFetchRequest(entityName: "ToDoEvents");
+            fetchRequest.predicate = pred;
+            
+            let results = (try? context.executeFetchRequest(fetchRequest)) as? [ToDoEvents];
+            context.deleteObject(results!.first!);
+            do {
+                try context.save()
+            } catch _ {
+            };
+            
+            //Remove from list of favorites
+            if (!toDoEvents.contains(event.eventId)) {
+                print("ERROR, REMOVING ORG FROM FAVORITED THAT DOESN'T EXIST");
+            }
+            toDoEvents.remove(event.eventId);
+            
             sender.setImage(UIImage(named: "heartunfaved"), forState: UIControlState.Normal);
         }
         

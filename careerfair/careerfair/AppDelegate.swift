@@ -26,43 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         orgData[2]=(organization(fromTitle: "Hewlett-Packard", desc_in: "Best", note_in: "", favorited_in: false, date_in: "Tuesday September 29th", location_in: "GG Brown", booth_in: 1, jobLoc_in: "Midwest, Northeast", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[3]=(organization(fromTitle: "Dow Company", desc_in: "In", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "Dow", booth_in: 8, jobLoc_in: "Midwest, Southwest, Northwest", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
         orgData[100]=(organization(fromTitle: "RetailMeNot", desc_in: "A cool company", note_in: "", favorited_in: false, date_in: "Monday September 28th", location_in: "BBB", booth_in: 2, jobLoc_in: "West Coast", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
-        orgData[4]=(organization(fromTitle: "Fitbit", desc_in: "A fitness compnay located in San Francisco", note_in: "", favorited_in: true, date_in: "Monday September 28th", location_in: "Dow", booth_in: 4, jobLoc_in: "Midwest, Southwest, Northwest", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));
-        
-        
-        
-        // Load favorited/noted from memory
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-        let context:NSManagedObjectContext = appDel.managedObjectContext!;
-        let error : NSError? = nil;
-        
-        loadFavorited(appDel, context: context, err: error);
-        loadNoted(appDel, context: context, err: error);
-        loadEvents(appDel, context: context, err: error);
+        orgData[4]=(organization(fromTitle: "Fitbit", desc_in: "A fitness compnay located in San Francisco", note_in: "", favorited_in: true, date_in: "Monday September 28th", location_in: "Dow", booth_in: 4, jobLoc_in: "Midwest, Southwest, Northwest", attendingRec_in: true, internshipC_in: false, fulltimeC_in: true, coopC_in: true, bachelorsC_in: true, mastersC_in: true, doctoralC_in: false, sponsorYesC_in: false, sponsorNoC_in: true, sponsorOnOccasionC_in: true, majorC_in: [1,2,3,4,5,6,7,8,9]));        
 
-        
-        // Insert favorited and noted orgs (could be done above and would be faster)
-        for org in orgData {
-            if (org.1.favorited) {
-                favoritedOrgs.insert(org.0);
-            }
-            if (org.1.note.isEmpty == false) {
-                notedOrgs.insert(org.0);
-            }
-        }
-        
-        // Check all orgId's within noted/favorited are valid
-        for orgId in favoritedOrgs {
-            if (orgData[orgId] == nil) {
-                favoritedOrgs.remove(orgId);
-            }
-        }
-        
-        for orgId in notedOrgs {
-            if (orgData[orgId] == nil) {
-                notedOrgs.remove(orgId);
-            }
-        }
-        
         return true;
     }
 
@@ -163,83 +128,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func loadFavorited(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
-        
-        let favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
-        favoriteRequest.returnsObjectsAsFaults = false;
-        
-        let favoritedResults: [FavoritedOrganizations];
-        do {
-            favoritedResults = try context.executeFetchRequest(favoriteRequest) as! [FavoritedOrganizations];
-            for result:NSManagedObject in favoritedResults {
-                let orgId = result.valueForKey("orgId") as! Int;
-                if (orgData[orgId] != nil) {
-                    orgData[orgId]?.favorited = true;
-                }
-            }
-        }
-        catch _ {
-            handleError("AppDelegate favoritedResults fetchRequest", error: err!);
-        }
-    }
-    
-    func loadNoted(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
-        let notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
-        notedRequest.returnsObjectsAsFaults = false;
-        
-        let notedResults: [NotedOrganizations];
-        do {
-            notedResults = try context.executeFetchRequest(notedRequest) as! [NotedOrganizations];
-            for result:NSManagedObject in notedResults {
-                let orgId = result.valueForKey("orgId") as! Int;
-                if (orgData[orgId] != nil) {
-                    orgData[orgId]?.note = result.valueForKey("note") as! String;
-                }
-            }
-        }
-        catch _ {
-            handleError("AppDelegate notedResults fetchRequest", error: err!);
-            
-        }
-
-    }
-    
-    func loadEvents(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
-        let eventRequest = NSFetchRequest(entityName: "ToDoEvents");
-        eventRequest.returnsObjectsAsFaults = false;
-        
-        let eventResults: [ToDoEvents];
-        do {
-            eventResults = try context.executeFetchRequest(eventRequest) as! [ToDoEvents];
-            for result:NSManagedObject in eventResults {
-                let eventId = result.valueForKey("eventId") as! Int;
-                if (eventIdsToPosition[eventId] != nil) {
-                    events[eventIdsToPosition[eventId]!].interested = true;
-                }
-                else {
-                    
-                    let pred = NSPredicate(format: "eventId == " + String());
-                    let fetchRequest = NSFetchRequest(entityName: "Events");
-                    fetchRequest.predicate = pred;
-                    
-                    let results = (try? context.executeFetchRequest(fetchRequest)) as? [ToDoEvents];
-                    context.deleteObject(results!.first!);
-                    do {
-                        try context.save()
-                    } catch _ {
-                    };
-                    //Keep for 'touch todo'
-                    //favoritedOrgs.remove(orgId);
-                    
-                }
-            }
-        }
-        catch _ {
-            handleError("AppDelegate notedResults fetchRequest", error: err!);
-            
-        }
-        
-        
-    }
-}
+   }
 

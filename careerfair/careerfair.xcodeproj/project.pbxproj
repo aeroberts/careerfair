@@ -37,6 +37,9 @@
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
 		F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
+		F74D308B1D636E94009CC0D4 /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
+		F74D308E1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */; };
+		F74D308F1D6370A1009CC0D4 /* ToDoEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */; };
 		F75E4C321BAB3E2B00080DEF /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C311BAB3E2B00080DEF /* navigationController.swift */; };
 		F75E4C341BAB4EEE00080DEF /* MainCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */; };
 		F7BA7C321BA9E2B5005D036D /* EventsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */; };
@@ -92,6 +95,8 @@
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testScrollViewController.swift; path = ../testScrollViewController.swift; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
+		F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoEvents+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEvents.swift; sourceTree = "<group>"; };
 		F75E4C311BAB3E2B00080DEF /* navigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
 		F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewHeader.swift; sourceTree = "<group>"; };
 		F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTVC.swift; sourceTree = "<group>"; };
@@ -241,6 +246,8 @@
 				F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */,
 				F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */,
 				F7BA7C351BA9E39E005D036D /* Events.swift */,
+				F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */,
+				F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -387,6 +394,7 @@
 				21F382A31B84E98600E5700C /* FilterVC.swift in Sources */,
 				ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */,
 				AC5851AF1D0B6015002149AB /* AnnouncementsTVC.swift in Sources */,
+				F74D308E1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift in Sources */,
 				ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC5851B11D0B604F002149AB /* announcements.swift in Sources */,
@@ -399,6 +407,7 @@
 				21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */,
 				ACD00D4B1D0B6CD300E86D21 /* TipsVC.swift in Sources */,
 				AC5851B31D0B61B8002149AB /* AnnouncmentsTableViewCell.swift in Sources */,
+				F74D308F1D6370A1009CC0D4 /* ToDoEvents.swift in Sources */,
 				AC366B861D09DEF700C29D80 /* LoadingSplashVC.swift in Sources */,
 				21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */,
 				F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */,
@@ -423,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74D308B1D636E94009CC0D4 /* EventsDescriptionVC.swift in Sources */,
 				AC0310341B5C26B900554DD2 /* careerfairTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

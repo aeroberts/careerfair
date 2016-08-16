@@ -10,6 +10,8 @@ import Foundation
 
 var eventIdsToPosition = [Int:Int]()
 var events = [Event]()
+var toDoEvents = Set<Int>();
+
 
 class Event {
     var date:NSDate;

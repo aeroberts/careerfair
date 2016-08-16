@@ -144,7 +144,7 @@ class OrganizationsTableViewController: UITableViewController {
             //Remove from core data
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
             let context:NSManagedObjectContext = appDel.managedObjectContext!;
-            var error : NSError?
+            let error : NSError? = nil;
 
             let pred = NSPredicate(format: "orgId == " + String(orgId));
             let fetchRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
@@ -156,7 +156,7 @@ class OrganizationsTableViewController: UITableViewController {
                 results = try context.executeFetchRequest(fetchRequest) as! [FavoritedOrganizations];
             }
             catch _ {
-                handleError("OrgTVC touchFavorite Remove From Core Data", error: &error);
+                handleError("OrgTVC touchFavorite Remove From Core Data", error: error!);
                 return;
             }
 

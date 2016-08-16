@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
     <entity name="FavoritedOrganizations" representedClassName="FavoritedOrganizations" syncable="YES">
         <attribute name="orgId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
@@ -7,8 +7,12 @@
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orgId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="ToDoEvents" representedClassName=".ToDoEvents" syncable="YES">
+        <attribute name="eventId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="FavoritedOrganizations" positionX="-36" positionY="9" width="128" height="60"/>
         <element name="NotedOrganizations" positionX="0" positionY="45" width="128" height="75"/>
+        <element name="ToDoEvents" positionX="0" positionY="63" width="128" height="60"/>
     </elements>
 </model>

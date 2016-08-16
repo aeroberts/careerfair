@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum JSONError: String, ErrorType {
     case NoData = "ERROR: no data"
@@ -34,6 +35,35 @@ class LoadingSplashVC: UIViewController {
         
         // Load org data into orgData
     
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        let context:NSManagedObjectContext = appDel.managedObjectContext!;
+        let error : NSError? = nil;
+        loadFavorited(appDel, context: context, err: error);
+        loadNoted(appDel, context: context, err: error);
+        
+        // Insert favorited and noted orgs (could be done above and would be faster)
+        for org in orgData {
+            if (org.1.favorited) {
+                favoritedOrgs.insert(org.0);
+            }
+            if (org.1.note.isEmpty == false) {
+                notedOrgs.insert(org.0);
+            }
+        }
+        
+        // Check all orgId's within noted/favorited are valid
+        for orgId in favoritedOrgs {
+            if (orgData[orgId] == nil) {
+                favoritedOrgs.remove(orgId);
+            }
+        }
+        
+        for orgId in notedOrgs {
+            if (orgData[orgId] == nil) {
+                notedOrgs.remove(orgId);
+            }
+        }
+
         // If all data is loaded, then transition
         orgDataHandled = true
         attemptTransition()
@@ -56,6 +86,13 @@ class LoadingSplashVC: UIViewController {
             eventIdsToPosition[event.eventId] = pos;
             pos += 1;
         }
+        
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        let context:NSManagedObjectContext = appDel.managedObjectContext!;
+        let error : NSError? = nil;
+        loadEvents(appDel, context: context, err: error);
+
+        
         
         // If all data is loaded, then transition
         eventDataHandled = true
@@ -125,4 +162,82 @@ class LoadingSplashVC: UIViewController {
         // Pass the selected object to the new view controller.
         
     }
+    
+    func loadFavorited(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        
+        let favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+        favoriteRequest.returnsObjectsAsFaults = false;
+        
+        let favoritedResults: [FavoritedOrganizations];
+        do {
+            favoritedResults = try context.executeFetchRequest(favoriteRequest) as! [FavoritedOrganizations];
+            for result:NSManagedObject in favoritedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.favorited = true;
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate favoritedResults fetchRequest", error: err!);
+        }
+    }
+    
+    func loadNoted(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        let notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
+        notedRequest.returnsObjectsAsFaults = false;
+        
+        let notedResults: [NotedOrganizations];
+        do {
+            notedResults = try context.executeFetchRequest(notedRequest) as! [NotedOrganizations];
+            for result:NSManagedObject in notedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.note = result.valueForKey("note") as! String;
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate notedResults fetchRequest", error: err!);
+            
+        }
+        
+    }
+    
+    func loadEvents(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        let eventRequest = NSFetchRequest(entityName: "ToDoEvents");
+        eventRequest.returnsObjectsAsFaults = false;
+        
+        let eventResults: [ToDoEvents];
+        do {
+            eventResults = try context.executeFetchRequest(eventRequest) as! [ToDoEvents];
+            for result:NSManagedObject in eventResults {
+                let eventId = result.valueForKey("eventId") as! Int;
+                if (eventIdsToPosition[eventId] != nil) {
+                    events[eventIdsToPosition[eventId]!].interested = true;
+                }
+                else {
+                    
+                    let pred = NSPredicate(format: "eventId == " + String(eventId));
+                    let fetchRequest = NSFetchRequest(entityName: "ToDoEvents");
+                    fetchRequest.predicate = pred;
+                    
+                    let results = (try? context.executeFetchRequest(fetchRequest)) as? [ToDoEvents];
+                    context.deleteObject(results!.first!);
+                    do {
+                        try context.save()
+                    } catch _ {
+                    };
+                    
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate notedResults fetchRequest", error: err!);
+            
+        }
+        
+        
+    }
+
 }
