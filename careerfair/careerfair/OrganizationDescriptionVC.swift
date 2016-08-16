@@ -228,7 +228,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
                     // Delete from core data
                     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
                     let context:NSManagedObjectContext = appDel.managedObjectContext!;
-                    var error : NSError?
+                    let error : NSError? = nil;
                     
                     let pred = NSPredicate(format: "orgId == " + String(orgId));
                     let fetchRequest = NSFetchRequest(entityName: "NotedOrganizations");
@@ -240,7 +240,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
                         results = try context.executeFetchRequest(fetchRequest) as! [NotedOrganizations];
                     }
                     catch _ {
-                        handleError("OrgDescVC willDisappear Delete from CD", error: &error);
+                        handleError("OrgDescVC willDisappear Delete from CD", error: error!);
                         return;
                     }
                     
@@ -259,7 +259,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
                     // Write to core data
                     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
                     let context:NSManagedObjectContext = appDel.managedObjectContext!;
-                    var error : NSError?
+                    let error : NSError? = nil;
 
                     // Check if org already exists in core data
                     let pred = NSPredicate(format: "orgId == " + String(orgId));
@@ -271,7 +271,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
                         results = try context.executeFetchRequest(fetchRequest) as! [NotedOrganizations];
                     }
                     catch _ {
-                        handleError("OrgDescVC willDissappear Check if already exists", error: &error);
+                        handleError("OrgDescVC willDissappear Check if already exists", error: error!);
                         return;
                     }
                     

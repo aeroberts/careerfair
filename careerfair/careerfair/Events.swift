@@ -8,6 +8,7 @@
 
 import Foundation
 
+var eventIdsToPosition = [Int:Int]()
 var events = [Event]()
 
 class Event {

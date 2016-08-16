@@ -51,6 +51,12 @@ class LoadingSplashVC: UIViewController {
         
         events.sortInPlace({ $0.date.timeIntervalSinceReferenceDate < $1.date.timeIntervalSinceReferenceDate })
         
+        var pos = 0;
+        for event in events {
+            eventIdsToPosition[event.eventId] = pos;
+            pos += 1;
+        }
+        
         // If all data is loaded, then transition
         eventDataHandled = true
         attemptTransition()

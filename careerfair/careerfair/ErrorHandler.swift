@@ -8,7 +8,7 @@
 
 import Foundation
 
-func handleError(details:String, error:NSErrorPointer) {
+func handleError(details:String, error:NSError) {
     print("Error: " + error.debugDescription);
     print("Details: " + details);
     return;

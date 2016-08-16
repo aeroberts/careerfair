@@ -33,47 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load favorited/noted from memory
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
         let context:NSManagedObjectContext = appDel.managedObjectContext!;
-        var error : NSError?
+        let error : NSError? = nil;
         
-        let favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
-        favoriteRequest.returnsObjectsAsFaults = false;
-        
-        let favoritedResults: [FavoritedOrganizations];
-        do {
-            favoritedResults = try context.executeFetchRequest(favoriteRequest) as! [FavoritedOrganizations];
-            for result:NSManagedObject in favoritedResults {
-                let orgId = result.valueForKey("orgId") as! Int;
-                if (orgData[orgId] != nil) {
-                    orgData[orgId]?.favorited = true;
-                }
-            }
-        }
-        catch _ {
-            handleError("AppDelegate favoritedResults fetchRequest", error: &error);
-        }
+        loadFavorited(appDel, context: context, err: error);
+        loadNoted(appDel, context: context, err: error);
+        loadEvents(appDel, context: context, err: error);
 
-        
-        // Set up noted request
-        let notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
-        notedRequest.returnsObjectsAsFaults = false;
-        
-        let notedResults: [NotedOrganizations];
-        do {
-            notedResults = try context.executeFetchRequest(notedRequest) as! [NotedOrganizations];
-            for result:NSManagedObject in notedResults {
-                let orgId = result.valueForKey("orgId") as! Int;
-                if (orgData[orgId] != nil) {
-                    orgData[orgId]?.note = result.valueForKey("note") as! String;
-                }
-            }
-        }
-        catch _ {
-            handleError("AppDelegate notedResults fetchRequest", error: &error);
-            
-        }
-        
-        
-        
         
         // Insert favorited and noted orgs (could be done above and would be faster)
         for org in orgData {
@@ -198,5 +163,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func loadFavorited(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        
+        let favoriteRequest = NSFetchRequest(entityName: "FavoritedOrganizations");
+        favoriteRequest.returnsObjectsAsFaults = false;
+        
+        let favoritedResults: [FavoritedOrganizations];
+        do {
+            favoritedResults = try context.executeFetchRequest(favoriteRequest) as! [FavoritedOrganizations];
+            for result:NSManagedObject in favoritedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.favorited = true;
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate favoritedResults fetchRequest", error: err!);
+        }
+    }
+    
+    func loadNoted(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        let notedRequest = NSFetchRequest(entityName: "NotedOrganizations");
+        notedRequest.returnsObjectsAsFaults = false;
+        
+        let notedResults: [NotedOrganizations];
+        do {
+            notedResults = try context.executeFetchRequest(notedRequest) as! [NotedOrganizations];
+            for result:NSManagedObject in notedResults {
+                let orgId = result.valueForKey("orgId") as! Int;
+                if (orgData[orgId] != nil) {
+                    orgData[orgId]?.note = result.valueForKey("note") as! String;
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate notedResults fetchRequest", error: err!);
+            
+        }
+
+    }
+    
+    func loadEvents(appDel:AppDelegate, context:NSManagedObjectContext, err:NSError?) {
+        let eventRequest = NSFetchRequest(entityName: "ToDoEvents");
+        eventRequest.returnsObjectsAsFaults = false;
+        
+        let eventResults: [ToDoEvents];
+        do {
+            eventResults = try context.executeFetchRequest(eventRequest) as! [ToDoEvents];
+            for result:NSManagedObject in eventResults {
+                let eventId = result.valueForKey("eventId") as! Int;
+                if (eventIdsToPosition[eventId] != nil) {
+                    events[eventIdsToPosition[eventId]!].interested = true;
+                }
+                else {
+                    
+                    let pred = NSPredicate(format: "eventId == " + String());
+                    let fetchRequest = NSFetchRequest(entityName: "Events");
+                    fetchRequest.predicate = pred;
+                    
+                    let results = (try? context.executeFetchRequest(fetchRequest)) as? [ToDoEvents];
+                    context.deleteObject(results!.first!);
+                    do {
+                        try context.save()
+                    } catch _ {
+                    };
+                    //Keep for 'touch todo'
+                    //favoritedOrgs.remove(orgId);
+                    
+                }
+            }
+        }
+        catch _ {
+            handleError("AppDelegate notedResults fetchRequest", error: err!);
+            
+        }
+        
+        
+    }
 }
 
