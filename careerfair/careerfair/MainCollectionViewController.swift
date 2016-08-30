@@ -83,6 +83,65 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             }
             orgNameToIdList.sortInPlace({ $0.orgName < $1.orgName });
         }
+        else if (segue.identifier == "navigationTileToToDo") {
+            toDoItems.removeAll(keepCapacity: true);
+            for orgId in favoritedOrgs {
+                toDoItems.append(ToDoItem(fromOrg: orgData[orgId]!));
+            }
+            
+            for eventId in toDoEvents {
+                toDoItems.append(ToDoItem(fromEvent: events[eventIdsToPosition[eventId]!]));
+            }
+            
+            // Sort
+            toDoItems.sortInPlace({ $0.startDate.timeIntervalSinceReferenceDate < $1.startDate.timeIntervalSinceReferenceDate })
+
+            // Determine number of different dates
+            var displayDates = [String]();
+            var numItemsForDate = [Int]();
+            var sectionTotals = [Int]();
+            
+            sectionTotals.append(0);
+            
+            let dateFormatter = NSDateFormatter();
+            dateFormatter.dateFormat = "EEEE, MMM dd";
+            
+            
+            var currentDay = -1;
+            var numDays = 0;
+            let calendar = NSCalendar.currentCalendar()
+            
+            // Every time we see a new date we append a 1 to the end of numItemsForDate
+            // Every time we see a repeat date we increment the end of numItemsForDate
+            
+            
+            for elt in toDoItems {
+                let components = calendar.components([.Day], fromDate: elt.startDate);
+                print(components.day);
+                if (components.day != currentDay) {
+                    displayDates.append(dateFormatter.stringFromDate(elt.startDate));
+                    numDays += 1;
+                    currentDay = components.day;
+                    numItemsForDate.append(1);
+                    sectionTotals.append(numDays);
+                }
+                else {
+                    numItemsForDate[numItemsForDate.count-1] += 1;
+                }
+            }
+            
+            print(displayDates);
+            print(numItemsForDate);
+            
+            // pass numDays to ToDoTVC
+            let navController = segue.destinationViewController as! templateNavController;
+            let destinationVC = navController.viewControllers.first as! ToDoTVC;
+            destinationVC.numDays = numDays;
+            destinationVC.numItemsOnDate = numItemsForDate;
+            destinationVC.displayDates = displayDates;
+            destinationVC.toDoItems = toDoItems;
+            destinationVC.sectionTotals = sectionTotals;
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -103,34 +162,43 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
         cell.backgroundColor = UIColor.lightGrayColor();
         
         // Configure the cell
-        cell.imageView.image = UIImage(named: "cat.png");
+        cell.imageView.image = UIImage(named: "Test2");
         
         switch (indexPath.row) {
-            case 0:
+            case 0: // Organizations
+                cell.imageView.image = UIImage(named: "cat.png");
                 cell.tileLabel.text = "Organizations"
                 break;
-            case 1:
+            case 1: // Map
+                cell.imageView.image = UIImage(named: "icon-announcements.jpg");
                 cell.tileLabel.text = "Map"
                 break;
-            case 2:
+            case 2: // Favorited
+                cell.imageView.image = UIImage(named: "heartfaved.png");
                 cell.tileLabel.text = "Favorited"
                 break;
-            case 3:
+            case 3: // Notes
+                cell.imageView.image = UIImage(named: "icon-notes.png");
                 cell.tileLabel.text = "Noted"
                 break;
-            case 4:
+            case 4: // ToDo list
+                cell.imageView.image = UIImage(named: "Test2");
                 cell.tileLabel.text = "To-do List"
                 break;
-            case 5:
+            case 5: // Events
+                cell.imageView.image = UIImage(named: "Test2");
                 cell.tileLabel.text = "Events"
                 break;
-            case 6:
+            case 6: // Announcements
+                cell.imageView.image = UIImage(named: "Test2");
                 cell.tileLabel.text = "Announcements"
                 break;
-            case 7:
+            case 7: // Tips
+                cell.imageView.image = UIImage(named: "Test2");
                 cell.tileLabel.text = "Career Fair Tips"
                 break;
-            case 8:
+            case 8: // General Info
+                cell.imageView.image = UIImage(named: "Test2");
                 cell.tileLabel.text = "General Info"
                 break;
             default:
@@ -144,7 +212,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             headerView.backgroundColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
 
             headerView.titleLabel.textColor = UIColor.whiteColor();
-            headerView.titleLabel.text = "SWE / TBP Career Fair 2015";
+            headerView.titleLabel.text = "SWE / TBP Career Fair 2016";
         
         return headerView;
     }

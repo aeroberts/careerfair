@@ -14,15 +14,17 @@ var toDoEvents = Set<Int>();
 
 
 class Event {
-    var date:NSDate;
+    var startTime:NSDate;
+    var endTime:NSDate;
     var location:String;
     var title:String;
     var information:String;
     var interested:Bool;
     var eventId:Int;
     
-    init(fromTitle title_in:String, date_in:NSDate, location_in:String, information_in:String, interested_in:Bool, eventId_in:Int) {
-        date = date_in;
+    init(fromTitle title_in:String, date_in:NSDate, end_in:NSDate, location_in:String, information_in:String, interested_in:Bool, eventId_in:Int) {
+        startTime = date_in;
+        endTime = end_in;
         location = location_in;
         title = title_in;
         information = information_in;
@@ -31,7 +33,8 @@ class Event {
     }
     
     init() {
-        date = NSDate();
+        startTime = NSDate();
+        endTime = NSDate();
         location = "";
         title = "";
         information = "";

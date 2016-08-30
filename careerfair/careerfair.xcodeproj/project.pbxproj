@@ -16,7 +16,6 @@
 		AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03101A1B5C26B800554DD2 /* AppDelegate.swift */; };
 		AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */; };
 		AC0310231B5C26B800554DD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0310211B5C26B800554DD2 /* Main.storyboard */; };
-		AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0310241B5C26B800554DD2 /* Images.xcassets */; };
 		AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0310261B5C26B800554DD2 /* LaunchScreen.xib */; };
 		AC0310341B5C26B900554DD2 /* careerfairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0310331B5C26B900554DD2 /* careerfairTests.swift */; };
 		AC366B841D09D3D400C29D80 /* mapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC366B831D09D3D400C29D80 /* mapMarker.swift */; };
@@ -31,17 +30,23 @@
 		AC9D7FF31B5F39AB0049107F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */; };
 		ACD00D491D0B6CC500E86D21 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D481D0B6CC500E86D21 /* FAQVC.swift */; };
 		ACD00D4B1D0B6CD300E86D21 /* TipsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D4A1D0B6CD300E86D21 /* TipsVC.swift */; };
-		ACD00D501D0B72F600E86D21 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */; };
 		ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988901B6AF69F0024C113 /* currentOrgArray.swift */; };
 		ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */; };
 		ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */; };
 		F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */; };
+		F7466B331D6F32C500657EEE /* tips.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7466B321D6F32C500657EEE /* tips.txt */; };
+		F7466B351D6F354500657EEE /* faq.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7466B341D6F354500657EEE /* faq.txt */; };
+		F7466B371D6F481D00657EEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7466B361D6F481D00657EEE /* Images.xcassets */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
 		F74D308B1D636E94009CC0D4 /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
 		F74D308E1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */; };
 		F74D308F1D6370A1009CC0D4 /* ToDoEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */; };
-		F75E4C321BAB3E2B00080DEF /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C311BAB3E2B00080DEF /* navigationController.swift */; };
+		F74D30911D64B56C009CC0D4 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D30901D64B56C009CC0D4 /* ToDoItem.swift */; };
+		F75E4C321BAB3E2B00080DEF /* templateNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C311BAB3E2B00080DEF /* templateNavController.swift */; };
 		F75E4C341BAB4EEE00080DEF /* MainCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */; };
+		F76117DC1D6E02DC00571BB6 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76117DB1D6E02DC00571BB6 /* ToDoCell.swift */; };
+		F7B869951D667E1800F2C484 /* ToDoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B869941D667E1800F2C484 /* ToDoTVC.swift */; };
+		F7B869971D66898600F2C484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0310211B5C26B800554DD2 /* Main.storyboard */; };
 		F7BA7C321BA9E2B5005D036D /* EventsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */; };
 		F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */; };
 		F7BA7C361BA9E39E005D036D /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C351BA9E39E005D036D /* Events.swift */; };
@@ -72,7 +77,6 @@
 		AC03101A1B5C26B800554DD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC03101D1B5C26B800554DD2 /* careerfair.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = careerfair.xcdatamodel; sourceTree = "<group>"; };
 		AC0310221B5C26B800554DD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC0310241B5C26B800554DD2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC0310271B5C26B800554DD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AC03102D1B5C26B900554DD2 /* careerfairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = careerfairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0310321B5C26B900554DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,16 +93,21 @@
 		AC9D7FF21B5F39AB0049107F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACD00D481D0B6CC500E86D21 /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
 		ACD00D4A1D0B6CD300E86D21 /* TipsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsVC.swift; sourceTree = "<group>"; };
-		ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
 		ACF988901B6AF69F0024C113 /* currentOrgArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrgArray.swift; sourceTree = "<group>"; };
 		ACF988961B6AF7DD0024C113 /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrganizationsTableViewController.swift; path = ../OrganizationsTableViewController.swift; sourceTree = "<group>"; };
 		ACF9889E1B6D689E0024C113 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testScrollViewController.swift; path = ../testScrollViewController.swift; sourceTree = "<group>"; };
+		F7466B321D6F32C500657EEE /* tips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tips.txt; sourceTree = "<group>"; };
+		F7466B341D6F354500657EEE /* faq.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = faq.txt; sourceTree = "<group>"; };
+		F7466B361D6F481D00657EEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
 		F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoEvents+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEvents.swift; sourceTree = "<group>"; };
-		F75E4C311BAB3E2B00080DEF /* navigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
+		F74D30901D64B56C009CC0D4 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		F75E4C311BAB3E2B00080DEF /* templateNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = templateNavController.swift; sourceTree = "<group>"; };
 		F75E4C331BAB4EEE00080DEF /* MainCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewHeader.swift; sourceTree = "<group>"; };
+		F76117DB1D6E02DC00571BB6 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		F7B869941D667E1800F2C484 /* ToDoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTVC.swift; sourceTree = "<group>"; };
 		F7BA7C311BA9E2B5005D036D /* EventsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTVC.swift; sourceTree = "<group>"; };
 		F7BA7C331BA9E312005D036D /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		F7BA7C351BA9E39E005D036D /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -149,7 +158,7 @@
 				AC03101A1B5C26B800554DD2 /* AppDelegate.swift */,
 				F7DDE5F31BAAFB5A00395C62 /* ErrorHandler.swift */,
 				AC366B851D09DEF700C29D80 /* LoadingSplashVC.swift */,
-				F75E4C311BAB3E2B00080DEF /* navigationController.swift */,
+				F75E4C311BAB3E2B00080DEF /* templateNavController.swift */,
 				AC0310211B5C26B800554DD2 /* Main.storyboard */,
 				AC5851B71D0B61F7002149AB /* MainCollection */,
 				AC5851B81D0B6211002149AB /* Organizations */,
@@ -160,11 +169,13 @@
 				AC5851BB1D0B627A002149AB /* Helpers */,
 				ACD00D471D0B6CA600E86D21 /* Tips */,
 				ACD00D461D0B6C9400E86D21 /* FAQ */,
-				AC0310241B5C26B800554DD2 /* Images.xcassets */,
+				F7466B361D6F481D00657EEE /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC0310191B5C26B800554DD2 /* Info.plist */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
 				AC0310181B5C26B800554DD2 /* Supporting Files */,
+				F7466B321D6F32C500657EEE /* tips.txt */,
+				F7466B341D6F354500657EEE /* faq.txt */,
 			);
 			path = careerfair;
 			sourceTree = "<group>";
@@ -282,7 +293,9 @@
 		ACD00D4E1D0B72B400E86D21 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				ACD00D4F1D0B72F600E86D21 /* ToDoVC.swift */,
+				F74D30901D64B56C009CC0D4 /* ToDoItem.swift */,
+				F7B869941D667E1800F2C484 /* ToDoTVC.swift */,
+				F76117DB1D6E02DC00571BB6 /* ToDoCell.swift */,
 			);
 			name = ToDo;
 			sourceTree = "<group>";
@@ -370,8 +383,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0310231B5C26B800554DD2 /* Main.storyboard in Resources */,
+				F7466B371D6F481D00657EEE /* Images.xcassets in Resources */,
 				AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */,
-				AC0310251B5C26B800554DD2 /* Images.xcassets in Resources */,
+				F7466B351D6F354500657EEE /* faq.txt in Resources */,
+				F7466B331D6F32C500657EEE /* tips.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B869971D66898600F2C484 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,12 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74D30911D64B56C009CC0D4 /* ToDoItem.swift in Sources */,
 				21F5D0321BA915F5006E1237 /* location.swift in Sources */,
 				F7BA7C321BA9E2B5005D036D /* EventsTVC.swift in Sources */,
 				21F382A31B84E98600E5700C /* FilterVC.swift in Sources */,
 				ACF988971B6AF7DD0024C113 /* OrganizationsTableViewController.swift in Sources */,
 				AC5851AF1D0B6015002149AB /* AnnouncementsTVC.swift in Sources */,
 				F74D308E1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift in Sources */,
+				F76117DC1D6E02DC00571BB6 /* ToDoCell.swift in Sources */,
 				ACF9889F1B6D689E0024C113 /* OrganizationTableViewCell.swift in Sources */,
 				AC9D7FF11B5F07CB0049107F /* MainCollectionViewController.swift in Sources */,
 				AC5851B11D0B604F002149AB /* announcements.swift in Sources */,
@@ -402,6 +420,7 @@
 				AC5851B51D0B61D6002149AB /* AnnouncementsDescriptionVC.swift in Sources */,
 				AC03101B1B5C26B800554DD2 /* AppDelegate.swift in Sources */,
 				F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */,
+				F7B869951D667E1800F2C484 /* ToDoTVC.swift in Sources */,
 				21E6068D1BAA5C7600093FB6 /* FavoritedOrganizations.swift in Sources */,
 				AC5536FC1B670D6B00C66C7D /* organization.swift in Sources */,
 				21F5D0301BA90D72006E1237 /* MapTVC.swift in Sources */,
@@ -411,7 +430,6 @@
 				AC366B861D09DEF700C29D80 /* LoadingSplashVC.swift in Sources */,
 				21F382AD1B8BA85200E5700C /* OrganizationDescriptionVC.swift in Sources */,
 				F7BA7C341BA9E312005D036D /* EventsTableViewCell.swift in Sources */,
-				ACD00D501D0B72F600E86D21 /* ToDoVC.swift in Sources */,
 				AC366B841D09D3D400C29D80 /* mapMarker.swift in Sources */,
 				F746FB561BA8869600885476 /* MapImageVC.swift in Sources */,
 				F7BA7C361BA9E39E005D036D /* Events.swift in Sources */,
@@ -420,7 +438,7 @@
 				F75E4C341BAB4EEE00080DEF /* MainCollectionViewHeader.swift in Sources */,
 				AC03101E1B5C26B800554DD2 /* careerfair.xcdatamodeld in Sources */,
 				F7DDE5F41BAAFB5A00395C62 /* ErrorHandler.swift in Sources */,
-				F75E4C321BAB3E2B00080DEF /* navigationController.swift in Sources */,
+				F75E4C321BAB3E2B00080DEF /* templateNavController.swift in Sources */,
 				F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */,
 				AC366B881D0B4D0300C29D80 /* dateHelpers.swift in Sources */,
 				ACF988911B6AF69F0024C113 /* currentOrgArray.swift in Sources */,

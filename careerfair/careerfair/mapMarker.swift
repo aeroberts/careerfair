@@ -24,32 +24,23 @@ class mapMarker {
 func getMapMarkerArray(location_in:mapLocations) -> [mapMarker] {
     switch(location_in) {
         case mapLocations.BBB:
-            return mapMarkersBbb
-            break;
+            return mapMarkersBbb;
         case mapLocations.dow:
-            return mapMarkersDow
-            break;
+            return mapMarkersDow;
         case mapLocations.dude:
-            return mapMarkersDude
-            break;
+            return mapMarkersDude;
         case mapLocations.dudeConnector:
-            return mapMarkersDudeConnector
-            break;
+            return mapMarkersDudeConnector;
         case mapLocations.eecs:
-            return mapMarkersEecs
-            break;
+            return mapMarkersEecs;
         case mapLocations.fxb:
-            return mapMarkersFxb
-            break;
+            return mapMarkersFxb;
         case mapLocations.ggBrown:
-            return mapMarkersGGbrown
-            break;
+            return mapMarkersGGbrown;
         case mapLocations.pierpont:
-            return mapMarkersPierpont
-            break;
+            return mapMarkersPierpont;
         default:
-            return mapMarkersDude
-            break;
+            return mapMarkersDude;
     }
 }
 

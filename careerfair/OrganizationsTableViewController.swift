@@ -93,7 +93,7 @@ class OrganizationsTableViewController: UITableViewController {
         cell.orgTitleLabel.text = org?.title;
         let temp = org?.date;
         let temp2 = org?.location;
-        cell.orgDateLabel.text = temp! + ", " + temp2!;
+        cell.orgDateLabel.text = dateToString(temp!) + ", " + temp2!;
         
         if (org?.favorited === true) {
             cell.favoritedButton.setImage(UIImage(named: "heartfaved"), forState: UIControlState.Normal);

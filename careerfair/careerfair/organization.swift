@@ -18,7 +18,7 @@ class organization {
     var desc: String;
     var note: String;
     var favorited: Bool;
-    var date: String;
+    var date: NSDate;
     var location: String;
     var booth: Int;
     var jobLocation: String;
@@ -35,7 +35,9 @@ class organization {
     var sponsorOnOccasionC: Bool;
     var majorC = [Bool]();
     
-    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: String, location_in: String, booth_in: Int, jobLoc_in: String, attendingRec_in: Bool, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int]) {
+    var orgId:Int;
+    
+    init(fromTitle title_in: String, desc_in: String, note_in: String, favorited_in: Bool, date_in: NSDate, location_in: String, booth_in: Int, jobLoc_in: String, attendingRec_in: Bool, internshipC_in: Bool, fulltimeC_in: Bool, coopC_in: Bool, bachelorsC_in: Bool, mastersC_in:Bool, doctoralC_in: Bool, sponsorYesC_in: Bool, sponsorNoC_in: Bool, sponsorOnOccasionC_in: Bool, majorC_in: [Int], id_in:Int) {
         
         title = title_in;
         desc = desc_in;
@@ -62,6 +64,8 @@ class organization {
         for majorId in majorC_in {
             majorC[majorId] = true;
         }
+        
+        orgId = id_in;
     }
     
     init() {
@@ -69,7 +73,7 @@ class organization {
         desc = "";
         note = "";
         favorited = false;
-        date = "";
+        date = NSDate();
         location = "";
         booth = -1;
         jobLocation = "Midwest";
@@ -86,6 +90,7 @@ class organization {
         sponsorOnOccasionC = false;
         
         majorC = Array(count: 16, repeatedValue: false);
+        orgId = orgData.count;
     }
 }
 

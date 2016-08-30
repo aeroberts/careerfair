@@ -110,11 +110,15 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
         scrollView.frame = view.bounds
         containerView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
         
-        dateAndLocationHeader.frame = CGRectMake(16, 20, UIScreen.mainScreen().bounds.width/2, 21);
-        dateAndLocationContent.frame = CGRectMake(36, 63, UIScreen.mainScreen().bounds.width/2, 17);
+        dateAndLocationHeader.frame = CGRectMake(16, 20, UIScreen.mainScreen().bounds.width-32, 21);
+        dateAndLocationContent.frame = CGRectMake(36, 63, UIScreen.mainScreen().bounds.width-52, 17);
         
         aboutHeader.frame = CGRectMake(16, 120, UIScreen.mainScreen().bounds.width/2, 21);
         aboutContent.frame = CGRectMake(24, 142, UIScreen.mainScreen().bounds.width-28, aboutHeight);
+    }
+    
+    @IBAction func touchBack(segue: UIStoryboardSegue) {
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     func buildControls() {
@@ -125,7 +129,7 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
         containerView.addSubview(dateAndLocationHeader);
         
         dateAndLocationContent = UILabel();
-        dateAndLocationContent.text = dateToStringWithTime(event.date) + " - " + event.location;
+        dateAndLocationContent.text = dateToStringWithTime(event.startTime) + " - " + event.location;
         dateAndLocationContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(dateAndLocationContent);

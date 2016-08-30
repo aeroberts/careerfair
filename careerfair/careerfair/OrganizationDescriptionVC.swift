@@ -124,7 +124,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
 
         
         dateAndLocationHeader.frame = CGRectMake(16, 20, UIScreen.mainScreen().bounds.width/2, 21);
-        dateAndLocationContent.frame = CGRectMake(36, 63, UIScreen.mainScreen().bounds.width/2, 17);
+        dateAndLocationContent.frame = CGRectMake(24, 63, UIScreen.mainScreen().bounds.width-28, 17);
         writeNoteHeader.frame = CGRectMake(16, 114, UIScreen.mainScreen().bounds.width/2, 21);
         writeNoteContent.frame = CGRectMake(16, 143, UIScreen.mainScreen().bounds.width-32, 130);
         aboutHeader.frame = CGRectMake(16, 309, UIScreen.mainScreen().bounds.width/2, 21);
@@ -190,6 +190,10 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
     
     func tap(gesture: UITapGestureRecognizer) {
         writeNoteContent.resignFirstResponder()
+    }
+    
+    @IBAction func touchBack(segue : UIStoryboardSegue) {
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     override func didReceiveMemoryWarning() {
@@ -312,7 +316,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         containerView.addSubview(dateAndLocationHeader);
         
         dateAndLocationContent = UILabel();
-        dateAndLocationContent.text = org.date + ", " + org.location;
+        dateAndLocationContent.text = dateToString(org.date) + ", " + org.location;
         dateAndLocationContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(dateAndLocationContent);

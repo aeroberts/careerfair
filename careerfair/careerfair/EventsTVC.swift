@@ -43,7 +43,7 @@ class EventsTVC: UITableViewController {
         let event = events[row]
         
         cell.eventTitleLabel.text = event.title
-        cell.eventDateLabel.text = dateToString(event.date) + " - " + event.location
+        cell.eventDateLabel.text = dateToString(event.startTime) + " - " + event.location
         
         return cell
     }

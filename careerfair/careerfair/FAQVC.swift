@@ -9,7 +9,7 @@
 import UIKit
 
 class FAQVC: UIViewController {
-
+    @IBOutlet weak var faqTV: UITextView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,16 @@ class FAQVC: UIViewController {
         navigationBar.translucent = false;
         navigationBar.tintColor = UIColor(red: 255/255, green: 203/255, blue: 5/255, alpha: 1.0);
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
+        
+        let path = NSBundle.mainBundle().pathForResource("faq", ofType: "txt")
+        if path == nil { /* Error */ }
+        
+        var fileContents: String? = nil
+        do {
+            fileContents = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
+        } catch _ as NSError { /* Error */ }
+        
+        faqTV.text = fileContents;
     }
 
     override func didReceiveMemoryWarning() {
