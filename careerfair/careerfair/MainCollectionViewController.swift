@@ -159,22 +159,21 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(navigationTileReuse, forIndexPath: indexPath) as! MainCollectionViewCell
-        cell.backgroundColor = UIColor.lightGrayColor();
         
         // Configure the cell
         cell.imageView.image = UIImage(named: "Test2");
         
         switch (indexPath.row) {
             case 0: // Organizations
-                cell.imageView.image = UIImage(named: "cat.png");
+                cell.imageView.image = UIImage(named: "icon-organizations.png");
                 cell.tileLabel.text = "Organizations"
                 break;
             case 1: // Map
-                cell.imageView.image = UIImage(named: "icon-announcements.jpg");
+                cell.imageView.image = UIImage(named: "icon-map.png");
                 cell.tileLabel.text = "Map"
                 break;
             case 2: // Favorited
-                cell.imageView.image = UIImage(named: "heartfaved.png");
+                cell.imageView.image = UIImage(named: "icon-favorite.png");
                 cell.tileLabel.text = "Favorited"
                 break;
             case 3: // Notes
@@ -182,23 +181,23 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
                 cell.tileLabel.text = "Noted"
                 break;
             case 4: // ToDo list
-                cell.imageView.image = UIImage(named: "Test2");
+                cell.imageView.image = UIImage(named: "icon-todo.png");
                 cell.tileLabel.text = "To-do List"
                 break;
             case 5: // Events
-                cell.imageView.image = UIImage(named: "Test2");
+                cell.imageView.image = UIImage(named: "icon-events.png");
                 cell.tileLabel.text = "Events"
                 break;
             case 6: // Announcements
-                cell.imageView.image = UIImage(named: "Test2");
+                cell.imageView.image = UIImage(named: "icon-announcements.png");
                 cell.tileLabel.text = "Announcements"
                 break;
             case 7: // Tips
-                cell.imageView.image = UIImage(named: "Test2");
+                cell.imageView.image = UIImage(named: "icon-tips.png");
                 cell.tileLabel.text = "Career Fair Tips"
                 break;
             case 8: // General Info
-                cell.imageView.image = UIImage(named: "Test2");
+                cell.imageView.image = UIImage(named: "icon-info.png");
                 cell.tileLabel.text = "General Info"
                 break;
             default:

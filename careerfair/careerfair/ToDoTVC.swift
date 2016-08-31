@@ -51,7 +51,28 @@ class ToDoTVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("toDoCell", forIndexPath: indexPath) as! ToDoCell;
         let displayTDI = toDoItems[sectionTotals[indexPath.section]+indexPath.row];
         cell.title.text = displayTDI.title;
-        cell.time.text = displayTDI.title;
+        
+        var startHours = displayTDI.startHours;
+        var startAMPM =  "am";
+        if (startHours > 12) {
+            startHours -= 12;
+            startAMPM = "pm";
+        }
+        let displayStartHours = String(startHours);
+        
+        var endHours = displayTDI.endHours;
+        var endAMPM =  "am";
+        if (endHours > 12) {
+            endHours -= 12;
+            endAMPM = "pm";
+        }
+        let displayEndHours = String(endHours);
+        
+        let startMinutes = String(format: "%02d", displayTDI.startMinutes);
+        let endMinutes = String(format: "%02d", displayTDI.endMinutes);
+        
+        
+        cell.time.text = displayStartHours + ":" + startMinutes + startAMPM + " - " + displayEndHours + ":" + endMinutes + endAMPM;
         
         cell.id = displayTDI.id;
         cell.isOrg = displayTDI.isOrg;

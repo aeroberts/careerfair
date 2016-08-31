@@ -20,6 +20,9 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var fulltimeCB: UIButton!
     @IBOutlet weak var coopCB: UIButton!
     
+    @IBOutlet weak var dayOneCB: UIButton!
+    @IBOutlet weak var dayTwoCB: UIButton!
+    
     @IBOutlet weak var bachelorsCB: UIButton!
     @IBOutlet weak var mastersCB: UIButton!
     @IBOutlet weak var doctoralCB: UIButton!
@@ -37,6 +40,14 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     @IBAction func checkCoop(sender: AnyObject) {
         coopCB.selected = !coopCB.selected;
+    }
+    
+    //events for day checkboxes
+    @IBAction func checkDayOne(sender: AnyObject) {
+        dayOneCB.selected = !dayOneCB.selected;
+    }
+    @IBAction func checkDayTwo(sender: AnyObject) {
+        dayTwoCB.selected = !dayTwoCB.selected;
     }
     
     //events for degree checkboxes
@@ -64,22 +75,30 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     @IBAction func filterDone(sender: AnyObject) {
-        var checked = [Int]();
+        var checked = Dictionary<String, Set<Int>>();
         //Determine checked checkboxes
-        if (internshipCB.selected) { checked.append(1); }
-        if (fulltimeCB.selected) { checked.append(2); }
-        if (coopCB.selected) { checked.append(3); }
+        checked["type"] = Set<Int>();
+        if (internshipCB.selected) { checked["type"]!.insert(0); }
+        if (fulltimeCB.selected) { checked["type"]!.insert(1); }
+        if (coopCB.selected) { checked["type"]!.insert(2); }
         
-        if (bachelorsCB.selected) { checked.append(4); }
-        if (mastersCB.selected) { checked.append(5); }
-        if (doctoralCB.selected) { checked.append(6); }
+        checked["degree"] = Set<Int>();
+        if (bachelorsCB.selected) { checked["degree"]!.insert(0); }
+        if (mastersCB.selected) { checked["degree"]!.insert(1); }
+        if (doctoralCB.selected) { checked["degree"]!.insert(2); }
         
-        if (sponsorYesCB.selected) { checked.append(7); }
-        if (sponsorNoCB.selected) { checked.append(8); }
-        if (sponsorOnOccasionCB.selected) { checked.append(9); }
+        checked["day"] = Set<Int>();
+        if (dayOneCB.selected) { checked["day"]!.insert(0); }
+        if (dayTwoCB.selected) { checked["day"]!.insert(1); }
         
+        checked["sponsor"] = Set<Int>();
+        if (sponsorYesCB.selected) { checked["sponsor"]!.insert(0); }
+        if (sponsorNoCB.selected) { checked["sponsor"]!.insert(1); }
+        if (sponsorOnOccasionCB.selected) { checked["sponsor"]!.insert(2); }
+        
+        checked["major"] = Set<Int>();
         if (majorPV.selectedRowInComponent(0) > 0) {
-            checked.append(majorPV.selectedRowInComponent(0) + 9);
+            checked["major"]!.insert(majorPV.selectedRowInComponent(0));
         }
 
         filteredOrgNameToIdList.removeAll(keepCapacity: false);
@@ -115,6 +134,14 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         coopCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         coopCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         coopCB.selected = false;
+        
+        dayOneCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        dayOneCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
+        dayOneCB.selected = false;
+        
+        dayTwoCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
+        dayTwoCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
+        dayTwoCB.selected = false;
         
         bachelorsCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         bachelorsCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
@@ -170,44 +197,52 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
 */
-    func filtersMatchOrg(filters:[Int], org: organization) -> Bool {
-        for filter in filters {
-            switch (filter) {
-                case 1:
-                    if (org.internshipC == false) { return false; }
-                    break;
-                case 2:
-                    if (!org.fulltimeC) { return false; }
-                    break;
-                case 3:
-                    if (!org.coopC) { return false; }
-                    break;
-                case 4:
-                    if (!org.bachelorsC) { return false; }
-                    break;
-                case 5:
-                    if (!org.mastersC) { return false; }
-                    break;
-                case 6:
-                    if (!org.doctoralC) { return false; }
-                    break;
-                case 7:
-                    if (!org.sponsorYesC) { return false; }
-                    break;
-                case 8:
-                    if (!org.sponsorNoC) { return false; }
-                    break;
-                case 9:
-                    if (!org.sponsorOnOccasionC) { return false; }
-                    break;
-                default:
-                    if (filter > 9 && filter < 27) {
-                        if (!org.majorC[filter-9]) {
-                            return false;
-                        }
-                    }
-                    break;
-            }
+    func filtersMatchOrg(filters:Dictionary<String, Set<Int>>, org: organization) -> Bool {
+        if (orgMatchesType(filters["type"]!, org: org) &&
+            orgMatchesDegree(filters["degree"]!, org: org) &&
+            orgMatchesDay(filters["day"]!, org: org) &&
+            orgMatchesSponsor(filters["sponsor"]!, org: org) &&
+            orgMatchesMajor(filters["major"]!, org: org)) {
+            return true;
+        }
+        return false;
+    }
+    
+    func orgMatchesType(filters:Set<Int>, org: organization) -> Bool {
+        if (filters.isEmpty) { return true; }
+        if (filters.contains(0) && org.internshipC) { return true; }
+        if (filters.contains(1) && org.coopC) { return true; }
+        if (filters.contains(2) && org.fulltimeC) { return true; }
+        return false;
+    }
+    
+    func orgMatchesDegree(filters:Set<Int>, org: organization) -> Bool {
+        if (filters.isEmpty) { return true; }
+        if (filters.contains(0) && org.bachelorsC) { return true; }
+        if (filters.contains(1) && org.mastersC) { return true; }
+        if (filters.contains(2) && org.doctoralC) { return true; }
+        return false;
+    }
+    
+    func orgMatchesDay(filters:Set<Int>, org: organization) -> Bool {
+        if (filters.isEmpty) { return true; }
+        if (filters.contains(0) && org.internshipC) { return true; }
+        if (filters.contains(1) && org.coopC) { return true; }
+        return false;
+    }
+    
+    func orgMatchesSponsor(filters:Set<Int>, org: organization) -> Bool {
+        if (filters.isEmpty) { return true; }
+        if (filters.contains(0) && org.sponsorYesC) { return true; }
+        if (filters.contains(1) && org.sponsorNoC) { return true; }
+        if (filters.contains(2) && org.sponsorOnOccasionC) { return true; }
+        return false;
+    }
+    
+    func orgMatchesMajor(filters:Set<Int>, org: organization) -> Bool {
+        if (filters.isEmpty) { return true; }
+        for major in filters {
+            return org.majorC[major];
         }
         return true;
     }

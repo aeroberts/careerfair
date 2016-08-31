@@ -8,6 +8,9 @@
 
 import Foundation
 
+let cfDayOne = makeDate(28, month_in: 9, year_in: 2016, hour_in: 10, minute_in: 00);
+let cfDayTwo = makeDate(29, month_in: 9, year_in: 2016, hour_in: 10, minute_in: 00);
+
 func makeDate(day_in:Int, month_in:Int, year_in:Int, hour_in:Int, minute_in:Int) -> NSDate {
     let calendar = NSCalendar.currentCalendar()
     let components = NSDateComponents()
