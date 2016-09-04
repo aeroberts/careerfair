@@ -68,6 +68,9 @@ class MapTVC: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 74;
+    }
     
     // MARK: - Navigation
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

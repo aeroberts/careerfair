@@ -86,7 +86,7 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         
         mapImage.drawInRect(CGRect(origin: CGPointZero, size: mapSize))
         
-        for marker in displayMapMarkers {
+        for marker in /*displayMapMarkers*/mapMarkers {
             UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
