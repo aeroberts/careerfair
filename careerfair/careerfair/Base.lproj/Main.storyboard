@@ -147,7 +147,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-h7-fqN">
                                             <rect key="frame" x="85" y="219" width="50.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -558,7 +558,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="xZU-Kg-Cen">
                             <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="FwA-QU-PPq" kind="show" identifier="orgToFilter" id="fFx-do-SKG"/>
+                                <segue destination="Ii5-wM-Mjp" kind="show" id="zwx-Ah-gdg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -572,6 +572,70 @@
             </objects>
             <point key="canvasLocation" x="1490" y="0.0"/>
         </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="guF-qL-TqJ">
+            <objects>
+                <viewController title="Filter View Controller" id="Ii5-wM-Mjp" customClass="FilterVC" customModule="careerfair" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k9h-qd-8BU"/>
+                        <viewControllerLayoutGuide type="bottom" id="BHf-rm-GSD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fck-Ya-2IW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-bE-Wvz">
+                                <rect key="frame" x="10" y="64" width="580" height="492"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ii5-wM-Mjp" id="dnF-XV-1Gn"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BHf-rm-GSD" firstAttribute="top" secondItem="8b8-bE-Wvz" secondAttribute="bottom" id="1Cs-AV-i1C"/>
+                            <constraint firstItem="8b8-bE-Wvz" firstAttribute="top" secondItem="k9h-qd-8BU" secondAttribute="bottom" id="F9k-d8-h6B"/>
+                            <constraint firstItem="8b8-bE-Wvz" firstAttribute="leading" secondItem="fck-Ya-2IW" secondAttribute="leadingMargin" constant="-10" id="HdP-4n-gi8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8b8-bE-Wvz" secondAttribute="trailing" constant="-10" id="Qoc-Cu-eSm"/>
+                            <constraint firstItem="8b8-bE-Wvz" firstAttribute="top" secondItem="k9h-qd-8BU" secondAttribute="bottom" id="Wp4-lf-5o2"/>
+                            <constraint firstItem="BHf-rm-GSD" firstAttribute="top" secondItem="8b8-bE-Wvz" secondAttribute="bottom" id="d4D-iV-75w"/>
+                            <constraint firstItem="8b8-bE-Wvz" firstAttribute="top" secondItem="k9h-qd-8BU" secondAttribute="top" id="dpT-bX-YXv"/>
+                            <constraint firstItem="BHf-rm-GSD" firstAttribute="top" secondItem="8b8-bE-Wvz" secondAttribute="bottom" id="w8p-LJ-B5c"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Wp4-lf-5o2"/>
+                                <exclude reference="F9k-d8-h6B"/>
+                                <exclude reference="d4D-iV-75w"/>
+                                <exclude reference="1Cs-AV-i1C"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hWS-qh-vvS">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="7en-i1-6uR">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterCancel:" destination="Ii5-wM-Mjp" id="IBa-wo-n2k"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Hk4-8f-65u">
+                            <color key="tintColor" red="1" green="0.79607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterDone:" destination="Ii5-wM-Mjp" id="t0f-9K-Fjr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Pk-LB-FeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ctp-7e-LHu">
+                    <connections>
+                        <action selector="handleTouch:" destination="Ii5-wM-Mjp" id="y5H-JT-8FQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2314" y="-682"/>
+        </scene>
         <!--Organization Detail View-->
         <scene sceneID="e1l-5P-tq4">
             <objects>
@@ -584,7 +648,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64e-D8-OjS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64e-D8-OjS">
                                 <rect key="frame" x="10" y="64" width="580" height="492"/>
                                 <connections>
                                     <outlet property="delegate" destination="aGZ-4f-vRN" id="hGa-0F-WMA"/>
@@ -700,7 +764,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-fD-7lK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-fD-7lK">
                                 <rect key="frame" x="4" y="64" width="592" height="492"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fpg-5V-oLr"/>
@@ -1210,20 +1274,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="bachelorsCB" destination="Brg-Nf-zLw" id="pes-R1-zAG"/>
-                        <outlet property="coopCB" destination="Adl-tt-E8i" id="xzr-cE-mMT"/>
-                        <outlet property="dayOneCB" destination="BGe-Oq-zwq" id="nxy-xm-F3n"/>
-                        <outlet property="dayTwoCB" destination="hmS-jz-IhK" id="bfY-cp-hQ6"/>
-                        <outlet property="doctoralCB" destination="m2B-nq-486" id="fyJ-53-DN8"/>
-                        <outlet property="fulltimeCB" destination="a18-ZO-l2l" id="swL-hQ-f4B"/>
-                        <outlet property="internshipCB" destination="45J-NS-HCN" id="3oS-aA-sP5"/>
-                        <outlet property="majorPV" destination="CYF-gF-gmK" id="cUn-YN-rF5"/>
-                        <outlet property="mastersCB" destination="cOD-ll-QPC" id="e1p-0N-AdS"/>
-                        <outlet property="sponsorNoCB" destination="TQc-uM-NIh" id="1qL-C1-vg9"/>
-                        <outlet property="sponsorOnOccasionCB" destination="UuU-83-Oad" id="xdG-OY-CLL"/>
-                        <outlet property="sponsorYesCB" destination="ctn-OU-1de" id="gsn-QG-5G7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-Y9-2ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1344,8 +1394,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mc2-iF-7X2"/>
-        <segue reference="yOd-hA-xov"/>
-        <segue reference="Qi0-V8-ixW"/>
         <segue reference="bRy-fv-BU9"/>
+        <segue reference="goa-u1-FiV"/>
+        <segue reference="MNR-6g-NH2"/>
     </inferredMetricsTieBreakers>
 </document>

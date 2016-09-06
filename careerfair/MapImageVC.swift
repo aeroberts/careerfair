@@ -86,7 +86,7 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         
         mapImage.drawInRect(CGRect(origin: CGPointZero, size: mapSize))
         
-        for marker in /*displayMapMarkers*/mapMarkers {
+        for marker in displayMapMarkers {
             UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
@@ -95,7 +95,7 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             
             if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
                 let selectedMarker = mapMarkers[selectedOrgBooth]
-                UIImage(named: "heartunfaved")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
+                UIImage(named: "icon-star")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
             }
         }
         

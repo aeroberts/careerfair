@@ -217,24 +217,29 @@ var mapMarkersFxb: [mapMarker] = [
 ]
 
 var mapMarkersPierpont: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(40, 50), size_in: 12),//1
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(60, 50), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 437), size_in: 12),//3
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 415), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 394), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 372.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 351), size_in: 12),//7
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 284), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 263), size_in: 12),//9
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 241), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 220), size_in: 12),//11
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 174), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 152.75), size_in: 12),//13
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 131), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 109.25), size_in: 12),//15
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 88), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 110), size_in: 12),//17
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 131), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 153), size_in: 12)//19
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(49.5, 53), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(74.5, 53), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 81), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 106), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 129), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 190), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 214.5), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 240), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 265), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 290.25), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 367.5), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 392.5), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 417.25), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 442), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(157.25, 423), size_in: 12),//15
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.5, 423), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(213, 423), size_in: 12),//17
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(240.5, 423), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(267.75, 423), size_in: 12),//19
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 315.75), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 340.75), size_in: 12),//21
 ]
 

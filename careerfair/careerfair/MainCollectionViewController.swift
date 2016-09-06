@@ -15,22 +15,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     private let navigationTileReuse = "navigationTile";
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
-    var toolbar:UIToolbar = UIToolbar();
-
-    override func viewWillAppear(animated: Bool) {
-        if (UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication().statusBarOrientation)) {
-            toolbar.hidden = false;
-            toolbar.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 50);
-            toolbar.sizeToFit();
-            toolbar.barTintColor = UIColor(red: 00, green: 39/255, blue: 76/255, alpha: 1.0);
-            toolbar.translucent = false;
-            self.view.addSubview(toolbar);
-        }
-        else {
-            toolbar.hidden = true;
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -286,16 +270,9 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
     
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        self.collectionView?.collectionViewLayout.invalidateLayout();
-        if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
-            toolbar.hidden = true;
-        }
-        toolbar.hidden = false;
-    }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 110, height: 120)
+        return CGSize(width: 100, height: 110)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
