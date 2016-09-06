@@ -206,6 +206,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(jobTypeLabel);
         
         internshipCB = UIButton();
+        internshipCB.addTarget(self, action: #selector(checkInternship), forControlEvents: .TouchDown)
         internshipCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         internshipCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         internshipCB.selected = false;
@@ -217,6 +218,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(internshipLabel);
 
         fulltimeCB = UIButton();
+        fulltimeCB.addTarget(self, action: #selector(checkFulltime), forControlEvents: .TouchDown)
         fulltimeCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         fulltimeCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         fulltimeCB.selected = false;
@@ -229,6 +231,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(fulltimeLabel);
         
         coopCB = UIButton();
+        coopCB.addTarget(self, action: #selector(checkCoop), forControlEvents: .TouchDown)
         coopCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         coopCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         coopCB.selected = false;
@@ -247,6 +250,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(dayLabel);
         
         dayOneCB = UIButton();
+        dayOneCB.addTarget(self, action: #selector(checkDayOne), forControlEvents: .TouchDown)
         dayOneCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         dayOneCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         dayOneCB.selected = false;
@@ -258,6 +262,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(dayOneLabel);
 
         dayTwoCB = UIButton();
+        dayTwoCB.addTarget(self, action: #selector(checkDayTwo), forControlEvents: .TouchDown)
         dayTwoCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         dayTwoCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         dayTwoCB.selected = false;
@@ -275,6 +280,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(degreeLabel);
 
         bachelorsCB = UIButton();
+        bachelorsCB.addTarget(self, action: #selector(checkBachelors), forControlEvents: .TouchDown)
         bachelorsCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         bachelorsCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         bachelorsCB.selected = false;
@@ -286,6 +292,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(bachelorsLabel);
         
         mastersCB = UIButton();
+        mastersCB.addTarget(self, action: #selector(checkMasters), forControlEvents: .TouchDown)
         mastersCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         mastersCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         mastersCB.selected = false;
@@ -297,6 +304,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(mastersLabel);
         
         doctoralCB = UIButton();
+        doctoralCB.addTarget(self, action: #selector(checkDoctoral), forControlEvents: .TouchDown)
         doctoralCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         doctoralCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         doctoralCB.selected = false;
@@ -314,6 +322,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(sponsorLabel);
         
         sponsorYesCB = UIButton();
+        sponsorYesCB.addTarget(self, action: #selector(checkYes), forControlEvents: .TouchDown)
         sponsorYesCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         sponsorYesCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorYesCB.selected = false;
@@ -325,6 +334,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(sponsorYesLabel);
 
         sponsorNoCB = UIButton();
+        sponsorNoCB.addTarget(self, action: #selector(checkNo), forControlEvents: .TouchDown)
         sponsorNoCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         sponsorNoCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorNoCB.selected = false;
@@ -336,6 +346,7 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         containerView.addSubview(sponsorNoLabel);
 
         sponsorOccCB = UIButton();
+        sponsorOccCB.addTarget(self, action: #selector(checkOnOccasion), forControlEvents: .TouchDown)
         sponsorOccCB.setImage(UIImage(named: "uncheckedcb"), forState: UIControlState.Normal);
         sponsorOccCB.setImage(UIImage(named: "checkedcb"), forState: UIControlState.Selected);
         sponsorOccCB.selected = false;
