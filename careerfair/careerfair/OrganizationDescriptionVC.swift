@@ -125,19 +125,19 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         
         dateAndLocationHeader.frame = CGRectMake(16, 20, UIScreen.mainScreen().bounds.width/2, 21);
         dateAndLocationContent.frame = CGRectMake(24, 63, UIScreen.mainScreen().bounds.width-28, 17);
-        writeNoteHeader.frame = CGRectMake(16, 114, UIScreen.mainScreen().bounds.width/2, 21);
+        writeNoteHeader.frame = CGRectMake(16, 114, UIScreen.mainScreen().bounds.width-20, 21);
         writeNoteContent.frame = CGRectMake(16, 143, UIScreen.mainScreen().bounds.width-32, 130);
-        aboutHeader.frame = CGRectMake(16, 309, UIScreen.mainScreen().bounds.width/2, 21);
+        aboutHeader.frame = CGRectMake(16, 309, UIScreen.mainScreen().bounds.width-20, 21);
         aboutContent.frame = CGRectMake(24, 338, UIScreen.mainScreen().bounds.width-28, aboutHeight);
-        majorHeader.frame = CGRectMake(16, aboutBottomContraint+20, UIScreen.mainScreen().bounds.width/2, 21);
+        majorHeader.frame = CGRectMake(16, aboutBottomContraint+20, UIScreen.mainScreen().bounds.width-20, 21);
         majorContent.frame = CGRectMake(24, aboutBottomContraint+42, UIScreen.mainScreen().bounds.width-28, 24);
-        positionsHeader.frame = CGRectMake(16, aboutBottomContraint+113, UIScreen.mainScreen().bounds.width/2, 21);
+        positionsHeader.frame = CGRectMake(16, aboutBottomContraint+113, UIScreen.mainScreen().bounds.width-20, 21);
         positionsContent.frame = CGRectMake(24, aboutBottomContraint+135, UIScreen.mainScreen().bounds.width-28, 24);
-        degreeHeader.frame = CGRectMake(16, aboutBottomContraint+207, UIScreen.mainScreen().bounds.width/2, 21);
+        degreeHeader.frame = CGRectMake(16, aboutBottomContraint+207, UIScreen.mainScreen().bounds.width-20, 21);
         degreeContent.frame = CGRectMake(24, aboutBottomContraint+229, UIScreen.mainScreen().bounds.width-28, 24);
-        jobLocHeader.frame = CGRectMake(16, aboutBottomContraint+300, UIScreen.mainScreen().bounds.width/2, 21);
+        jobLocHeader.frame = CGRectMake(16, aboutBottomContraint+300, UIScreen.mainScreen().bounds.width-20, 21);
         jobLocContent.frame = CGRectMake(24, aboutBottomContraint+322, UIScreen.mainScreen().bounds.width-28, 50);
-        sponsorHeader.frame = CGRectMake(16, aboutBottomContraint+393, UIScreen.mainScreen().bounds.width/2, 21);
+        sponsorHeader.frame = CGRectMake(16, aboutBottomContraint+393, UIScreen.mainScreen().bounds.width-20, 21);
         sponsorContent.frame = CGRectMake(24, aboutBottomContraint+415, UIScreen.mainScreen().bounds.width-28, 24);
     }
     
@@ -317,7 +317,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         
         dateAndLocationContent = UILabel();
         dateAndLocationContent.text = dateToString(org.date) + ", " + org.location;
-        dateAndLocationContent.font = UIFont.systemFontOfSize(14);
+        dateAndLocationContent.font = UIFont.systemFontOfSize(12);
         
         containerView.addSubview(dateAndLocationContent);
         
@@ -360,7 +360,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         aboutContent.text = org.desc
         aboutContent.editable = false;
         aboutContent.font = UIFont.systemFontOfSize(14);
-        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat(FLT_MAX)))).height
+        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width-32, CGFloat(FLT_MAX)))).height
         self.aboutBottomContraint = 338 + aboutHeight;
         
         containerView.addSubview(aboutContent);

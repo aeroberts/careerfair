@@ -36,7 +36,6 @@
 		F72526EF1BACE53B008EEE32 /* testScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */; };
 		F7466B331D6F32C500657EEE /* tips.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7466B321D6F32C500657EEE /* tips.txt */; };
 		F7466B351D6F354500657EEE /* faq.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7466B341D6F354500657EEE /* faq.txt */; };
-		F7466B371D6F481D00657EEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7466B361D6F481D00657EEE /* Images.xcassets */; };
 		F746FB561BA8869600885476 /* MapImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F746FB551BA8869600885476 /* MapImageVC.swift */; };
 		F74D308B1D636E94009CC0D4 /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
 		F74D308E1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */; };
@@ -53,6 +52,7 @@
 		F7BA7C3A1BA9E57A005D036D /* EventsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */; };
 		F7DDE5F41BAAFB5A00395C62 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DDE5F31BAAFB5A00395C62 /* ErrorHandler.swift */; };
 		F7DE96751BAA47020012C1F4 /* NotedOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */; };
+		F7EF2B831D80EAD90072F56A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF2B821D80EAD90072F56A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,6 @@
 		F72526EE1BACE53B008EEE32 /* testScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testScrollViewController.swift; path = ../testScrollViewController.swift; sourceTree = "<group>"; };
 		F7466B321D6F32C500657EEE /* tips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tips.txt; sourceTree = "<group>"; };
 		F7466B341D6F354500657EEE /* faq.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = faq.txt; sourceTree = "<group>"; };
-		F7466B361D6F481D00657EEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		F746FB551BA8869600885476 /* MapImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapImageVC.swift; path = ../MapImageVC.swift; sourceTree = "<group>"; };
 		F74D308C1D6370A1009CC0D4 /* ToDoEvents+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoEvents+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F74D308D1D6370A1009CC0D4 /* ToDoEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEvents.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		F7BA7C391BA9E57A005D036D /* EventsDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsDescriptionVC.swift; path = ../EventsDescriptionVC.swift; sourceTree = "<group>"; };
 		F7DDE5F31BAAFB5A00395C62 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F7DE96741BAA47020012C1F4 /* NotedOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotedOrganizations.swift; sourceTree = "<group>"; };
+		F7EF2B821D80EAD90072F56A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 				AC5851BB1D0B627A002149AB /* Helpers */,
 				ACD00D471D0B6CA600E86D21 /* Tips */,
 				ACD00D461D0B6C9400E86D21 /* FAQ */,
-				F7466B361D6F481D00657EEE /* Images.xcassets */,
+				F7EF2B821D80EAD90072F56A /* Images.xcassets */,
 				AC0310261B5C26B800554DD2 /* LaunchScreen.xib */,
 				AC0310191B5C26B800554DD2 /* Info.plist */,
 				AC03101C1B5C26B800554DD2 /* careerfair.xcdatamodeld */,
@@ -384,7 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0310231B5C26B800554DD2 /* Main.storyboard in Resources */,
-				F7466B371D6F481D00657EEE /* Images.xcassets in Resources */,
+				F7EF2B831D80EAD90072F56A /* Images.xcassets in Resources */,
 				AC0310281B5C26B800554DD2 /* LaunchScreen.xib in Resources */,
 				F7466B351D6F354500657EEE /* faq.txt in Resources */,
 				F7466B331D6F32C500657EEE /* tips.txt in Resources */,

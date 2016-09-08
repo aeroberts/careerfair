@@ -272,14 +272,25 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 100, height: 110)
+        if (UIScreen.mainScreen().bounds.width >= 375.0) {
+            return CGSize(width: 100, height: 110)
+        }
+        else {
+            return CGSize(width: 86, height: 96)
+        }
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
             return UIEdgeInsetsMake(30, 20, 30, 20);
         }
-        return UIEdgeInsetsMake(48, 20, 30, 20);
+        if (UIScreen.mainScreen().bounds.width >= 375.0) {
+            return UIEdgeInsetsMake(48, 20, 30, 20);
+        }
+        else {
+            return UIEdgeInsetsMake(32, 20, 30, 20);
+        }
+        
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
@@ -287,7 +298,12 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             return 40;
         }
         else {
-            return 70;
+            if (UIScreen.mainScreen().bounds.width >= 375.0) {
+                return 70;
+            }
+            else {
+                return 30;
+            }
         }
     }
     

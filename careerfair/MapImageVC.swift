@@ -17,6 +17,7 @@ enum mapLocations {
     case ggBrown
     case pierpont
     case BBB
+    case chryslerBasement
     case none
 }
 
@@ -64,6 +65,9 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             case mapLocations.dudeConnector:
                 mapMarkers = mapMarkersDudeConnector
                 return "dude_connector.png";
+            case mapLocations.chryslerBasement:
+                mapMarkers = mapMarkersChryslerBasement
+                return "chrysler_basement.png"
             default:
                 return "cat.png";
         }
@@ -86,8 +90,11 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         
         mapImage.drawInRect(CGRect(origin: CGPointZero, size: mapSize))
         
-        for marker in displayMapMarkers {
-            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:marker.position, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
+        for marker in displayMapMarkers /*mapMarkers*/ {
+            var origin: CGPoint = marker.position;
+            origin.x *= imageHeight;
+            origin.y *= imageWidth;
+            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:origin, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
         if (selectedOrgId != -1) {
@@ -95,7 +102,12 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             
             if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
                 let selectedMarker = mapMarkers[selectedOrgBooth]
-                UIImage(named: "icon-star")!.drawInRect(CGRect(origin:selectedMarker.position, size:CGSizeMake(CGFloat(selectedMarker.size), CGFloat(selectedMarker.size))))
+                var origin: CGPoint = selectedMarker.position;
+                origin.x *= imageHeight;
+                origin.x -= 5;
+                origin.y *= imageWidth;
+                origin.y -= 5;
+                UIImage(named: "icon-star")!.drawInRect(CGRect(origin:origin, size:CGSizeMake(22, 22)))
             }
         }
         
@@ -133,6 +145,9 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         let mapImage = UIImage(named: getMapImage(mapLocation))!;
         
         for orgId in favoritedOrgs {
+            if (orgId == selectedOrgId) {
+                continue;
+            }
             let currentOrg = orgData[orgId]
             if (parseLocation(currentOrg!.location) == mapLocation && orgId != selectedOrgId) {
                 displayMapMarkers.append(mapMarkers[currentOrg!.booth])

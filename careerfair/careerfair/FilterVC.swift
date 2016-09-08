@@ -167,11 +167,11 @@ class FilterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         
         sponsorLabel.frame = CGRectMake(16, 368, UIScreen.mainScreen().bounds.width-16, 21);
         sponsorYesCB.frame = CGRectMake(45, 404, 26, 26)
-        sponsorYesLabel.frame = CGRectMake(40, 432, 30, 16)
+        sponsorYesLabel.frame = CGRectMake(46.5, 432, 30, 16)
         sponsorNoCB.frame = CGRectMake(135, 404, 26, 26)
-        sponsorNoLabel.frame = CGRectMake(133, 432, 30, 16)
+        sponsorNoLabel.frame = CGRectMake(140, 432, 30, 16)
         sponsorOccCB.frame = CGRectMake(220, 404, 26, 26)
-        sponsorOccLabel.frame = CGRectMake(215, 432, 61, 16)
+        sponsorOccLabel.frame = CGRectMake(200, 432, 80, 16)
         
         majorPV.frame = CGRectMake(16, 480, UIScreen.mainScreen().bounds.width-32, 180);
         

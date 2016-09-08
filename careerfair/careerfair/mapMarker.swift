@@ -47,199 +47,212 @@ func getMapMarkerArray(location_in:mapLocations) -> [mapMarker] {
 var orgIdToMapMarker: [Int:mapMarker] = [:]
 
 var mapMarkersDow: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(33.5, 56), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(86, 56.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(110, 56.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(294, 56.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(317, 56), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(163, 98.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(188, 98.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(211, 98.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(231.5, 98.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(48.5, 95), size_in: 10)
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.16, 0.132), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.43, 0.132), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.55, 0.132), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(1.47, 0.132), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(1.59, 0.132), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.82, 0.237), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.94, 0.237), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(1.05, 0.237), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(1.162, 0.237), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.237, 0.228), size_in: 12)
 ]
 
 var mapMarkersDude: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(89.75, 340), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(89.75, 320), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(89.75, 300), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(89.75, 279), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(127, 112), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(139.75, 98.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(152, 86), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(165, 73), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(177.75, 60.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(190.25, 47.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(203, 35), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(219, 437), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(206, 424.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(193.5, 411), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(178, 397), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(164, 382.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(149, 368), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(144, 346), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(144, 330.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(144, 311.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(144, 294.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(144, 277.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(256, 229.5), size_in: 10),//CC1
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(270, 215), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(285.5, 215), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(300, 229.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(300, 245), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(285.5, 259), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(270, 259), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(256, 245), size_in: 10),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.183, 0.82), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.183, 0.771), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.183, 0.721), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.183, 0.671), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.260, 0.267), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.285, 0.235), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.311, 0.205), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.337, 0.175), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.364, 0.144), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.39, 0.114), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.417, 0.083), size_in: 12),//11
+    
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.451, 1.054), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.424, 1.02), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.398, 0.99), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.366, 0.954), size_in: 12),//15
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.338, 0.918), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.3054, 0.884), size_in: 12),//17
+    
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.295, 0.832), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.295, 0.794), size_in: 12),//19
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.295, 0.750), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.295, 0.709), size_in: 12),//21
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.295, 0.669), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.526, 0.55), size_in: 12),//CC1
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.556, 0.514), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.588, 0.514), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.617, 0.55), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.617, 0.588), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.588, 0.619), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.556, 0.619), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dow, position_in: CGPointMake(0.526, 0.588), size_in: 12),
 ]
 
 var mapMarkersDudeConnector: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(168, 51), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(146.5, 51), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(119.25, 59.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(107.5, 82.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(107.5, 104.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(119, 130.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(146.5, 135.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(168, 135.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(192.75, 104.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(192.75, 80), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(162.25, 86), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(143.25, 87.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(142.75, 104.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(162, 104.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 70.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 92.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 114.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 167.75), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 189.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 212), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 234), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 256.25), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 278.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 300), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 322.5), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 344), size_in: 10),
-    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(232, 365.75), size_in: 10)
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.349, 0.119), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.303, 0.119), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.244, 0.136), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.221, 0.193), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.221, 0.248), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.244, 0.313), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.303, 0.326), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.349, 0.326), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.4, 0.248), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.4, 0.189), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.338, 0.202), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.294, 0.202), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.294, 0.249), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.338, 0.249), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.164), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.22), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.27), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.401), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.455), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.508), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.562), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.616), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.667), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.720), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.772), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.826), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.dudeConnector, position_in: CGPointMake(0.483, 0.878), size_in: 12)
 ]
 
 var mapMarkersEecs: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 543.75), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 522.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 437), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 415), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 394), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 372.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 351), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 284), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 263), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 241), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 220), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 174), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 152.75), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 131), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 109.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(146.5, 88), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 110), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 131), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 153), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 174), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 220.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 241.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 263.25), size_in: 12),//
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(178.75, 294.5), size_in: 12),//
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(179.25, 316.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 352), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 373), size_in: 12),///////////
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 393.75), size_in: 12),//6
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 429.75), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182, 451), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 502.75), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 528.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.25, 553), size_in: 12)
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 1.401), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 1.344), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 1.125), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 1.070), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 1.015), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.96), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.905), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.732), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.677), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.622), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.567), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.446), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.391), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.336), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.281), size_in: 12),//15
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.216, 0.226), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.281), size_in: 12),//17
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.336), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.391), size_in: 12),//19
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.446), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.567), size_in: 12),//21
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.622), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.677), size_in: 12),//23
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.262, 0.760), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.263, 0.815), size_in: 12),//25
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.905), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 0.96), size_in: 12),//27
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.015), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.11), size_in: 12),//29
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.165), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.3), size_in: 12),//31
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.365), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.268, 1.429), size_in: 12)//33
 ]
 
 var mapMarkersBbb: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(53, 321), size_in: 12),//1
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(77, 260), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(77, 221), size_in: 12),//3
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(77.25, 182), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(77.25, 143), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(93.5, 95.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(141, 95.5), size_in: 12),//7
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(145, 142), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(145, 182), size_in: 12),//9
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(145, 217.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(152, 238.25), size_in: 12),//11
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(190, 239.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(199, 210.5), size_in: 12),//13
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(199.5, 180), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(217.5, 96), size_in: 12),//15
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(279, 96), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(308.5, 115.5), size_in: 12),//17
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(334, 115.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(363, 115.5), size_in: 12),//19
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(387, 115.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(247.5, 271), size_in: 12),//21
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(247.5, 300), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(235, 321), size_in: 12),//23
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(202, 321), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(163, 321), size_in: 12), // 53
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.13, 0.77), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.187, 0.62), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.187, 0.53), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.187, 0.432), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.187, 0.344), size_in: 12),//5
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.229, 0.229), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.345, 0.229), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.355, 0.342), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.355, 0.433), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.355, 0.516), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.372, 0.572), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.465, 0.572), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.489, 0.505), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.489, 0.430), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.534, 0.229), size_in: 12),//15
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.686, 0.229), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.76, 0.276), size_in: 12),//17
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.82, 0.276), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.895, 0.276), size_in: 12),//19
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.955, 0.276), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.609, 0.645), size_in: 12),//21
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.609, 0.718), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.58, 0.77), size_in: 12),//23
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.492, 0.77), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.395, 0.77), size_in: 12), // 53
 ]
 
 var mapMarkersGGbrown: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(86.5, 110), size_in: 12),//1
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(117.5, 110), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(148.5, 110), size_in: 12),//3
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(179.5, 110), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(210.5, 110), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(240.75, 110), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(271.5, 110), size_in: 12),//7
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(302.5, 110), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(333, 110), size_in: 12),//9
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(364.5, 110), size_in: 12)
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.412, 0.263), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.56, 0.263), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.71, 0.263), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.855, 0.263), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.005, 0.263), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.155, 0.263), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.30, 0.263), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.446, 0.263), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.598, 0.263), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.74, 0.263), size_in: 12)
 ]
 
 var mapMarkersFxb: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(96, 83), size_in: 12),//1
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(140, 82), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(166.75, 81.5), size_in: 12),//3
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(214, 80.25), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(239, 80.25), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(296.25, 83), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(105, 166), size_in: 12),//7
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(133, 166), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(161.5, 166), size_in: 12),//9
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(222, 166), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(250.5, 166), size_in: 12),//11
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(279.75, 166), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(315.75, 165), size_in: 12),//13
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(357.25, 166.5), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.418, 0.2), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.610, 0.197), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.730, 0.195), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.938, 0.192), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.047, 0.192), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.29, 0.2), size_in: 12),
+    
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.457, 0.401), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.577, 0.401), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.701, 0.401), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.968, 0.401), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.1, 0.401), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.22, 0.399), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.376, 0.398), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(1.566, 0.402), size_in: 12),
 ]
 
 var mapMarkersPierpont: [mapMarker] = [
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(49.5, 53), size_in: 12),//1
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(74.5, 53), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 81), size_in: 12),//3
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 106), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 129), size_in: 12),//5
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 190), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 214.5), size_in: 12),//7
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 240), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 265), size_in: 12),//9
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 290.25), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.1, 0.128), size_in: 12),//1
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.153, 0.128), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.192), size_in: 12),//3
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.254), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.311), size_in: 12),//5
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.456), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.516), size_in: 12),//7
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.578), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.64), size_in: 12),//9
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.70), size_in: 12),
     
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 367.5), size_in: 12),//11
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 392.5), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 417.25), size_in: 12),//13
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(100, 442), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.205, 0.885), size_in: 12),//11
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.205, 0.945), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.205, 1.005), size_in: 12),//13
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.205, 1.065), size_in: 12),
     
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(157.25, 423), size_in: 12),//15
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(182.5, 423), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(213, 423), size_in: 12),//17
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(240.5, 423), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(267.75, 423), size_in: 12),//19
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.323, 1.02), size_in: 12),//15
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.375, 1.02), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.437, 1.02), size_in: 12),//17
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.494, 1.02), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.551, 1.02), size_in: 12),//19
     
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 315.75), size_in: 12),
-    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(130.25, 340.75), size_in: 12),//21
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.76), size_in: 12),
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.267, 0.82), size_in: 12),//21
+]
+
+var mapMarkersChryslerBasement: [mapMarker] = [
+    mapMarker(mapLocation_in: mapLocations.eecs, position_in: CGPointMake(0.1, 0.128), size_in: 12),//1
 ]
 
