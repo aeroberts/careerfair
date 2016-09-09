@@ -92,6 +92,90 @@ class organization {
         majorC = Array(count: 16, repeatedValue: false);
         orgId = orgData.count;
     }
+    
+    func listDegree() -> String {
+        var degrees: String = ""
+        if (self.bachelorsC) {
+            degrees += "Bachelors, "
+        }
+        if (self.mastersC) {
+            degrees += "Masters, "
+        }
+        if (self.doctoralC) {
+            degrees += "Doctoral, "
+        }
+    
+        return degrees.substringToIndex(degrees.endIndex.advancedBy(-2))
+    }
+    
+    func listJobType() -> String {
+        var jobTypes: String = ""
+        if (self.internshipC) {
+            jobTypes += "Internship, "
+        }
+        if (self.fulltimeC) {
+            jobTypes += "Full Time, "
+        }
+        if (self.coopC) {
+            jobTypes += "Co-op, "
+        }
+        
+        return jobTypes.substringToIndex(jobTypes.endIndex.advancedBy(-2))
+    }
+    
+    func listMajors() -> String {
+        var majors = ""
+        if (self.majorC[0]) {
+            majors += "AERO, "
+        }
+        if (self.majorC[1]) {
+            majors += "AOSS, "
+        }
+        if (self.majorC[2]) {
+            majors += "Biomedical, "
+        }
+        if (self.majorC[3]) {
+            majors += "CHEM, "
+        }
+        if (self.majorC[4]) {
+            majors += "Civil, "
+        }
+        if (self.majorC[5]) {
+            majors += "CE, "
+        }
+        if (self.majorC[6]) {
+            majors += "CS, "
+        }
+        if (self.majorC[7]) {
+            majors += "Data Science, "
+        }
+        if (self.majorC[8]) {
+            majors += "EE, "
+        }
+        if (self.majorC[9]) {
+            majors += "Engin. Physics, "
+        }
+        if (self.majorC[10]) {
+            majors += "Environmental, "
+        }
+        if (self.majorC[11]) {
+            majors += "IoE, "
+        }
+        if (self.majorC[12]) {
+            majors += "MSE, "
+        }
+        if (self.majorC[13]) {
+            majors += "ME, "
+        }
+        if (self.majorC[14]) {
+            majors += "Naval, "
+        }
+        if (self.majorC[15]) {
+            majors += "NERS, "
+        }
+        return majors.substringToIndex(majors.endIndex.advancedBy(-2))
+
+    }
 }
 
 func pushFavoritedOrgs(orgId: Int) -> Bool {

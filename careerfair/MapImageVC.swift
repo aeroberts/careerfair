@@ -28,6 +28,11 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
     var mapMarkers = [mapMarker]()
     var displayMapMarkers = [mapMarker]()
     
+    var dayOne: Bool = true
+    var dayBtn: UIButton = UIButton()
+    
+    var drawnItems = [UIImage]()
+    
     var selectedOrgId = -1
     
     @IBOutlet weak var mapScrollView: UIScrollView!
@@ -73,7 +78,26 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func createMapOverlay(mapImage:UIImage) {
+    func createMapOverlay() {
+        let mapImage = UIImage(named: getMapImage(mapLocation))!;
+        
+        for orgId in favoritedOrgs {
+            if (orgId == selectedOrgId) {
+                continue;
+            }
+            let currentOrg = orgData[orgId]
+            
+            if (currentOrg!.date == cfDayOne && !dayOne) {
+                continue;
+            }
+            if (currentOrg!.date == cfDayTwo && dayOne) {
+                continue;
+            }
+            if (parseLocation(currentOrg!.location) == mapLocation && orgId != selectedOrgId) {
+                displayMapMarkers.append(mapMarkers[currentOrg!.booth])
+            }
+        }
+        
         let height = mapImage.size.height
         let width = mapImage.size.width
         
@@ -94,20 +118,26 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             var origin: CGPoint = marker.position;
             origin.x *= imageHeight;
             origin.y *= imageWidth;
-            UIImage(named: "heartfaved")!.drawInRect(CGRect(origin:origin, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
+            drawnItems.append(UIImage(named: "heartfaved")!)
+            drawnItems.last!.drawInRect(CGRect(origin:origin, size:CGSizeMake(CGFloat(marker.size), CGFloat(marker.size))))
         }
         
         if (selectedOrgId != -1) {
-            let selectedOrgBooth = orgData[selectedOrgId]!.booth
-            
-            if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
-                let selectedMarker = mapMarkers[selectedOrgBooth]
-                var origin: CGPoint = selectedMarker.position;
-                origin.x *= imageHeight;
-                origin.x -= 5;
-                origin.y *= imageWidth;
-                origin.y -= 5;
-                UIImage(named: "icon-star")!.drawInRect(CGRect(origin:origin, size:CGSizeMake(22, 22)))
+            let selectedOrg = orgData[selectedOrgId]
+            if ((selectedOrg!.date == cfDayOne && dayOne) ||
+                (selectedOrg!.date == cfDayTwo && !dayOne)) {
+           
+                let selectedOrgBooth = selectedOrg!.booth
+                if (selectedOrgBooth > -1 && selectedOrgBooth < mapMarkers.count) {
+                    let selectedMarker = mapMarkers[selectedOrgBooth]
+                    var origin: CGPoint = selectedMarker.position;
+                    origin.x *= imageHeight;
+                    origin.x -= 5;
+                    origin.y *= imageWidth;
+                    origin.y -= 5;
+                    drawnItems.append(UIImage(named: "icon-star")!);
+                    drawnItems.last!.drawInRect(CGRect(origin:origin, size:CGSizeMake(22, 22)))
+                }
             }
         }
         
@@ -139,27 +169,43 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
         updateConstraintsForSize(view.bounds.size)
     }
     
+    @IBAction func touchDay(sender: AnyObject) {
+        if (dayOne) {
+            dayBtn.setTitle("Day Two", forState: .Normal)
+        }
+        else {
+            dayBtn.setTitle("Day One", forState: .Normal)
+        }
+        dayOne = !dayOne
+        
+        drawnItems.removeAll(keepCapacity: false)
+        displayMapMarkers.removeAll(keepCapacity: false)
+        mapImageView.image = nil
+        mapImageView.setNeedsDisplay()
+        self.mapScrollView.setZoomScale(1.0, animated: false)
+        createMapOverlay()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mapImage = UIImage(named: getMapImage(mapLocation))!;
+        dayBtn.setTitle("Day One", forState: .Normal)
+        dayBtn.setTitleColor(UIColor(red: 255/255, green: 203/255, blue: 5/255, alpha: 1.0), forState: .Normal);
+        dayBtn.frame = CGRectMake(0, 0, 70, 30)
+        dayBtn.addTarget(self, action: #selector(touchDay), forControlEvents: .TouchDown)
         
-        for orgId in favoritedOrgs {
-            if (orgId == selectedOrgId) {
-                continue;
-            }
-            let currentOrg = orgData[orgId]
-            if (parseLocation(currentOrg!.location) == mapLocation && orgId != selectedOrgId) {
-                displayMapMarkers.append(mapMarkers[currentOrg!.booth])
-            }
-        }
+        //.... Set Right/Left Bar Button item
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.customView = dayBtn
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
         
         self.mapScrollView.minimumZoomScale = 1.0
         self.mapScrollView.maximumZoomScale = 2.0
         self.mapScrollView.setZoomScale(1.0, animated: false)
         self.mapScrollView.delegate = self
         
-        createMapOverlay(mapImage)
+        createMapOverlay()
         updateConstraintsForSize(view.bounds.size)
 
         // Do any additional setup after loading the view.

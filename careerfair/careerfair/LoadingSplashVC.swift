@@ -75,9 +75,60 @@ class LoadingSplashVC: UIViewController {
         //}
         
         // Load event data into eventData
-        events.append(Event(fromTitle: "Resume Check Sesh", date_in: makeDate(28, month_in: 9, year_in: 2016, hour_in: 14, minute_in: 30), end_in: makeDate(28, month_in: 9, year_in: 2016, hour_in: 16, minute_in: 00), location_in: "Duderstadt", information_in: "Come get your resume checked by the ecrc", interested_in: false, eventId_in: 10))
-        events.append(Event(fromTitle: "Interviewing Prep Sesh", date_in: makeDate(29, month_in: 9, year_in: 2016, hour_in: 12, minute_in: 30), end_in: makeDate(29, month_in: 9, year_in: 2016, hour_in: 13, minute_in: 30), location_in: "ECRC", information_in: "Learn how to improve your interview skills in a mock interview", interested_in: false, eventId_in: 12))
-        events.append(Event(fromTitle: "Tech Talk X", date_in: makeDate(24, month_in: 9, year_in: 2016, hour_in: 15, minute_in: 00), end_in: makeDate(24, month_in: 9, year_in: 2016, hour_in: 16, minute_in: 00), location_in: "EECS", information_in: "Literally everyones favorite compnay is giving a tech talk.  Hosted by HKN.  Food will be involved.", interested_in: false, eventId_in: 3))
+        events.append(Event(fromTitle: "Undergrad Receptions", date_in: makeDate(18, month_in: 9, year_in: 2016, hour_in: 14, minute_in: 30), end_in: makeDate(18, month_in: 9, year_in: 2016, hour_in: 16, minute_in: 00), location_in: "Duderstadt", information_in: "Undergrad Receptions", interested_in: false, eventId_in: 0))
+        
+        events.append(Event(fromTitle: "Graduate Receptions", date_in: makeDate(18, month_in: 9, year_in: 2016, hour_in: 12, minute_in: 30), end_in: makeDate(18, month_in: 9, year_in: 2016, hour_in: 13, minute_in: 30), location_in: "ECRC", information_in: "Graduate Receptions", interested_in: false, eventId_in: 1))
+        
+        // Monday september 12
+        events.append(Event(fromTitle: "ZS Associates Info Session", date_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about ZS Associates in an info session", interested_in: false, eventId_in: 2))
+        events.append(Event(fromTitle: "BASF Info Session", date_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about BASF in an info session", interested_in: false, eventId_in: 3))
+        events.append(Event(fromTitle: "General Electric Info Session", date_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 30), end_in: makeDate(12, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 30), location_in: "EECS", information_in: "Learn about GE in an info session", interested_in: false, eventId_in: 4))
+        
+        // Tuesday september 13
+        events.append(Event(fromTitle: "Barr Engineering Co Info Session", date_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about Barr Engineering Co in an info session", interested_in: false, eventId_in: 5))
+        events.append(Event(fromTitle: "Whirlpool Corp. Info Session", date_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about Whirlpool Corporation in an info session", interested_in: false, eventId_in: 6))
+        events.append(Event(fromTitle: "Fiat Chrysler Info Session", date_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Fiat Chrysler Automobiles in an info session", interested_in: false, eventId_in: 7))
+        events.append(Event(fromTitle: "Cummins Inc. Info Session", date_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(13, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Cummins Inc. in an info session", interested_in: false, eventId_in: 8))
+        
+        
+        // Wednesday September 14
+        events.append(Event(fromTitle: "Air Products Info Session", date_in: makeDate(14, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 30), end_in: makeDate(14, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 30), location_in: "EECS", information_in: "Learn about Barr Engineering Co in an info session", interested_in: false, eventId_in: 9))
+        
+        events.append(Event(fromTitle: "Consumers Energy Info Session", date_in: makeDate(14, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 00), end_in: makeDate(14, month_in: 9, year_in: 2016, hour_in: 21, minute_in: 00), location_in: "EECS", information_in: "Learn about Consumers Energy in an info session", interested_in: false, eventId_in: 10))
+        
+        
+        // Thursday September 15
+        //General Mills- Thursday, Sept. 15th 5:30pm-7:30pm
+        //The Lee Company- Thursday, Sept. 15th 6pm-8pm
+        //Lear Corporation- Thursday, Sept. 15th, 7pm-9pm
+        events.append(Event(fromTitle: "General Mills Info Session", date_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about Fiat Chrysler Automobiles in an info session", interested_in: false, eventId_in: 11))
+        events.append(Event(fromTitle: "The Lee Company Info Session", date_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about The Lee Company in an info session", interested_in: false, eventId_in: 12))
+        events.append(Event(fromTitle: "Lear Corp. Info Session", date_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 00), end_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 21, minute_in: 00), location_in: "EECS", information_in: "Learn about Lear Corporation in an info session", interested_in: false, eventId_in: 13))
+        
+        //Monday September 19
+        //Uptake Technologies, Inc. - Monday, Sept. 19th 5:30pm-7:30pm
+        //National Instruments- Monday, Sept. 19th 6pm-8pm
+        //Echelon Consulting LLC- Monday, Sept. 19th 6pm-8pm
+        //Exponent- Monday, Sept. 19th 6:30pm-8:30pm
+        events.append(Event(fromTitle: "Uptake Technologies, Inc. Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Uptake Technologies Info Session in an info session", interested_in: false, eventId_in: 14))
+        events.append(Event(fromTitle: "National Instruments Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about National Instruments in an info session", interested_in: false, eventId_in: 15))
+        events.append(Event(fromTitle: "Echelon Consulting LLC Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Echelon Consulting LLC in an info session", interested_in: false, eventId_in: 16))
+        events.append(Event(fromTitle: "Exponent Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 30), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 30), location_in: "EECS", information_in: "Learn about Exponent in an info session", interested_in: false, eventId_in: 17))
+        
+        //Tuesday September 20
+        //Textron- Tuesday, Sept. 20th 5:30pm-7:30pm
+        //Amazon- Tuesday, Sept. 20th 5:30pm-7:30pm
+        //ANDREESSEN HOROWITZ- Tuesday, Sept. 20th 6pm-8pm
+        //Citrix Systems Inc.- Tuesday, Sept. 20th 7pm-9pm
+        events.append(Event(fromTitle: "Textron Info Session", date_in: makeDate(20, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about Textron Info Session in an info session", interested_in: false, eventId_in: 18))
+        events.append(Event(fromTitle: "Amazon Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 17, minute_in: 30), end_in: makeDate(15, month_in: 9, year_in: 2016, hour_in: 19, minute_in: 30), location_in: "EECS", information_in: "Learn about Amazon in an info session", interested_in: false, eventId_in: 19))
+        events.append(Event(fromTitle: "Andreessen Horowitz Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Andreessen Horowitz in an info session", interested_in: false, eventId_in: 20))
+        events.append(Event(fromTitle: "Citrix Systems Inc. Info Session", date_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(19, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Citrix Systems Inc. in an info session", interested_in: false, eventId_in: 21))
+        
+        //Tuesday September 21
+        //Raytheon- Tuesday, Sept. 20th 5:30pm-7:30pm
+        events.append(Event(fromTitle: "Raytheon Info Session", date_in: makeDate(21, month_in: 9, year_in: 2016, hour_in: 18, minute_in: 00), end_in: makeDate(21, month_in: 9, year_in: 2016, hour_in: 20, minute_in: 00), location_in: "EECS", information_in: "Learn about Raytheon Info Session in an info session", interested_in: false, eventId_in: 18))
+        
         
         events.sortInPlace({ $0.startTime.timeIntervalSinceReferenceDate < $1.startTime.timeIntervalSinceReferenceDate })
         

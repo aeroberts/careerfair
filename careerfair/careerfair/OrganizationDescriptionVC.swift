@@ -45,6 +45,8 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
     
     var aboutHeight:CGFloat = -1;
     var aboutBottomContraint:CGFloat = -1;
+    var majorHeight:CGFloat = -1;
+    var majorBottomConstraint:CGFloat = -1;
     
     var viewOnMapButton:UIButton!
     
@@ -130,15 +132,15 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         aboutHeader.frame = CGRectMake(16, 309, UIScreen.mainScreen().bounds.width-20, 21);
         aboutContent.frame = CGRectMake(24, 338, UIScreen.mainScreen().bounds.width-28, aboutHeight);
         majorHeader.frame = CGRectMake(16, aboutBottomContraint+20, UIScreen.mainScreen().bounds.width-20, 21);
-        majorContent.frame = CGRectMake(24, aboutBottomContraint+42, UIScreen.mainScreen().bounds.width-28, 24);
-        positionsHeader.frame = CGRectMake(16, aboutBottomContraint+113, UIScreen.mainScreen().bounds.width-20, 21);
-        positionsContent.frame = CGRectMake(24, aboutBottomContraint+135, UIScreen.mainScreen().bounds.width-28, 24);
-        degreeHeader.frame = CGRectMake(16, aboutBottomContraint+207, UIScreen.mainScreen().bounds.width-20, 21);
-        degreeContent.frame = CGRectMake(24, aboutBottomContraint+229, UIScreen.mainScreen().bounds.width-28, 24);
-        jobLocHeader.frame = CGRectMake(16, aboutBottomContraint+300, UIScreen.mainScreen().bounds.width-20, 21);
-        jobLocContent.frame = CGRectMake(24, aboutBottomContraint+322, UIScreen.mainScreen().bounds.width-28, 50);
-        sponsorHeader.frame = CGRectMake(16, aboutBottomContraint+393, UIScreen.mainScreen().bounds.width-20, 21);
-        sponsorContent.frame = CGRectMake(24, aboutBottomContraint+415, UIScreen.mainScreen().bounds.width-28, 24);
+        majorContent.frame = CGRectMake(24, aboutBottomContraint+42, UIScreen.mainScreen().bounds.width-28, majorHeight);
+        positionsHeader.frame = CGRectMake(16, majorBottomConstraint+20, UIScreen.mainScreen().bounds.width-20, 21);
+        positionsContent.frame = CGRectMake(24, majorBottomConstraint+42, UIScreen.mainScreen().bounds.width-28, 24);
+        degreeHeader.frame = CGRectMake(16, majorBottomConstraint+113, UIScreen.mainScreen().bounds.width-20, 21);
+        degreeContent.frame = CGRectMake(24, majorBottomConstraint+135, UIScreen.mainScreen().bounds.width-28, 24);
+        jobLocHeader.frame = CGRectMake(16, majorBottomConstraint+207, UIScreen.mainScreen().bounds.width-20, 21);
+        jobLocContent.frame = CGRectMake(24, majorBottomConstraint+229, UIScreen.mainScreen().bounds.width-28, 50);
+        sponsorHeader.frame = CGRectMake(16, majorBottomConstraint+300, UIScreen.mainScreen().bounds.width-20, 21);
+        sponsorContent.frame = CGRectMake(24, majorBottomConstraint+322, UIScreen.mainScreen().bounds.width-28, 24);
     }
     
     override func viewDidLoad() {
@@ -374,8 +376,12 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         
         majorContent = UITextView();
         majorContent.scrollEnabled = false
-        majorContent.text = "EE, CS, MECH, CE, CHE, NME"
+        majorContent.text = org.listMajors()
         majorContent.editable = false;
+        self.majorHeight = majorContent.sizeThatFits(majorContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width-32, CGFloat(FLT_MAX)))).height
+        print (self.majorHeight)
+        self.majorBottomConstraint = aboutBottomContraint+52+majorHeight;
+
         majorContent.font = UIFont.systemFontOfSize(14);
         
         containerView.addSubview(majorContent);
@@ -388,7 +394,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         
         positionsContent = UITextView();
         positionsContent.scrollEnabled = false
-        positionsContent.text = "Full-Time, Internship, Co-op";
+        positionsContent.text = org.jobLocation;
         positionsContent.editable = false;
         positionsContent.font = UIFont.systemFontOfSize(14);
         
@@ -396,14 +402,14 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         
         
         degreeHeader = UILabel();
-        degreeHeader.text = Constants.OD_MajorHeader;
+        degreeHeader.text = Constants.OD_DegreeReqHeader;
         degreeHeader.font = UIFont.systemFontOfSize(17);
         
         containerView.addSubview(degreeHeader);
         
         degreeContent = UITextView();
         degreeContent.scrollEnabled = false
-        degreeContent.text = "Bachelor's, Master's, Ph.D.";
+        degreeContent.text = org.listDegree();
         degreeContent.editable = false;
         degreeContent.font = UIFont.systemFontOfSize(14);
         
@@ -450,6 +456,7 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
 
             destinationVC.mapLocation = location;
             destinationVC.selectedOrgId = orgId
+            destinationVC.dayOne = (org.date == cfDayOne)
         }
     }
 }
