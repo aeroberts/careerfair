@@ -379,7 +379,6 @@ class OrganizationDescriptionVC: UIViewController, UIScrollViewDelegate, UITextV
         majorContent.text = org.listMajors()
         majorContent.editable = false;
         self.majorHeight = majorContent.sizeThatFits(majorContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width-32, CGFloat(FLT_MAX)))).height
-        print (self.majorHeight)
         self.majorBottomConstraint = aboutBottomContraint+52+majorHeight;
 
         majorContent.font = UIFont.systemFontOfSize(14);

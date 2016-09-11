@@ -45,9 +45,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
                 orgNameToIdList.append(orgNameToId(orgName_in: orgData[orgId]!.title, orgId_in: orgId));
             }
             orgNameToIdList.sortInPlace({ $0.orgName < $1.orgName });
-            /*for x in orgNameToIdList {
-                println("x: " + toString(x.orgId) + " " + x.orgName);
-            }*/
         }
         else if (segue.identifier == "navigationTileToNoted") {
             currentArray = currentOrgArray.noted;
@@ -101,7 +98,6 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
             
             for elt in toDoItems {
                 let components = calendar.components([.Day], fromDate: elt.startDate);
-                print(components.day);
                 if (components.day != currentDay) {
                     displayDates.append(dateFormatter.stringFromDate(elt.startDate));
                     numDays += 1;
@@ -113,10 +109,7 @@ class MainCollectionViewController: UICollectionViewController, UICollectionView
                     numItemsForDate[numItemsForDate.count-1] += 1;
                 }
             }
-            
-            print(displayDates);
-            print(numItemsForDate);
-            
+
             // pass numDays to ToDoTVC
             let navController = segue.destinationViewController as! templateNavController;
             let destinationVC = navController.viewControllers.first as! ToDoTVC;

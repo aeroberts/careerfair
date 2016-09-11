@@ -180,10 +180,6 @@ class OrganizationsTableViewController: UITableViewController {
 /*            let view = sender.superview!;
             let cell = view.superview as! OrganizationTableViewCell;
             let indexpath = self.tableView.indexPathForCell(cell);
-            println("\n\n\n");
-            println("indexpath: ");
-            println(indexpath!);
-            println("\n\n\n");
             
             self.tableView.deleteRowsAtIndexPaths([indexpath!], withRowAnimation: UITableViewRowAnimation.Automatic);
 */

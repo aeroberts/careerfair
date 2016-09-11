@@ -17,7 +17,7 @@ enum mapLocations {
     case ggBrown
     case pierpont
     case BBB
-    case chryslerBasement
+    case chryslerLobby
     case none
 }
 
@@ -70,9 +70,9 @@ class MapImageVC: UIViewController, UIScrollViewDelegate {
             case mapLocations.dudeConnector:
                 mapMarkers = mapMarkersDudeConnector
                 return "dude_connector.png";
-            case mapLocations.chryslerBasement:
-                mapMarkers = mapMarkersChryslerBasement
-                return "chrysler_basement.png"
+            case mapLocations.chryslerLobby:
+                mapMarkers = mapMarkersChryslerLobby
+                return "chrysler_lobby.png"
             default:
                 return "cat.png";
         }

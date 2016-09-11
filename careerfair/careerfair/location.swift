@@ -27,8 +27,8 @@ func parseLocation(location:String) -> mapLocations {
         return mapLocations.ggBrown;
     case "pierpont":
         return mapLocations.pierpont;
-    case "chrysler basement":
-        return mapLocations.chryslerBasement
+    case "chrysler lobby":
+        return mapLocations.chryslerLobby
     default:
         return mapLocations.dude;
     }

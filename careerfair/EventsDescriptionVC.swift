@@ -16,9 +16,12 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
     var containerView:UIView!
     
     var dateAndLocationHeader:UILabel!
-    var dateAndLocationContent:UILabel!
+    var dateAndLocationContent:UITextView!
     var aboutHeader:UILabel!
     var aboutContent:UITextView!
+    
+    var dateHeight:CGFloat = -1;
+    var dateBottom:CGFloat = -1;
     
     var aboutHeight:CGFloat = -1;
     var aboutBottomContraint:CGFloat = -1;
@@ -37,7 +40,6 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
             newFavorite.setValue(event.eventId, forKey: "eventId");
             do {
                 try context.save()
-                print("context saved");
             } catch _ {
             };
             
@@ -111,10 +113,10 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
         containerView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
         
         dateAndLocationHeader.frame = CGRectMake(16, 20, UIScreen.mainScreen().bounds.width-32, 21);
-        dateAndLocationContent.frame = CGRectMake(36, 63, UIScreen.mainScreen().bounds.width-52, 17);
+        dateAndLocationContent.frame = CGRectMake(36, 63, UIScreen.mainScreen().bounds.width-52, dateHeight);
         
-        aboutHeader.frame = CGRectMake(16, 120, UIScreen.mainScreen().bounds.width/2, 21);
-        aboutContent.frame = CGRectMake(24, 142, UIScreen.mainScreen().bounds.width-28, aboutHeight);
+        aboutHeader.frame = CGRectMake(16, 128, UIScreen.mainScreen().bounds.width-32, 21);
+        aboutContent.frame = CGRectMake(24, 150, UIScreen.mainScreen().bounds.width-28, aboutHeight);
     }
     
     @IBAction func touchBack(segue: UIStoryboardSegue) {
@@ -128,17 +130,18 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
         
         containerView.addSubview(dateAndLocationHeader);
         
-        dateAndLocationContent = UILabel();
+        dateAndLocationContent = UITextView();
+        dateAndLocationContent.scrollEnabled = false
         dateAndLocationContent.text = dateToStringWithTime(event.startTime) + " - " + event.location;
-        dateAndLocationContent.font = UIFont.systemFontOfSize(14);
-        
+        dateAndLocationContent.font = UIFont.systemFontOfSize(13);
+        self.dateHeight = dateAndLocationContent.sizeThatFits(dateAndLocationContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width-32, CGFloat(FLT_MAX)))).height
+        self.dateBottom = 36 + dateAndLocationContent.bounds.height
         containerView.addSubview(dateAndLocationContent);
         
         
         aboutHeader = UILabel();
         aboutHeader.text = Constants.OD_AboutHeader;
         aboutHeader.font = UIFont.systemFontOfSize(17);
-        
         containerView.addSubview(aboutHeader);
         
         
@@ -147,7 +150,7 @@ class EventsDescriptionVC: UIViewController, UIScrollViewDelegate {
         aboutContent.text = event.information;
         aboutContent.editable = false;
         aboutContent.font = UIFont.systemFontOfSize(14);
-        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat(FLT_MAX)))).height
+        self.aboutHeight = aboutContent.sizeThatFits(aboutContent.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.size.width-32, CGFloat(FLT_MAX)))).height
         self.aboutBottomContraint = 338 + aboutHeight;
         
         containerView.addSubview(aboutContent);

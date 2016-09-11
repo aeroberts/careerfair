@@ -12,7 +12,7 @@ class MapTVC: UITableViewController {
     
     private let NUM_MAPS = 9;
     private let MAP_NAMES = [
-        "Chrysler Basement",
+        "Chrysler Lobby",
         "Dow",
         "Duderstadt",
         "Duderstadt Connector",
