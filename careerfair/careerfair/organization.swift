@@ -105,6 +105,7 @@ class organization {
             degrees += "Doctoral, "
         }
     
+        if (degrees.isEmpty) { return "" }
         return degrees.substringToIndex(degrees.endIndex.advancedBy(-2))
     }
     
@@ -120,6 +121,7 @@ class organization {
             jobTypes += "Co-op, "
         }
         
+        if (jobTypes.isEmpty) { return ""; }
         return jobTypes.substringToIndex(jobTypes.endIndex.advancedBy(-2))
     }
     
@@ -173,6 +175,7 @@ class organization {
         if (self.majorC[15]) {
             majors += "NERS, "
         }
+        if (majors.isEmpty) { return "" }
         return majors.substringToIndex(majors.endIndex.advancedBy(-2))
 
     }
